@@ -5,12 +5,14 @@ import {RouterModule} from '@angular/router';
 import {APP_ROUTES} from './app.routes';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { OverviewPageComponent } from './overview-page/overview-page.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginPageComponent,
-    OverviewPageComponent
+    OverviewPageComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
