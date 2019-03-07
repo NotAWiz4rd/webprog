@@ -17,7 +17,7 @@ export class LoginPageComponent implements OnInit {
   loginName: string = '';
   loginPassword: string = '';
 
-  constructor(private http: HttpClient, private globals: Globals) {
+  constructor(private http: HttpClient, public globals: Globals) {
   }
 
   ngOnInit() {
