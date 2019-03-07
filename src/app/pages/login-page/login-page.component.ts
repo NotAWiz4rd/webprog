@@ -1,7 +1,10 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Globals} from "../../globals";
 import {User} from "../../util/User";
+import {AuthService} from "../../util/auth.service";
+import {LanguageService} from "../../util/language.service";
+import {Globals} from "../../util/globals";
+import {NavigationService} from "../../util/navigation.service";
 
 const USERFILE_PATH = '../../../assets/users.json';
 
@@ -11,25 +14,31 @@ const USERFILE_PATH = '../../../assets/users.json';
   styleUrls: ['./login-page.component.css']
 })
 export class LoginPageComponent implements OnInit {
-  @Output()
-  correctLogin: EventEmitter<boolean> = new EventEmitter();
-
   loginName: string = '';
   loginPassword: string = '';
 
-  constructor(private http: HttpClient, public globals: Globals) {
+  constructor(public globals: Globals,
+              public languageService: LanguageService,
+              private authService: AuthService,
+              private http: HttpClient,
+              private navigationService: NavigationService) {
   }
 
   ngOnInit() {
+    if (this.authService.isLoggedIn()) {
+      this.navigationService.navigateToView('overview');
+    }
   }
 
   onLogin() {
-    // load file with users
+    // load file with users - reload this every time, in case the users have changed
     this.http.get(USERFILE_PATH)
       .subscribe(data => {
         const userData = data as User[];
         console.log('Loaded user data.');
-        this.lookForMatch(userData);
+        if (this.authService.isLoggedIn() || this.lookForMatch(userData)) {
+          this.navigationService.navigateToView('overview');
+        }
       });
   }
 
@@ -41,13 +50,16 @@ export class LoginPageComponent implements OnInit {
     this.loginPassword = password;
   }
 
-  private lookForMatch(data: User[]) {
+  private lookForMatch(data: User[]): boolean {
+    let foundUser = false;
     data.forEach(user => {
       if (user.name === this.loginName && user.password === this.loginPassword) {
         console.log('Correct login for user ' + this.loginName + ' received.');
-        this.correctLogin.emit(true);
+        this.authService.setLoggedIn(true);
+        foundUser = true;
       }
     });
+    return foundUser;
   }
 }
 

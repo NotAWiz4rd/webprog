@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Globals} from "../../globals";
+import {LanguageService} from "../../util/language.service";
+import {Globals} from "../../util/globals";
 
 @Component({
   selector: 'app-footer',
@@ -8,13 +9,13 @@ import {Globals} from "../../globals";
 })
 export class FooterComponent implements OnInit {
 
-  constructor(public globals: Globals) {
+  constructor(public globals: Globals, public languageService: LanguageService) {
   }
 
   ngOnInit() {
   }
 
   changeLanguage(language: number) {
-    this.globals.language = language;
+    this.languageService.changeLanguage(language);
   }
 }

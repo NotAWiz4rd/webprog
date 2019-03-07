@@ -6,6 +6,12 @@
     "spanish": "iniciar sesión"
   },
   {
+    "logicalName": "logoutText",
+    "english": "logout",
+    "german": "Logout",
+    "spanish": "cerrar sesión"
+  },
+  {
     "logicalName": "englishLanguageText",
     "english": "English",
     "german": "Englisch",

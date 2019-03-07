@@ -15,7 +15,7 @@ export class GetStaticTextPipe implements PipeTransform {
 
     texts.forEach(text => {
       if (text.logicalName === key) {
-        switch (language.toString()) {
+        switch (String(language)) {
           case '0':
             staticText = text.english;
             break;
