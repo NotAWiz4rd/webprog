@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-Install NodeJS.
+Install NodeJS (IntelliJ idea might come with it bundled, check that first).
 Change standard IntelliJ idea run command to use "update-serve" script.
 Run `update-serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
@@ -14,7 +14,11 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build. The production flag will
+automatically be used when using the configured build script.
+
+##Deploy
+Build the project, then copy the contents of the /dist/webprog/ folder into the base directory (where the index.html shall reside) of the webserver.
 
 ## Running unit tests
 
