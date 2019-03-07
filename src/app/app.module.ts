@@ -3,11 +3,13 @@ import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
 import {RouterModule} from '@angular/router';
 import {APP_ROUTES} from './app.routes';
-import {LoginPageComponent} from './login-page/login-page.component';
-import {OverviewPageComponent} from './overview-page/overview-page.component';
-import {FooterComponent} from './footer/footer.component';
-import { MainComponent } from './main/main.component';
+import {MainComponent} from './main/main.component';
 import {HttpClientModule} from "@angular/common/http";
+import {Globals} from "./globals";
+import {LoginPageComponent} from "./pages/login-page/login-page.component";
+import {OverviewPageComponent} from "./pages/overview-page/overview-page.component";
+import {FooterComponent} from "./components/footer/footer.component";
+import {GetStaticTextPipe} from "./pipes/get-static-text.pipe";
 
 @NgModule({
   declarations: [
@@ -15,7 +17,8 @@ import {HttpClientModule} from "@angular/common/http";
     LoginPageComponent,
     OverviewPageComponent,
     FooterComponent,
-    MainComponent
+    MainComponent,
+    GetStaticTextPipe
   ],
   imports: [
     BrowserModule,
@@ -25,7 +28,9 @@ import {HttpClientModule} from "@angular/common/http";
       onSameUrlNavigation: 'reload'
     })
   ],
-  providers: [],
+  providers: [
+    Globals
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

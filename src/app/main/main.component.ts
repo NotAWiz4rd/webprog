@@ -1,4 +1,9 @@
 import {Component, OnInit} from '@angular/core';
+import {HttpClient} from "@angular/common/http";
+import {Globals} from "../globals";
+import {StaticText} from "../util/StaticText";
+
+const TEXTFILE_PATH = '../../../assets/texts.json';
 
 @Component({
   selector: 'app-main',
@@ -8,10 +13,16 @@ import {Component, OnInit} from '@angular/core';
 export class MainComponent implements OnInit {
   view: string = 'login';
 
-  constructor() {
+  constructor(private http: HttpClient, private globals: Globals) {
   }
 
   ngOnInit() {
+    // load file with static texts
+    this.http.get(TEXTFILE_PATH)
+      .subscribe(data => {
+        this.globals.staticTexts = data as StaticText[];
+        console.log('Loaded static texts.');
+      });
   }
 
   changeView(view: string) {

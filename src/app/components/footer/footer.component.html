@@ -1,0 +1,11 @@
+<div (click)="changeLanguage(0)" [class.active]="globals?.language === 0">
+  {{globals?.staticTexts | getStaticText : 'englishLanguageText' : globals?.language}}
+</div>
+
+<div (click)="changeLanguage(1)" [class.active]="globals?.language === 1">
+  {{globals?.staticTexts | getStaticText : 'germanLanguageText' : globals?.language}}
+</div>
+
+<div (click)="changeLanguage(2)" [class.active]="globals?.language === 2">
+  {{globals?.staticTexts | getStaticText : 'spanishLanguageText' : globals?.language}}
+</div>

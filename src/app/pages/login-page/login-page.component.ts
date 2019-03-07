@@ -1,5 +1,9 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {Globals} from "../../globals";
+import {User} from "../../util/User";
+
+const USERFILE_PATH = '../../../assets/users.json';
 
 @Component({
   selector: 'app-login-page',
@@ -13,7 +17,7 @@ export class LoginPageComponent implements OnInit {
   loginName: string = '';
   loginPassword: string = '';
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private globals: Globals) {
   }
 
   ngOnInit() {
@@ -21,10 +25,10 @@ export class LoginPageComponent implements OnInit {
 
   onLogin() {
     // load file with users
-    this.http.get('../../../assets/users.json')
+    this.http.get(USERFILE_PATH)
       .subscribe(data => {
         const userData = data as User[];
-        console.log('loaded the following users: ' + data);
+        console.log('Loaded user data.');
         this.lookForMatch(userData);
       });
   }
@@ -45,11 +49,5 @@ export class LoginPageComponent implements OnInit {
       }
     });
   }
-}
-
-// most basic user data, corresponds to the structure in the users.json
-export class User {
-  name: string = '';
-  password: string = '';
 }
 

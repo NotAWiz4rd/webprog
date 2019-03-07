@@ -1,0 +1,15 @@
+div {
+  padding: 0.5rem;
+  display: inline-block;
+  cursor: pointer;
+
+}
+
+div:hover {
+  color: blue;
+  text-underline-color: blue;
+}
+
+.active {
+  text-decoration: underline;
+}

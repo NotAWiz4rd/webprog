@@ -1,0 +1,26 @@
+[
+  {
+    "logicalName": "loginText",
+    "english": "login",
+    "german": "Login",
+    "spanish": "iniciar sesión"
+  },
+  {
+    "logicalName": "englishLanguageText",
+    "english": "English",
+    "german": "Englisch",
+    "spanish": "Inglés"
+  },
+  {
+    "logicalName": "germanLanguageText",
+    "english": "German",
+    "german": "Deutsch",
+    "spanish": "Alemán"
+  },
+  {
+    "logicalName": "spanishLanguageText",
+    "english": "Spanish",
+    "german": "Spanisch",
+    "spanish": "Español"
+  }
+]
