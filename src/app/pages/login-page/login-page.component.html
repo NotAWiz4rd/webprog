@@ -1,0 +1,8 @@
+<div>
+  <input type="email" #inputMail (keyup)="mailInputChange(inputMail.value)">
+  <input type="email" #inputPassword (keyup)="passwordInputChange(inputPassword.value)">
+</div>
+
+<div class="login-button" (click)="onLogin()">
+  Login
+</div>

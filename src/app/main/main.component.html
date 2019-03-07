@@ -1,0 +1,3 @@
+<app-login-page *ngIf="view === 'login'" (correctLogin)="changeView('overview')"></app-login-page>
+
+<app-overview-page *ngIf="view === 'overview'"></app-overview-page>

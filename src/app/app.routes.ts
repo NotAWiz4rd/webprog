@@ -1,8 +1,8 @@
-import {LoginPageComponent} from './login-page/login-page.component';
+import {MainComponent} from "./main/main.component";
 
 export const APP_ROUTES = [
   {
-    path: '',
-    component: LoginPageComponent
+    path: '**',
+    component: MainComponent
   }
 ];
