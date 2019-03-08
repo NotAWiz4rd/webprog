@@ -1,0 +1,34 @@
+[
+  {
+    "filename": "transformers17.mov",
+    "name": "Transformers 17",
+    "length": "117",
+    "description": "This is a great movie!",
+    "director": "Steven Spielberg",
+    "isHighlight": "true",
+    "genres": [
+      "Action",
+      "Comedy"
+    ],
+    "tags": [
+      "spielberg",
+      "robots"
+    ]
+  },
+  {
+    "filename": "dawnofthedead.mov",
+    "name": "Dawn of the Dead",
+    "length": "134",
+    "description": "This is also a great movie!",
+    "director": "Some other guy",
+    "isHighlight": "false",
+    "genres": [
+      "Horror",
+      "Comedy"
+    ],
+    "tags": [
+      "zombies",
+      "apocalypse"
+    ]
+  }
+]

@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {HttpClient} from "@angular/common/http";
+import {MovieData} from "../../util/MovieData";
+
+const MOVIEDATA_PATH = '../../../assets/movieData.json';
 
 @Component({
   selector: 'app-overview-page',
@@ -7,7 +11,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OverviewPageComponent implements OnInit {
 
-  constructor() { }
+  movieData: MovieData[] = [];
+
+  constructor(private http: HttpClient) {
+    // load file with movie data - reload this every time, in case the movies have changed
+    this.http.get(MOVIEDATA_PATH)
+      .subscribe(data => {
+        const movieData = data as MovieData[];
+        console.log('Loaded movies data.');
+        this.movieData = movieData;
+      });
+  }
 
   ngOnInit() {
   }
