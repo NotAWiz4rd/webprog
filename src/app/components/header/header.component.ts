@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {LanguageService} from "../../util/language.service";
-import {Globals} from "../../util/globals";
-import {AuthService} from "../../util/auth.service";
+import {Globals} from "../../util/Globals";
 import {Router} from "@angular/router";
-import {NavigationService} from "../../util/navigation.service";
+import {LanguageService} from "../../services/language.service";
+import {AuthService} from "../../services/auth.service";
+import {NavigationService} from "../../services/navigation.service";
 
 @Component({
   selector: 'app-header',

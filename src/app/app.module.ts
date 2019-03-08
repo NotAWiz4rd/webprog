@@ -8,12 +8,12 @@ import {LoginPageComponent} from "./pages/login-page/login-page.component";
 import {OverviewPageComponent} from "./pages/overview-page/overview-page.component";
 import {FooterComponent} from "./components/footer/footer.component";
 import {GetStaticTextPipe} from "./pipes/get-static-text.pipe";
-import {AuthService} from "./util/auth.service";
-import {LanguageService} from "./util/language.service";
-import {Globals} from "./util/globals";
+import {Globals} from "./util/Globals";
 import {HeaderComponent} from "./components/header/header.component";
-import {NavigationService} from "./util/navigation.service";
 import {NotFoundComponent} from "./components/not-found/not-found.component";
+import {AuthService} from "./services/auth.service";
+import {LanguageService} from "./services/language.service";
+import {NavigationService} from "./services/navigation.service";
 
 @NgModule({
   declarations: [

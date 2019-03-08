@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 import {Router} from "@angular/router";
-import {Globals} from "./globals";
+import {Globals} from "../util/Globals";
 
 @Injectable()
 export class NavigationService {

@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {User} from "../../util/User";
-import {AuthService} from "../../util/auth.service";
-import {LanguageService} from "../../util/language.service";
-import {Globals} from "../../util/globals";
-import {NavigationService} from "../../util/navigation.service";
+import {Globals} from "../../util/Globals";
+import {LanguageService} from "../../services/language.service";
+import {AuthService} from "../../services/auth.service";
+import {NavigationService} from "../../services/navigation.service";
 
 const USERFILE_PATH = '../../../assets/users.json';
 

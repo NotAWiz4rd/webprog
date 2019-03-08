@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {LanguageService} from "../../util/language.service";
-import {Globals} from "../../util/globals";
+import {Globals} from "../../util/Globals";
+import {LanguageService} from "../../services/language.service";
 
 @Component({
   selector: 'app-footer',

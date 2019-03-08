@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {StaticText} from "./util/StaticText";
 import {HttpClient} from "@angular/common/http";
-import {Globals} from "./util/globals";
+import {Globals} from "./util/Globals";
 
 const TEXTFILE_PATH = '../../../assets/texts.json';
 
