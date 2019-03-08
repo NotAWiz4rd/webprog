@@ -1,12 +1,9 @@
 import {Injectable} from "@angular/core";
 import {CanActivate} from "@angular/router";
-import {NavigationService} from "./navigation.service";
-import {Globals} from "./globals";
 
 @Injectable()
 export class AuthService implements CanActivate {
-  constructor(private navigationService: NavigationService,
-              private globals: Globals) {
+  constructor() {
   }
 
   isLoggedIn(): boolean {
