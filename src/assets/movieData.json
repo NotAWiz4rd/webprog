@@ -4,6 +4,8 @@
     "name": "Transformers 17",
     "length": "117",
     "description": "This is a great movie!",
+    "descriptionGerman": "Dies ist ein toller Film.",
+    "descriptionSpanish": "Es una buena pelicula!",
     "director": "Steven Spielberg",
     "isHighlight": "true",
     "genres": [
@@ -20,6 +22,8 @@
     "name": "Dawn of the Dead",
     "length": "134",
     "description": "This is also a great movie!",
+    "descriptionGerman": "Dies ist auch ein toller Film.",
+    "descriptionSpanish": "Es una buena pelicula!",
     "director": "Some other guy",
     "isHighlight": "false",
     "genres": [

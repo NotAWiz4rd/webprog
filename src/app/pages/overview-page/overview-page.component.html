@@ -1,6 +1,6 @@
-Dynamically loaded list of movies from movieData.json
 <div *ngFor="let movie of movieData">
   <h2>{{movie.name}}</h2>
+  <p>{{movie | getMovieDescription : languageService.getLanguage()}}</p>
   <p>Length: {{movie.length}}m</p>
   <p>Director: {{movie.director}}</p>
 </div>
