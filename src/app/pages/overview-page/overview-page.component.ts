@@ -3,6 +3,8 @@ import {HttpClient} from "@angular/common/http";
 import {MovieData} from "../../util/MovieData";
 import {LanguageService} from "../../services/language.service";
 import {Globals} from "../../util/Globals";
+import {NavigationService} from "../../services/navigation.service";
+import {MoviesService} from "../../services/movies.service";
 
 const MOVIEDATA_PATH = '../../../assets/movieData.json';
 
@@ -12,25 +14,28 @@ const MOVIEDATA_PATH = '../../../assets/movieData.json';
   styleUrls: ['./overview-page.component.css']
 })
 export class OverviewPageComponent implements OnInit {
-  // can't be constants because the need to be accessible from the template
-  MOVIES_PATH = '../../../assets/movies/';
-  THUMBNAILS_PATH = '../../../assets/thumbnails/';
-
-  movieData: MovieData[] = [];
 
   constructor(public languageService: LanguageService,
               public globals: Globals,
-              private http: HttpClient) {
+              private http: HttpClient,
+              private navigationService: NavigationService,
+              private moviesService: MoviesService) {
     // load file with movie data - reload this every time, in case the movies have changed
     this.http.get(MOVIEDATA_PATH)
       .subscribe(data => {
         const movieData = data as MovieData[];
         console.log('Loaded movies data.');
-        this.movieData = movieData;
+        this.globals.movieData = movieData;
       });
   }
 
   ngOnInit() {
+    this.globals.view = 'overview';
   }
 
+  navigateToMovie(movieFilename: string) {
+    if (this.moviesService.movieAvailable(movieFilename)) {
+      this.navigationService.navigateToMovie(movieFilename);
+    }
+  }
 }

@@ -1,0 +1,13 @@
+<div class="back-button" (click)="goBack()">Go back</div>
+<video controls
+       disablePictureInPicture
+       controlsList="nodownload"
+       oncontextmenu="return false;"
+       poster="{{thumbnail}}"
+       height="{{innerHeight-10}}"
+       width="{{innerWidth-10}}">
+  <source src="{{movieSource}}" type="video/mp4">
+  <p>
+    {{globals.staticTexts | getStaticText : 'noVideoSupportText' : languageService.getLanguage()}}
+  </p>
+</video>

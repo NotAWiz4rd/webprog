@@ -15,7 +15,9 @@ import {AuthService} from "./services/auth.service";
 import {LanguageService} from "./services/language.service";
 import {NavigationService} from "./services/navigation.service";
 import {GetMovieDescriptionPipe} from "./pipes/get-movie-description.pipe";
-import {PlayerComponent} from "./components/player/player.component";
+import {MoviesResolver} from "./resolvers/movies.resolver";
+import {MoviesService} from "./services/movies.service";
+import {PlayerComponent} from "./pages/player/player.component";
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import {PlayerComponent} from "./components/player/player.component";
     Globals,
     AuthService,
     LanguageService,
-    NavigationService
+    NavigationService,
+    MoviesService,
+    MoviesResolver
   ],
   bootstrap: [AppComponent]
 })

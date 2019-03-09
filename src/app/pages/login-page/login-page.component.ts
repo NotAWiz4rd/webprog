@@ -27,6 +27,8 @@ export class LoginPageComponent implements OnInit {
   ngOnInit() {
     if (this.authService.isLoggedIn()) {
       this.navigationService.navigateToView('overview');
+    } else {
+      this.globals.view = 'login';
     }
   }
 

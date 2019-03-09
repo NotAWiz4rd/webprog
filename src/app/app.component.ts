@@ -11,7 +11,8 @@ const TEXTFILE_PATH = '../../../assets/texts.json';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  constructor(private http: HttpClient, public globals: Globals) {
+  constructor(public globals: Globals,
+              private http: HttpClient) {
   }
 
   ngOnInit() {
