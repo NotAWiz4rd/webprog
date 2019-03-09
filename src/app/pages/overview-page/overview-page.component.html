@@ -1,7 +1,1 @@
-<div *ngFor="let movie of globals.movieData">
-  <img src="{{THUMBNAILS_PATH + movie.filename + '.jpg'}}">
-  <h2 (click)="navigateToMovie(movie.filename)">{{movie.name}}</h2>
-  <p>{{movie | getMovieDescription : languageService.getLanguage()}}</p>
-  <p>{{globals.staticTexts | getStaticText : 'lengthText' : languageService.getLanguage()}}: {{movie.length}}min</p>
-  <p>{{globals.staticTexts | getStaticText : 'directorText' : languageService.getLanguage()}}: {{movie.director}}</p>
-</div>
+<app-movie-preview *ngFor="let movie of globals.movieData" [movie]="movie"></app-movie-preview>

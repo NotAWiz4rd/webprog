@@ -18,6 +18,7 @@ import {GetMovieDescriptionPipe} from "./pipes/get-movie-description.pipe";
 import {MoviesResolver} from "./resolvers/movies.resolver";
 import {MoviesService} from "./services/movies.service";
 import {PlayerComponent} from "./pages/player/player.component";
+import {MoviePreviewComponent} from "./components/movie-preview/movie-preview.component";
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {PlayerComponent} from "./pages/player/player.component";
     HeaderComponent,
     NotFoundComponent,
     GetMovieDescriptionPipe,
-    PlayerComponent
+    PlayerComponent,
+    MoviePreviewComponent
   ],
   imports: [
     BrowserModule,
