@@ -106,5 +106,17 @@
     "english": "Animation",
     "german": "Animation",
     "spanish": "Animación"
+  },
+  {
+    "logicalName": "notFoundText",
+    "english": "The page you were looking for does not exist.",
+    "german": "Diese Seite existiert leider nicht.",
+    "spanish": "La página que estabas buscando no existe."
+  },
+  {
+    "logicalName": "backToMainPageText",
+    "english": "Go back to main page",
+    "german": "Zur Hauptseite zurückkehren.",
+    "spanish": "Volver a la página principal."
   }
 ]

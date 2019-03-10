@@ -1,3 +1,5 @@
-<p>
-  not-found works!
-</p>
+{{globals.staticTexts | getStaticText : 'notFoundText' : languageService.getLanguage()}}
+<div></div>
+<div class="back-button" (click)="navigationService.navigateToView('login')">
+  {{globals.staticTexts | getStaticText : 'backToMainPageText' : languageService.getLanguage()}}
+</div>

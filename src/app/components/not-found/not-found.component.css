@@ -1,0 +1,10 @@
+.back-button {
+  cursor: pointer;
+  display: inline-block;
+  border: 1px solid black;
+}
+
+.back-button:hover {
+  text-decoration: underline;
+  background-color: darkgrey;
+}

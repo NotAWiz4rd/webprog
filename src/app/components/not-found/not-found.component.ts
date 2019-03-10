@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {NavigationService} from "../../services/navigation.service";
+import {Globals} from "../../util/Globals";
+import {LanguageService} from "../../services/language.service";
 
 @Component({
   selector: 'app-not-found',
@@ -7,7 +10,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NotFoundComponent implements OnInit {
 
-  constructor() { }
+  constructor(public navigationService: NavigationService,
+              public globals: Globals,
+              public languageService: LanguageService) { }
 
   ngOnInit() {
   }
