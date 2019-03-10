@@ -19,6 +19,7 @@ import {MoviesResolver} from "./resolvers/movies.resolver";
 import {MoviesService} from "./services/movies.service";
 import {PlayerComponent} from "./pages/player/player.component";
 import {MoviePreviewComponent} from "./components/movie-preview/movie-preview.component";
+import {GenreChooserComponent} from "./components/genre-chooser/genre-chooser.component";
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {MoviePreviewComponent} from "./components/movie-preview/movie-preview.co
     NotFoundComponent,
     GetMovieDescriptionPipe,
     PlayerComponent,
-    MoviePreviewComponent
+    MoviePreviewComponent,
+    GenreChooserComponent
   ],
   imports: [
     BrowserModule,
@@ -42,12 +44,12 @@ import {MoviePreviewComponent} from "./components/movie-preview/movie-preview.co
     })
   ],
   providers: [
-    Globals,
     AuthService,
     LanguageService,
     NavigationService,
     MoviesService,
-    MoviesResolver
+    MoviesResolver,
+    Globals
   ],
   bootstrap: [AppComponent]
 })

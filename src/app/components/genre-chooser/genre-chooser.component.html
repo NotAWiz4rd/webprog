@@ -1,0 +1,9 @@
+<div class="open-button" (click)="toggleVisibility()">
+  {{globals?.staticTexts | getStaticText : 'genresText' : languageService?.getLanguage()}}
+</div>
+
+<div class="genre-container" *ngIf="isOpen">
+  <div (click)="onGenreChange(genre)" class="genre-text" *ngFor="let genre of genres">
+    {{globals.staticTexts | getStaticText : 'genreText' + genre : languageService.getLanguage()}}
+  </div>
+</div>

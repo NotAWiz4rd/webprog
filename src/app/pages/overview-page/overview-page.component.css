@@ -1,0 +1,12 @@
+app-movie-preview {
+  display: block;
+}
+
+.reset-genre {
+  cursor: pointer;
+  display: inline-block;
+}
+
+.reset-genre:hover {
+  text-decoration: underline;
+}

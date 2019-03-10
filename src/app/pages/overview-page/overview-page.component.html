@@ -1,1 +1,15 @@
-<app-movie-preview *ngFor="let movie of globals.movieData" [movie]="movie"></app-movie-preview>
+<div class="reset-genre" *ngIf="genreFilter != ''" (click)="genreFilterChange('')">
+  {{globals.staticTexts | getStaticText : 'allMoviesText' : languageService.getLanguage()}}
+</div>
+
+<app-genre-chooser (genreChange)="genreFilterChange($event)"></app-genre-chooser>
+
+<h2>
+  {{genreFilter != '' ? (globals.staticTexts | getStaticText : 'genreText' + genreFilter : languageService.getLanguage())
+  : (globals.staticTexts | getStaticText : 'allMoviesText' : languageService.getLanguage())}}
+</h2>
+
+<ng-container *ngFor="let movie of globals.movieData">
+  <app-movie-preview *ngIf="genreFilter === '' || movie.genres.includes(genreFilter)"
+                     [movie]="movie"></app-movie-preview>
+</ng-container>
