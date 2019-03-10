@@ -1,5 +1,44 @@
 [
   {
+    "filename": "nightofthelivingdead",
+    "name": "Night of the Living Dead",
+    "length": 95,
+    "description": "In this classic yet still creepy horror film, strangers hold up in a rural Pennsylvania farmhouse and battle constant attacks from dead locals who have been brought back to life by mysterious radiation.",
+    "descriptionGerman": "In diesem klassischen, immer noch gruseligen Horrorfilm halten sich Fremde in einem ländlichen Bauernhaus in Pennsylvania auf und kämpfen gegen ständige Angriffe von toten Einheimischen, die durch mysteriöse Strahlung wieder zum Leben erweckt wurden.",
+    "descriptionSpanish": "En esta película de terror clásica pero todavía espeluznante, los extraños se sostienen en una granja rural de Pensilvania y combaten los constantes ataques de locales muertos que han sido devueltos a la vida por una radiación misteriosa.",
+    "director": "George A. Romero",
+    "release": 1968,
+    "isHighlight": true,
+    "genres": [
+      "Horror"
+    ],
+    "tags": [
+      "creepy",
+      "zombies",
+      "Duane Jones",
+      "Karl Hardman"
+    ]
+  },
+  {
+    "filename": "gulliverstravels",
+    "name": "Gulliver's Travels",
+    "length": 72,
+    "description": "Gulliver washes ashore on Lilliput and attempts to prevent war between that tiny kingdom and its equally minuscule rival, Blefuscu, as well as smooth the way for the romance between the Princess and Prince of the opposing lands. In this he is alternately aided and hampered by the Lilliputian town crier and general fussbudget, Gabby. A life-threatening situation develops when the bumbling trio of Blefuscu spies, Sneak, Snoop, and Snitch, manage to steal Gulliver's pistol.",
+    "descriptionGerman": "Gulliver wäscht Lilliput an Land und versucht, einen Krieg zwischen diesem winzigen Königreich und seinem ebenso winzigen Rivalen Blefuscu zu verhindern und den Weg für die Romanze zwischen der Prinzessin und dem Prinz der gegnerischen Länder zu ebnen. Dabei wird er abwechselnd vom lilliputianischen Stadtschreier und allgemeinem Fuselbudget Gabby unterstützt und behindert. Eine lebensbedrohliche Situation entwickelt sich, wenn das trampelnde Trio der Blefuscu-Spione Sneak, Snoop und Snitch es schafft, Gullivers Pistole zu stehlen.",
+    "descriptionSpanish": "Gulliver desembarca en Lilliput e intenta evitar la guerra entre ese pequeño reino y su igualmente minúsculo rival, Blefuscu, así como allanar el camino para el romance entre la princesa y el príncipe de las tierras opuestas. En este caso, es alternativamente ayudado y obstaculizado por el pregonero liliputiense y el gran alboroto general, Gabby. Una situación que amenaza la vida se desarrolla cuando el trío de espías Blefuscu, Sneak, Snoop y Snitch, logran robar la pistola de Gulliver.",
+    "director": "Dave Fleischer",
+    "release": 1939,
+    "isHighlight": false,
+    "genres": [
+      "Animated",
+      "Comedy"
+    ],
+    "tags": [
+      "kids",
+      "novel-based"
+    ]
+  },
+  {
     "filename": "returnofthekungfudragon",
     "name": "Return of the Kung Fu Dragon",
     "length": 82,
@@ -8,51 +47,13 @@
     "descriptionSpanish": "La complicada historia involucra la conquista militar de una nación isleña pacífica por un déspota malvado y su aliado hechicero. Su victoria deja muertos a los tres protectores heroicos de la isla, pero sus hijos pequeños están escondidos para llegar a la edad adulta con diferentes identidades, desconociendo su herencia, con la esperanza de que, con el tiempo, puedan desafiar y derrotar al malvado gobernante.",
     "director": "Chi-Lien Yu",
     "release": 1976,
-    "isHighlight": true,
+    "isHighlight": false,
     "genres": [
       "Action"
     ],
     "tags": [
       "kung-fu",
       "asian"
-    ]
-  },
-  {
-    "filename": "transformers17.mov",
-    "name": "Transformers 17",
-    "length": 117,
-    "description": "This is a great movie!",
-    "descriptionGerman": "Dies ist ein toller Film.",
-    "descriptionSpanish": "Es una buena pelicula!",
-    "director": "Steven Spielberg",
-    "release": 2020,
-    "isHighlight": true,
-    "genres": [
-      "Action",
-      "Comedy"
-    ],
-    "tags": [
-      "spielberg",
-      "robots"
-    ]
-  },
-  {
-    "filename": "dawnofthedead.mov",
-    "name": "Dawn of the Dead",
-    "length": 134,
-    "description": "This is also a great movie!",
-    "descriptionGerman": "Dies ist auch ein toller Film.",
-    "descriptionSpanish": "Es una buena pelicula!",
-    "director": "Some other guy",
-    "release": 2010,
-    "isHighlight": false,
-    "genres": [
-      "Horror",
-      "Comedy"
-    ],
-    "tags": [
-      "zombies",
-      "apocalypse"
     ]
   }
 ]

@@ -16,8 +16,4 @@ export class MoviesService {
     });
     return selectedMovie;
   }
-
-  movieAvailable(movieKey: string) {
-    return true;
-  }
 }

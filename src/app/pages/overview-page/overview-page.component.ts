@@ -4,7 +4,6 @@ import {MovieData} from "../../util/MovieData";
 import {LanguageService} from "../../services/language.service";
 import {Globals} from "../../util/Globals";
 import {NavigationService} from "../../services/navigation.service";
-import {MoviesService} from "../../services/movies.service";
 
 const MOVIEDATA_PATH = '../../../assets/movieData.json';
 
@@ -14,12 +13,13 @@ const MOVIEDATA_PATH = '../../../assets/movieData.json';
   styleUrls: ['./overview-page.component.css']
 })
 export class OverviewPageComponent implements OnInit {
+  // this can't be a const as it has to be accessed from the template
+  THUMBNAILS_PATH = '../../../assets/thumbnails/';
 
   constructor(public languageService: LanguageService,
               public globals: Globals,
               private http: HttpClient,
-              private navigationService: NavigationService,
-              private moviesService: MoviesService) {
+              private navigationService: NavigationService) {
     // load file with movie data - reload this every time, in case the movies have changed
     this.http.get(MOVIEDATA_PATH)
       .subscribe(data => {
@@ -34,8 +34,6 @@ export class OverviewPageComponent implements OnInit {
   }
 
   navigateToMovie(movieFilename: string) {
-    if (this.moviesService.movieAvailable(movieFilename)) {
-      this.navigationService.navigateToMovie(movieFilename);
-    }
+    this.navigationService.navigateToMovie(movieFilename);
   }
 }
