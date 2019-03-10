@@ -1,13 +1,32 @@
 [
   {
+    "filename": "returnofthekungfudragon.mp4",
+    "name": "Return of the Kung Fu Dragon",
+    "length": 82,
+    "description": "The complicated story involves the military conquest of a peaceful island-nation by an evil despot and his sorcerer ally. His victory leaves the island's three heroic protectors dead, but, their young children are hidden away to grow to adulthood with different identities, unaware of their heritage, in hope that, in time, they might challenge and defeat the evil ruler.",
+    "descriptionGerman": "Die komplizierte Geschichte beinhaltet die militärische Eroberung einer friedlichen Insel-Nation durch einen bösen Despot und seinen Zauberer-Verbündeten. Durch seinen Sieg sind die drei heldenhaften Beschützer der Insel tot, aber ihre kleinen Kinder sind versteckt, um mit unterschiedlicher Identität zum Erwachsenenalter zu werden, ohne sich ihres Erbes bewusst zu sein, in der Hoffnung, dass sie mit der Zeit den bösen Herrscher herausfordern und besiegen könnten.",
+    "descriptionSpanish": "La complicada historia involucra la conquista militar de una nación isleña pacífica por un déspota malvado y su aliado hechicero. Su victoria deja muertos a los tres protectores heroicos de la isla, pero sus hijos pequeños están escondidos para llegar a la edad adulta con diferentes identidades, desconociendo su herencia, con la esperanza de que, con el tiempo, puedan desafiar y derrotar al malvado gobernante.",
+    "director": "Chi-Lien Yu",
+    "release": 1976,
+    "isHighlight": true,
+    "genres": [
+      "Action"
+    ],
+    "tags": [
+      "kung-fu",
+      "asian"
+    ]
+  },
+  {
     "filename": "transformers17.mov",
     "name": "Transformers 17",
-    "length": "117",
+    "length": 117,
     "description": "This is a great movie!",
     "descriptionGerman": "Dies ist ein toller Film.",
     "descriptionSpanish": "Es una buena pelicula!",
     "director": "Steven Spielberg",
-    "isHighlight": "true",
+    "release": 2020,
+    "isHighlight": true,
     "genres": [
       "Action",
       "Comedy"
@@ -20,12 +39,13 @@
   {
     "filename": "dawnofthedead.mov",
     "name": "Dawn of the Dead",
-    "length": "134",
+    "length": 134,
     "description": "This is also a great movie!",
     "descriptionGerman": "Dies ist auch ein toller Film.",
     "descriptionSpanish": "Es una buena pelicula!",
     "director": "Some other guy",
-    "isHighlight": "false",
+    "release": 2010,
+    "isHighlight": false,
     "genres": [
       "Horror",
       "Comedy"

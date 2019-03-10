@@ -11,7 +11,7 @@ export class GetStaticTextPipe implements PipeTransform {
       return '';
     }
 
-    let staticText = '';
+    let staticText = key;
 
     texts.forEach(text => {
       if (text.logicalName === key) {

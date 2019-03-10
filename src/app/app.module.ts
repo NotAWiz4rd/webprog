@@ -15,6 +15,7 @@ import {AuthService} from "./services/auth.service";
 import {LanguageService} from "./services/language.service";
 import {NavigationService} from "./services/navigation.service";
 import {GetMovieDescriptionPipe} from "./pipes/get-movie-description.pipe";
+import {PlayerComponent} from "./components/player/player.component";
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {GetMovieDescriptionPipe} from "./pipes/get-movie-description.pipe";
     GetStaticTextPipe,
     HeaderComponent,
     NotFoundComponent,
-    GetMovieDescriptionPipe
+    GetMovieDescriptionPipe,
+    PlayerComponent
   ],
   imports: [
     BrowserModule,

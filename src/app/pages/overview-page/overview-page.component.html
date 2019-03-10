@@ -1,6 +1,12 @@
 <div *ngFor="let movie of movieData">
   <h2>{{movie.name}}</h2>
   <p>{{movie | getMovieDescription : languageService.getLanguage()}}</p>
-  <p>Length: {{movie.length}}m</p>
-  <p>Director: {{movie.director}}</p>
+  <p>{{globals.staticTexts | getStaticText : 'lengthText' : languageService.getLanguage()}}: {{movie.length}}min</p>
+  <p>{{globals.staticTexts | getStaticText : 'directorText' : languageService.getLanguage()}}: {{movie.director}}</p>
+  <app-player *ngIf="movie.filename.endsWith('mp4')"
+              [movieSource]="MOVIES_PATH + movie.filename"
+              [thumbnail]="THUMBNAILS_PATH + movie.filename.replace('mp4', 'jpg')"></app-player>
+  <div class="not-available" *ngIf="!movie.filename.endsWith('mp4')">
+    {{globals.staticTexts | getStaticText : 'movieNotAvailableText' : languageService.getLanguage()}}
+  </div>
 </div>

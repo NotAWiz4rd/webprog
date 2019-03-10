@@ -6,6 +6,7 @@ export class MovieData {
   descriptionGerman: string = '';
   descriptionSpanish: string = '';
   director: string = '';
+  release: number = 0;
   isHighlight: boolean = false;
   genres: string[] = [];
   tags: string[] = [];

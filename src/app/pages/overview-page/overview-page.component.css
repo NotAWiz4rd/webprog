@@ -1,0 +1,6 @@
+.not-available {
+  padding: 5px;
+  display: inline-block;
+  border: 1px solid black;
+  background-color: lightgrey;
+}

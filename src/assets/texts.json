@@ -1,15 +1,15 @@
 [
   {
     "logicalName": "loginText",
-    "english": "login",
+    "english": "Login",
     "german": "Login",
-    "spanish": "iniciar sesión"
+    "spanish": "Iniciar sesión"
   },
   {
     "logicalName": "logoutText",
-    "english": "logout",
+    "english": "Logout",
     "german": "Logout",
-    "spanish": "cerrar sesión"
+    "spanish": "Cerrar sesión"
   },
   {
     "logicalName": "englishLanguageText",
@@ -28,5 +28,23 @@
     "english": "Spanish",
     "german": "Spanisch",
     "spanish": "Español"
+  },
+  {
+    "logicalName": "directorText",
+    "english": "Director",
+    "german": "Regisseur",
+    "spanish": "El director"
+  },
+  {
+    "logicalName": "lengthText",
+    "english": "Length",
+    "german": "Länge",
+    "spanish": "Duración"
+  },
+  {
+    "logicalName": "movieNotAvailableText",
+    "english": "This movie is currently not available on our platform.",
+    "german": "Dieser Film ist momentan nicht auf unserer Plattform verfügbar.",
+    "spanish": "Esta película no está disponible actualmente en nuestra plataforma."
   }
 ]
