@@ -3,6 +3,11 @@
   position: absolute;
   height: 50px;
   width: 100px;
-  background-color: greenyellow;
   z-index: 3;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background-color: lightgrey;
 }
