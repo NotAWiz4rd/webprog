@@ -124,5 +124,11 @@
     "english": "Search..",
     "german": "Suchen..",
     "spanish": "Buscar.."
+  },
+  {
+    "logicalName": "playText",
+    "english": "Play",
+    "german": "Abspielen",
+    "spanish": "Jugar"
   }
 ]

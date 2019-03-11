@@ -12,6 +12,7 @@ const MOVIEDATA_PATH = '../../../assets/movieData.json';
   styleUrls: ['./overview-page.component.css']
 })
 export class OverviewPageComponent implements OnInit {
+  highlightMovie: MovieData = new MovieData();
 
   constructor(public globals: Globals,
               public languageService: LanguageService,
@@ -22,6 +23,7 @@ export class OverviewPageComponent implements OnInit {
         const movieData = data as MovieData[];
         console.log('Loaded movies data.');
         this.globals.movieData = movieData;
+        this.getHighlightMovie();
       });
   }
 
@@ -35,5 +37,19 @@ export class OverviewPageComponent implements OnInit {
 
   filterInputChange(value: string) {
     this.globals.filter = value;
+  }
+
+  getHighlightMovie() {
+    let highlightMovies = this.globals.movieData.filter(movie => {
+      return movie.isHighlight && this.globals.genreFilter === '' || movie.genres.includes(this.globals.genreFilter);
+    });
+
+    if (highlightMovies.length <= 0) {
+      return new MovieData();
+    }
+
+    let randomIndex = Math.floor(Math.random() * highlightMovies.length);
+
+    this.highlightMovie = highlightMovies[randomIndex];
   }
 }

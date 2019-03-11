@@ -1,0 +1,4 @@
+<img *ngIf="movie?.filename" src="{{THUMBNAILS_PATH + movie?.filename + '.jpg'}}">
+<div>{{movie.name}}</div>
+<div>{{movie.director}}</div>
+<div (click)="navigateToMovie()">{{globals.staticTexts | getStaticText : 'playText' : languageService.getLanguage()}}</div>

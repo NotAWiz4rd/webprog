@@ -15,6 +15,7 @@
   : (globals.staticTexts | getStaticText : 'allMoviesText' : languageService.getLanguage())}}
 </h2>
 
+<app-highlight [movie]="highlightMovie"></app-highlight>
 <ng-container *ngFor="let movie of globals.movieData | getFilteredMovies : globals.filter">
   <app-movie-preview *ngIf="globals.genreFilter === '' || movie.genres.includes(globals.genreFilter)"
                      [movie]="movie"></app-movie-preview>
