@@ -7,7 +7,7 @@
 <div class="search-container">
   <input type="text"
          placeholder="{{globals.staticTexts | getStaticText : 'searchText' : languageService.getLanguage()}}"
-         #inputSearch (keyup)="filterInputChange(inputSearch.value)">
+         #inputSearch (keyup)="filterInputChange(inputSearch.value)" value="{{globals.filter}}">
 </div>
 
 <h2>
