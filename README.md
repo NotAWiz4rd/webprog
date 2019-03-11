@@ -6,7 +6,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Install NodeJS (IntelliJ idea might come with it bundled, check that first).
 Change standard IntelliJ idea run command to use "update-serve" script.
-Download the current list of movies from here: https://mega.nz/#!t1xRnCzR!3ihAyfYWbUsGGpBBIzxX6S9R49EiE3J5XHCG1AkwdI0
+Download the current list of movies from here: https://mega.nz/#!F5QXAAIb!yWEJbX-v2g7aDKEbA351JGWHrifYpPNjo6aHFYDODwY
 Run `update-serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
