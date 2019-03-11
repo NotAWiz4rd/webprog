@@ -5,5 +5,6 @@ export class Globals {
   staticTexts: StaticText[] = [];
   movieData: MovieData[] = [];
   view: string = 'login';
+  genreFilter: string = '';
   filter: string = '';
 }

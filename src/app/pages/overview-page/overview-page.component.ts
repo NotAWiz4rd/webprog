@@ -12,7 +12,6 @@ const MOVIEDATA_PATH = '../../../assets/movieData.json';
   styleUrls: ['./overview-page.component.css']
 })
 export class OverviewPageComponent implements OnInit {
-  genreFilter: string = '';
 
   constructor(public globals: Globals,
               public languageService: LanguageService,
@@ -31,7 +30,7 @@ export class OverviewPageComponent implements OnInit {
   }
 
   genreFilterChange(genre: string) {
-    this.genreFilter = genre;
+    this.globals.genreFilter = genre;
   }
 
   filterInputChange(value: string) {

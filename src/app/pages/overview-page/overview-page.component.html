@@ -1,4 +1,4 @@
-<div class="reset-genre" *ngIf="genreFilter != ''" (click)="genreFilterChange('')">
+<div class="reset-genre" *ngIf="globals.genreFilter != ''" (click)="genreFilterChange('')">
   {{globals.staticTexts | getStaticText : 'allMoviesText' : languageService.getLanguage()}}
 </div>
 
@@ -11,11 +11,11 @@
 </div>
 
 <h2>
-  {{genreFilter != '' ? (globals.staticTexts | getStaticText : 'genreText' + genreFilter : languageService.getLanguage())
+  {{globals.genreFilter != '' ? (globals.staticTexts | getStaticText : 'genreText' + globals.genreFilter : languageService.getLanguage())
   : (globals.staticTexts | getStaticText : 'allMoviesText' : languageService.getLanguage())}}
 </h2>
 
 <ng-container *ngFor="let movie of globals.movieData | getFilteredMovies : globals.filter">
-  <app-movie-preview *ngIf="genreFilter === '' || movie.genres.includes(genreFilter)"
+  <app-movie-preview *ngIf="globals.genreFilter === '' || movie.genres.includes(globals.genreFilter)"
                      [movie]="movie"></app-movie-preview>
 </ng-container>
