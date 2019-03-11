@@ -6,3 +6,7 @@
 <div class="login-button" (click)="onLogin()">
   {{globals?.staticTexts | getStaticText : 'loginText': languageService.getLanguage()}}
 </div>
+
+<div class="login-button" (click)="onRegister()">
+  {{globals?.staticTexts | getStaticText : 'registerText': languageService.getLanguage()}}
+</div>

@@ -20,6 +20,7 @@ import {MoviesService} from "./services/movies.service";
 import {PlayerComponent} from "./pages/player/player.component";
 import {MoviePreviewComponent} from "./components/movie-preview/movie-preview.component";
 import {GenreChooserComponent} from "./components/genre-chooser/genre-chooser.component";
+import {UsersService} from "./services/users.service";
 import {GetFilteredMoviesPipe} from "./pipes/get-filtered-movies.pipe";
 
 @NgModule({
@@ -49,6 +50,7 @@ import {GetFilteredMoviesPipe} from "./pipes/get-filtered-movies.pipe";
     AuthService,
     LanguageService,
     NavigationService,
+    UsersService,
     MoviesService,
     MoviesResolver,
     Globals

@@ -124,5 +124,11 @@
     "english": "Search..",
     "german": "Suchen..",
     "spanish": "Buscar.."
+  },
+  {
+    "logicalName": "registerText",
+    "english": "Register",
+    "german": "Registrieren",
+    "spanish": "Registrar"
   }
 ]
