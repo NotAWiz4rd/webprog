@@ -5,4 +5,5 @@ export class Globals {
   staticTexts: StaticText[] = [];
   movieData: MovieData[] = [];
   view: string = 'login';
+  filter: string = '';
 }
