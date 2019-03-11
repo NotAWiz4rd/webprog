@@ -8,7 +8,7 @@
     "descriptionSpanish": "En esta película de terror clásica pero todavía espeluznante, los extraños se sostienen en una granja rural de Pensilvania y combaten los constantes ataques de locales muertos que han sido devueltos a la vida por una radiación misteriosa.",
     "director": "George A. Romero",
     "release": 1968,
-    "isHighlight": true,
+    "isHighlight": false,
     "genres": [
       "Horror"
     ],
@@ -28,14 +28,14 @@
     "descriptionSpanish": "Gulliver desembarca en Lilliput e intenta evitar la guerra entre ese pequeño reino y su igualmente minúsculo rival, Blefuscu, así como allanar el camino para el romance entre la princesa y el príncipe de las tierras opuestas. En este caso, es alternativamente ayudado y obstaculizado por el pregonero liliputiense y el gran alboroto general, Gabby. Una situación que amenaza la vida se desarrolla cuando el trío de espías Blefuscu, Sneak, Snoop y Snitch, logran robar la pistola de Gulliver.",
     "director": "Dave Fleischer",
     "release": 1939,
-    "isHighlight": false,
+    "isHighlight": true,
     "genres": [
       "Animation",
       "Comedies"
     ],
     "tags": [
       "kids",
-      "novel-based"
+      "novel"
     ]
   },
   {
@@ -54,6 +54,99 @@
     "tags": [
       "kung-fu",
       "asian"
+    ]
+  },
+  {
+    "filename": "plan9fromouterspace",
+    "name": "Plan 9 from Outer Space",
+    "length": 78,
+    "description": "Can your heart stand the shocking facts about grave robbers from outer space? That's the question on the lips of the narrator of this tale about flying saucers, zombies and cardboard tombstones. A pair of aliens, angered by the 'stupid minds' of planet Earth, set up shop in a California cemetery. Their plan: to animate an army of the dead to march on the capitals of the world.",
+    "descriptionGerman": "Kann dein Herz die schockierenden Tatsachen über Grabräuber aus dem Weltraum ertragen? Das ist die Frage, die der Erzähler dieser Geschichte über fliegende Untertassen, Zombies und Grabsteine aus Pappe stellt. Ein Alienspaar, das von den 'dummen Gedanken' des Planeten verärgert wird Erde, Laden auf einem kalifornischen Friedhof, ihr Plan: eine Armee der Toten zu animieren, um auf die Hauptstädte der Welt zu marschieren",
+    "descriptionSpanish": "Puede su corazón soportar los datos impactantes sobre los ladrones de tumbas del espacio exterior? Esa es la pregunta en los labios del narrador de este cuento sobre platillos voladores, zombies y lápidas de cartón. Un par de alienígenas, enojados por las 'mentes estúpidas' del planeta La Tierra se instaló en un cementerio de California. Su plan: animar a un ejército de los muertos a marchar en las capitales del mundo.",
+    "director": "Edward D. Wood Jr.",
+    "release": 1959,
+    "isHighlight": false,
+    "genres": [
+      "Sci-Fi",
+      "Horror"
+    ],
+    "tags": [
+      "trash",
+      "bad"
+    ]
+  },
+  {
+    "filename": "junglebook",
+    "name": "Jungle Book",
+    "length": 104,
+    "description": "Teenager Mowgli, who was raised by wolves, appears in a village in India and is adopted by Messua. Mowgli learns human language and some human ways quickly, though keeping jungle ideas. Influential Merchant Buldeo is bigoted against 'beasts' including Mowgli; not so Buldeo's pretty daughter, whom Mowgli takes on a jungle tour where they find a treasure, setting the evil of human greed in motion.",
+    "descriptionGerman": "Der von Wölfen aufgezogene Teenager Mowgli erscheint in einem Dorf in Indien und wird von Messua adoptiert. Mowgli lernt die menschliche Sprache und einige menschliche Wege schnell, behält aber die Ideen des Dschungels bei. Der einflussreiche Händler Buldeo ist ein Fanatiker gegen 'Bestien', einschließlich Mowgli; nicht so die hübsche Tochter von Buldeo, die Mowgli auf einer Dschungeltour mitnimmt, wo sie einen Schatz finden, der das Böse der menschlichen Gier in Bewegung setzt.",
+    "descriptionSpanish": "El adolescente Mowgli, quien fue criado por lobos, aparece en un pueblo en India y es adoptado por Messua. Mowgli aprende el lenguaje humano y algunas formas humanas rápidamente, a pesar de mantener las ideas de la selva. El influyente Merchant Buldeo es intolerante contra 'bestias', incluido Mowgli; no tan bonita hija de Buldeo, a quien Mowgli realiza un recorrido por la selva donde encuentran un tesoro, poniendo en marcha el mal de la codicia humana.",
+    "director": "Zoltan Korda",
+    "release": 1942,
+    "isHighlight": true,
+    "genres": [
+      "Fantasy",
+      "Action"
+    ],
+    "tags": [
+      "book",
+      "award-winning"
+    ]
+  },
+  {
+    "filename": "charliechaplinfestival",
+    "name": "The Charlie Chaplin Festival",
+    "length": 77,
+    "description": "Four Chaplin shorts from 1917: The Adventurer, The Cure, Easy Street and The Immigrant, presented with music and sound effects.",
+    "descriptionGerman": "Vier Chaplin-Shorts von 1917: The Adventurer, The Cure, Easy Street und The Immigrant, präsentiert mit Musik und Soundeffekten.",
+    "descriptionSpanish": "Cuatro cortos de Chaplin de 1917: The Adventurer, The Cure, Easy Street y The Immigrant, presentados con música y efectos de sonido.",
+    "director": "Charlie Chaplin",
+    "release": 1941,
+    "isHighlight": false,
+    "genres": [
+      "Comedies"
+    ],
+    "tags": [
+      "collection"
+    ]
+  },
+  {
+    "filename": "naziconcentrationcamps",
+    "name": "Nazi Concentration Camps",
+    "length": 59,
+    "description": "Compilation footage of Nazi concentration camps in the immediate aftermath of World War II. The footage was gathered by the US Department of Defense as part of the effort to conduct war crimes trials.",
+    "descriptionGerman": "Zusammenstellungsmaterial von Nazi-Konzentrationslagern unmittelbar nach dem Zweiten Weltkrieg. Das Filmmaterial wurde vom US-Verteidigungsministerium im Rahmen der Bemühungen zur Durchführung von Kriegsverbrecherprozessen gesammelt.",
+    "descriptionSpanish": "Recopilación de imágenes de campos de concentración nazis inmediatamente después de la Segunda Guerra Mundial. Las imágenes fueron recopiladas por el Departamento de Defensa de los Estados Unidos como parte del esfuerzo para llevar a cabo juicios por crímenes de guerra.",
+    "director": "George Stevens",
+    "release": 1945,
+    "isHighlight": false,
+    "genres": [
+      "Documentaries"
+    ],
+    "tags": [
+      "brutal",
+      "american",
+      "graphic"
+    ]
+  },
+  {
+    "filename": "myfavoritebrunette",
+    "name": "My Favorite Brunette",
+    "length": 86,
+    "description": "Shortly before his execution on the death row in San Quentin, amateur sleuth and baby photographer Ronnie Jackson, tells reporters how he got there.",
+    "descriptionGerman": "Kurz vor seiner Hinrichtung in der Todeszelle in San Quentin erzählt der Hobbykünstler und Babyfotograf Ronnie Jackson den Reportern, wie er dorthin gekommen ist.",
+    "descriptionSpanish": "Poco antes de su ejecución en el corredor de la muerte en San Quintín, el detective aficionado y el pequeño fotógrafo Ronnie Jackson le cuentan a los reporteros cómo llegó allí.",
+    "director": "Elliott Nugent",
+    "release": 1947,
+    "isHighlight": true,
+    "genres": [
+      "Romance",
+      "Comedies"
+    ],
+    "tags": [
+      "funny",
+      "american"
     ]
   }
 ]
