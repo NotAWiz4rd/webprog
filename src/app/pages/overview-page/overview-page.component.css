@@ -10,3 +10,8 @@ app-movie-preview {
 .reset-genre:hover {
   text-decoration: underline;
 }
+
+.search-container {
+  margin-left: 10px;
+  display: inline-block;
+}

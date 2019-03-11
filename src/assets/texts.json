@@ -118,5 +118,11 @@
     "english": "Go back to main page",
     "german": "Zur Hauptseite zurückkehren.",
     "spanish": "Volver a la página principal."
+  },
+  {
+    "logicalName": "searchText",
+    "english": "Search..",
+    "german": "Suchen..",
+    "spanish": "Buscar.."
   }
 ]

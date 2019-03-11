@@ -33,4 +33,8 @@ export class OverviewPageComponent implements OnInit {
   genreFilterChange(genre: string) {
     this.genreFilter = genre;
   }
+
+  filterInputChange(value: string) {
+    this.globals.filter = value;
+  }
 }

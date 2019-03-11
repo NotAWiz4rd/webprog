@@ -4,12 +4,18 @@
 
 <app-genre-chooser (genreChange)="genreFilterChange($event)"></app-genre-chooser>
 
+<div class="search-container">
+  <input type="text"
+         placeholder="{{globals.staticTexts | getStaticText : 'searchText' : languageService.getLanguage()}}"
+         #inputSearch (keyup)="filterInputChange(inputSearch.value)">
+</div>
+
 <h2>
   {{genreFilter != '' ? (globals.staticTexts | getStaticText : 'genreText' + genreFilter : languageService.getLanguage())
   : (globals.staticTexts | getStaticText : 'allMoviesText' : languageService.getLanguage())}}
 </h2>
 
-<ng-container *ngFor="let movie of globals.movieData">
+<ng-container *ngFor="let movie of globals.movieData | getFilteredMovies : globals.filter">
   <app-movie-preview *ngIf="genreFilter === '' || movie.genres.includes(genreFilter)"
                      [movie]="movie"></app-movie-preview>
 </ng-container>
