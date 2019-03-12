@@ -32,10 +32,18 @@ export class LoginPageComponent implements OnInit {
     }
   }
 
-  onLogin() {
+  onLogin(): boolean {
+    if (this.loginPassword.length < 4 || this.loginName.length < 4) {
+      console.log('Login attempt failed: Password or name too short.');
+      return false;
+    }
+
     if (this.authService.isLoggedIn() || this.lookForMatch()) {
       this.navigationService.navigateToView('overview');
+      return true;
     }
+    console.log('Login attempt failed: Password or name wrong or user doesnt exist.');
+    return false;
   }
 
   mailInputChange(mail: string) {
@@ -51,6 +59,7 @@ export class LoginPageComponent implements OnInit {
     this.globals.userData.forEach(user => {
       if (user.name === this.loginName && user.password === this.loginPassword) {
         console.log('Correct login for user ' + this.loginName + ' received.');
+        this.globals.currentUser = user;
         this.authService.setLoggedIn(true);
         foundUser = true;
       }
@@ -58,12 +67,17 @@ export class LoginPageComponent implements OnInit {
     return foundUser;
   }
 
-  onRegister() {
-    // todo block if username or password are empty
+  onRegister(): boolean {
+    if (this.loginPassword.length < 4 || this.loginName.length < 4) {
+      console.log('Register attempt failed: Password or name too short.');
+      return false;
+    }
+
     let user = new User();
     user.name = this.loginName;
     user.password = this.loginPassword;
     this.usersService.addUser(user);
+    return true;
   }
 }
 

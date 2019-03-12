@@ -1,0 +1,11 @@
+div {
+  height: 3rem;
+  width: 10rem;
+  display: inline-block;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+div:hover {
+  background-color: lightgrey;
+}

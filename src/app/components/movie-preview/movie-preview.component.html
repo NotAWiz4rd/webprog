@@ -3,3 +3,10 @@
 <p>{{movie | getMovieDescription : languageService.getLanguage()}}</p>
 <p>{{globals.staticTexts | getStaticText : 'lengthText' : languageService.getLanguage()}}: {{movie.length}}min</p>
 <p>{{globals.staticTexts | getStaticText : 'directorText' : languageService.getLanguage()}}: {{movie.director}}</p>
+
+<app-basic-button *ngIf="!movieIsInList()" (click)="addMovieToList()"
+                  [text]="globals.staticTexts | getStaticText : 'addToListText' : languageService.getLanguage()">
+</app-basic-button>
+<app-basic-button *ngIf="movieIsInList()" (click)="removeMovieFromList()"
+                  [text]="globals.staticTexts | getStaticText : 'removeFromListText' : languageService.getLanguage()">
+</app-basic-button>

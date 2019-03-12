@@ -22,6 +22,7 @@ import {MoviePreviewComponent} from "./components/movie-preview/movie-preview.co
 import {GenreChooserComponent} from "./components/genre-chooser/genre-chooser.component";
 import {UsersService} from "./services/users.service";
 import {GetFilteredMoviesPipe} from "./pipes/get-filtered-movies.pipe";
+import {BasicButtonComponent} from "./components/basic-button/basic-button.component";
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import {GetFilteredMoviesPipe} from "./pipes/get-filtered-movies.pipe";
     PlayerComponent,
     MoviePreviewComponent,
     GenreChooserComponent,
-    GetFilteredMoviesPipe
+    GetFilteredMoviesPipe,
+    BasicButtonComponent
   ],
   imports: [
     BrowserModule,

@@ -3,10 +3,13 @@
   <input type="email" #inputPassword (keyup)="passwordInputChange(inputPassword.value)">
 </div>
 
-<div class="login-button" (click)="onLogin()">
-  {{globals?.staticTexts | getStaticText : 'loginText': languageService.getLanguage()}}
-</div>
 
-<div class="login-button" (click)="onRegister()">
-  {{globals?.staticTexts | getStaticText : 'registerText': languageService.getLanguage()}}
-</div>
+<app-basic-button (click)="onLogin()"
+                  [text]=" globals?.staticTexts | getStaticText : 'loginText': languageService.getLanguage()">
+
+</app-basic-button>
+
+<app-basic-button (click)="onRegister()"
+                  [text]="globals?.staticTexts | getStaticText : 'registerText': languageService.getLanguage()">
+</app-basic-button>
+

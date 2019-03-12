@@ -5,3 +5,4 @@
 <div class="button" *ngIf="!authService.isLoggedIn() && globals.view != 'login'" (click)="navigateToLogin()">
   {{globals?.staticTexts | getStaticText : 'loginText' : languageService.getLanguage()}}
 </div>
+{{globals.staticTexts | getStaticText : 'currentUserText' : languageService.getLanguage()}} {{globals.currentUser.name}}

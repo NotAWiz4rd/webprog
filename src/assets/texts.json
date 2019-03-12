@@ -130,5 +130,29 @@
     "english": "Register",
     "german": "Registrieren",
     "spanish": "Registrar"
+  },
+  {
+    "logicalName": "goBackText",
+    "english": "Go Back",
+    "german": "Zurück",
+    "spanish": "Regresa"
+  },
+  {
+    "logicalName": "addToListText",
+    "english": "Add to My List",
+    "german": "Zu Liste hinzufügen",
+    "spanish": "Añadir a mi lista"
+  },
+  {
+    "logicalName": "removeFromListText",
+    "english": "Remove from My List",
+    "german": "Von meiner Liste entfernen",
+    "spanish": "Eliminar de mi lista"
+  },
+  {
+    "logicalName": "currentUserText",
+    "english": "Current User:",
+    "german": "Aktueller Nutzer:",
+    "spanish": "Usuario actual"
   }
 ]

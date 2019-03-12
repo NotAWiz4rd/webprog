@@ -1,4 +1,5 @@
-<div class="back-button" (click)="goBack()">Go back</div>
+<app-basic-button (click)="goBack()"
+                  [text]="globals.staticTexts | getStaticText : 'goBackText' : languageService.getLanguage()"></app-basic-button>
 <video controls
        disablePictureInPicture
        controlsList="nodownload"

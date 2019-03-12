@@ -9,4 +9,5 @@ export class Globals {
   view: string = 'login';
   genreFilter: string = '';
   filter: string = '';
+  currentUser: User = new User();
 }
