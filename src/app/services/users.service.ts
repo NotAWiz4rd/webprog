@@ -47,8 +47,8 @@ export class UsersService {
       console.log('New user has been created:');
       console.log(data);
       success = true;
+      this.loadUsersFromServer();
     });
-    this.loadUsersFromServer();
     return success;
   }
 
