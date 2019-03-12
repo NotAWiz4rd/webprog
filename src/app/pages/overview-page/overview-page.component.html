@@ -2,6 +2,10 @@
   {{globals.staticTexts | getStaticText : 'allMoviesText' : languageService.getLanguage()}}
 </div>
 
+<app-basic-button (click)="navigationsService.navigateToView('my-list')"
+                  [text]="globals.staticTexts | getStaticText : 'myListText' : languageService.getLanguage()">
+</app-basic-button>
+
 <app-genre-chooser (genreChange)="genreFilterChange($event)"></app-genre-chooser>
 
 <div class="search-container">

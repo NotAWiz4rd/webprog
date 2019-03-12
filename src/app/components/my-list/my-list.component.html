@@ -1,0 +1,4 @@
+<h2>{{globals.staticTexts | getStaticText : 'myListText' : languageService.getLanguage()}}</h2>
+<ng-container *ngFor="let moviename of globals.currentUser.movieList">
+  <app-movie-preview [movie]="moviesService.getMovie(moviename)"></app-movie-preview>
+</ng-container>

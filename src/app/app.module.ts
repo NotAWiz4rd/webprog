@@ -23,6 +23,7 @@ import {GenreChooserComponent} from "./components/genre-chooser/genre-chooser.co
 import {UsersService} from "./services/users.service";
 import {GetFilteredMoviesPipe} from "./pipes/get-filtered-movies.pipe";
 import {BasicButtonComponent} from "./components/basic-button/basic-button.component";
+import { MyListComponent } from './components/my-list/my-list.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import {BasicButtonComponent} from "./components/basic-button/basic-button.compo
     MoviePreviewComponent,
     GenreChooserComponent,
     GetFilteredMoviesPipe,
-    BasicButtonComponent
+    BasicButtonComponent,
+    MyListComponent
   ],
   imports: [
     BrowserModule,

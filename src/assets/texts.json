@@ -153,6 +153,18 @@
     "logicalName": "currentUserText",
     "english": "Current User:",
     "german": "Aktueller Nutzer:",
-    "spanish": "Usuario actual"
+    "spanish": "Usuario actual:"
+  },
+  {
+    "logicalName": "myListText",
+    "english": "My List",
+    "german": "Meine Liste",
+    "spanish": "Mi Lista"
+  },
+  {
+    "logicalName": "homeText",
+    "english": "Home",
+    "german": "Home",
+    "spanish": "Casa"
   }
 ]

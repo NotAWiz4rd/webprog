@@ -1,6 +1,11 @@
-<div class="button" *ngIf="authService.isLoggedIn()" (click)="logoutUser()">
-  {{globals?.staticTexts | getStaticText : 'logoutText' : languageService.getLanguage()}}
-</div>
+<app-basic-button class="button" *ngIf="authService.isLoggedIn()" (click)="logoutUser()"
+                  [text]="globals?.staticTexts | getStaticText : 'logoutText' : languageService.getLanguage()">
+</app-basic-button>
+
+<app-basic-button *ngIf="authService.isLoggedIn()" (click)="navigationService.navigateToView('overview')"
+                  [text]="globals?.staticTexts | getStaticText : 'homeText' : languageService.getLanguage()">
+
+</app-basic-button>
 
 <div class="button" *ngIf="!authService.isLoggedIn() && globals.view != 'login'" (click)="navigateToLogin()">
   {{globals?.staticTexts | getStaticText : 'loginText' : languageService.getLanguage()}}
