@@ -32,4 +32,9 @@ export class HeaderComponent implements OnInit {
   navigateToLogin() {
     this.navigationService.navigateToView('login')
   }
+
+  navigateToList() {
+    this.navigationService.navigateToView('my-list');
+  }
+
 }
