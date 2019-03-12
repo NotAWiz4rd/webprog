@@ -1,0 +1,4 @@
+<ng-container *ngIf="suggestedMovies.length > 0">
+  <h2>{{globals?.staticTexts | getStaticText : 'yourSuggestionsText': languageService.getLanguage()}}</h2>
+  <app-movie-preview *ngFor="let movie of suggestedMovies" [movie]="movie"></app-movie-preview>
+</ng-container>

@@ -3,7 +3,6 @@ import {HttpClient} from "@angular/common/http";
 import {MovieData} from "../../util/MovieData";
 import {Globals} from "../../util/Globals";
 import {LanguageService} from "../../services/language.service";
-import {NavigationService} from "../../services/navigation.service";
 
 const MOVIEDATA_PATH = '../../../assets/movieData.json';
 
@@ -16,7 +15,6 @@ export class OverviewPageComponent implements OnInit {
 
   constructor(public globals: Globals,
               public languageService: LanguageService,
-              public navigationsService: NavigationService,
               private http: HttpClient) {
     // load file with movie data - reload this every time, in case the movies have changed
     this.http.get(MOVIEDATA_PATH)
