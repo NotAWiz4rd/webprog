@@ -3,6 +3,7 @@ import {Globals} from "../util/Globals";
 import {User} from "../util/User";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {MovieData} from "../util/MovieData";
+import {WatchedMovie} from "../util/WatchedMovie";
 
 const DATABASE_PATH = 'https://api.mlab.com/api/1/databases/primetime-users/collections/users?apiKey=06Yem6JpYP8TSlm48U-Ze0Tb49Gnu0NA';
 
@@ -79,5 +80,21 @@ export class UsersService {
       }
     });
     return userFound;
+  }
+
+  addMovieToWatched(movie: WatchedMovie) {
+    this.globals.currentUser.watchedList.push(movie);
+    this.pushUserUpdate();
+  }
+
+  getWatchedMovie(moviename: string): WatchedMovie {
+    let movie = new WatchedMovie();
+    movie.timestamp = 0;
+    this.globals.currentUser.watchedList.forEach(watchedMovie => {
+      if (watchedMovie.movieName === moviename) {
+        movie = watchedMovie;
+      }
+    });
+    return movie;
   }
 }

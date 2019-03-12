@@ -1,6 +1,7 @@
 <app-basic-button (click)="goBack()"
                   [text]="globals.staticTexts | getStaticText : 'goBackText' : languageService.getLanguage()"></app-basic-button>
-<video controls
+<video id="myVideo" controls
+       autoplay
        disablePictureInPicture
        controlsList="nodownload"
        oncontextmenu="return false;"
