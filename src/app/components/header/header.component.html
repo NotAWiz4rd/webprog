@@ -2,7 +2,7 @@
                   [text]="globals?.staticTexts | getStaticText : 'logoutText' : languageService.getLanguage()">
 </app-basic-button>
 
-<app-basic-button *ngIf="authService.isLoggedIn()" (click)="navigationService.navigateToView('overview')"
+<app-basic-button *ngIf="authService.isLoggedIn()" (click)="navigateToOverview()"
                   [text]="globals?.staticTexts | getStaticText : 'homeText' : languageService.getLanguage()">
 
 </app-basic-button>
