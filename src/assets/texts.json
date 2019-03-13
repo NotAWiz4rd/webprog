@@ -166,5 +166,11 @@
     "english": "Home",
     "german": "Home",
     "spanish": "Casa"
+  },
+  {
+    "logicalName": "yourSuggestionsText",
+    "english": "Suggestions for You:",
+    "german": "Vorschläge für Dich:",
+    "spanish": "Sugerencias para Ti:"
   }
 ]
