@@ -17,10 +17,11 @@
 
 <app-movie-suggestions *ngIf="globals.genreFilter === '' && globals.filter === ''"></app-movie-suggestions>
 
-<h2>Continue watching:</h2>
-<app-movie-preview *ngFor="let movie of getRecentlyWatched()" [movie]="movie"></app-movie-preview>
+<ng-container *ngIf="globals.genreFilter === '' && globals.filter === ''">
+  <h2>{{globals.staticTexts | getStaticText : 'continueWatchingText' : languageService.getLanguage()}}</h2>
+  <app-movie-preview *ngFor="let movie of getRecentlyWatched()" [movie]="movie"></app-movie-preview>
+</ng-container>
 
-<h2>Other movies</h2>
 <ng-container *ngFor="let movie of globals.movieData | getFilteredMovies : globals.filter">
   <app-movie-preview *ngIf="globals.genreFilter === '' || movie.genres.includes(globals.genreFilter)"
                      [movie]="movie"></app-movie-preview>

@@ -190,5 +190,11 @@
     "english": "Dramas",
     "german": "Dramas",
     "spanish": "Dramas"
+  },
+  {
+    "logicalName": "continueWatchingText",
+    "english": "Continue watching:",
+    "german": "Weitergucken:",
+    "spanish": "Sigue viendo:"
   }
 ]
