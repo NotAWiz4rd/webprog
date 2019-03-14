@@ -151,5 +151,215 @@
       "funny",
       "american"
     ]
+  },
+  {
+    "filename": "thephantomoftheopera",
+    "name": "The Phantom of the Opera",
+    "length": 106,
+    "description": "A mad, disfigured composer seeks love with a lovely young opera singer.",
+    "descriptionGerman": "Ein verrückter, entstellter Komponist sucht die Liebe mit einer hübschen jungen Opernsängerin.",
+    "descriptionSpanish": "Un compositor loco y desfigurado busca el amor con una encantadora joven cantante de ópera.",
+    "director": "Rupert Julian",
+    "release": 1925,
+    "isHighlight": true,
+    "genres": [
+      "Horror",
+      "Drama"
+    ],
+    "tags": [
+      "music",
+      "silent"
+    ]
+  },
+  {
+    "filename": "charliechaplinhisprehistoricpast",
+    "name": "Charlie Chaplin's His Prehistoric Past",
+    "length": 12,
+    "description": "Set in the stone age, King Low-Brow rules the land and a harem of wives. When Charlie arrives in this land (where every man has one thousand wives), he falls in love with the King's favorite wife.",
+    "descriptionGerman": "In der Steinzeit regiert King Low-Brow das Land und einen Harem von Ehefrauen. Wenn Charlie in diesem Land ankommt (wo jeder Mann tausend Frauen hat), verliebt er sich in die Lieblingsfrau des Königs.",
+    "descriptionSpanish": "Ambientada en la edad de piedra, el rey Ceja baja gobierna la tierra y un harén de esposas. Cuando Charlie llega a esta tierra (donde cada hombre tiene mil esposas), se enamora de la esposa favorita del rey.",
+    "director": "Charlie Chaplin",
+    "release": 1914,
+    "isHighlight": false,
+    "genres": [
+      "Comedies"
+    ],
+    "tags": [
+      "funny",
+      "silent"
+    ]
+  },
+  {
+    "filename": "thefastandthefurious",
+    "name": "The Fast and the Furious",
+    "length": 72,
+    "description": "A trucker framed for murder breaks out of jail, takes a young woman hostage, and enters her sports car in cross-border road race hoping to get to Mexico before the police catch him.",
+    "descriptionGerman": "Ein für Mord gerahmter Trucker bricht aus dem Gefängnis aus, nimmt eine junge Frau als Geisel und steigt mit seinem Sportwagen in ein grenzüberschreitendes Straßenrennen ein, in der Hoffnung, nach Mexiko zu gelangen, bevor die Polizei ihn erwischt.",
+    "descriptionSpanish": "Un camionero enmarcado para un asesinato se escapa de la cárcel, toma a una joven como rehén y entra a su automóvil deportivo en una carrera transfronteriza en la carretera con la esperanza de llegar a México antes de que la policía lo atrape.",
+    "director": "John Ireland",
+    "release": 1955,
+    "isHighlight": true,
+    "genres": [
+      "Action"
+    ],
+    "tags": [
+      "cars",
+      "racing"
+    ]
+  },
+  {
+    "filename": "sirarthurconandoyle",
+    "name": "Sir Arthur Conan Doyle Interview",
+    "length": 10,
+    "description": "A 1927 Fox news real interview with the author and spiritualist, Sir Arthur Conan Doyle. He speaks about his greatest literary creation, Sherlock Holmes, and his work in spiritualism.",
+    "descriptionGerman": "Ein Interview von Fox aus dem Jahr 1927 mit dem Autor und Spiritisten Sir Arthur Conan Doyle. Er spricht über seine größte literarische Schöpfung, Sherlock Holmes, und seine Arbeit im Spiritualismus.",
+    "descriptionSpanish": "Una entrevista real de 1927 Fox News con el autor y espiritualista, Sir Arthur Conan Doyle. Habla sobre su mayor creación literaria, Sherlock Holmes, y su trabajo en el espiritismo.",
+    "director": "-",
+    "release": 1927,
+    "isHighlight": false,
+    "genres": [
+      "Documentaries"
+    ],
+    "tags": [
+      "sherlock holmes",
+      "scottish",
+      "spiritualism"
+    ]
+  },
+  {
+    "filename": "charliechaplinthefatalmallet",
+    "name": "Charlie Chaplin's The Fatal Mallet",
+    "length": 9,
+    "description": "Three men will fight for the love of a charming girl. Charlie and one other suitor teams up against the third, and play dirty, throwing bricks and using a mallet.",
+    "descriptionGerman": "Drei Männer kämpfen um die Liebe eines charmanten Mädchens. Charlie und ein anderer Verehrer treten gegen den dritten an, spielen schmutzig, werfen Steine und verwenden einen Holzhammer.",
+    "descriptionSpanish": "Tres hombres lucharán por el amor de una chica encantadora. Charlie y otro pretendiente se unen contra el tercero, y juegan sucio, lanzan ladrillos y usan un mazo.",
+    "director": "Mack Sennett",
+    "release": 1914,
+    "isHighlight": false,
+    "genres": [
+      "Comedies"
+    ],
+    "tags": [
+      "funny",
+      "silent"
+    ]
+  },
+  {
+    "filename": "thegeneral",
+    "name": "The General",
+    "length": 105,
+    "description": "When Union spies steal an engineer's beloved locomotive, he pursues it single handedly and straight through enemy lines.",
+    "descriptionGerman": "Wenn Union-Spione die geliebte Lokomotive eines Ingenieurs stehlen, verfolgt er sie ganz allein und direkt durch die feindlichen Linien.",
+    "descriptionSpanish": "Cuando los espías de la Unión roban la locomotora amada de un ingeniero, la persigue con una sola mano y directamente a través de las líneas enemigas.",
+    "director": "Clyde Bruckman",
+    "release": 1927,
+    "isHighlight": false,
+    "genres": [
+      "Comedies",
+      "Action",
+      "Drama"
+    ],
+    "tags": [
+      "trains",
+      "silent"
+    ]
+  },
+  {
+    "filename": "thenut",
+    "name": "The Nut",
+    "length": 74,
+    "description": "Eccentric inventor Charlie Jackson tries to interest wealthy investors in his girlfriend's plan to help children from poor neighborhoods.",
+    "descriptionGerman": "Der exzentrische Erfinder Charlie Jackson versucht, reiche Investoren für den Plan seiner Freundin zu interessieren, Kinder aus armen Vierteln zu unterstützen.",
+    "descriptionSpanish": "El excéntrico inventor Charlie Jackson trata de interesar a los inversionistas ricos en el plan de su novia para ayudar a los niños de los barrios pobres.",
+    "director": "Theodore Reed",
+    "release": 1921,
+    "isHighlight": false,
+    "genres": [
+      "Action",
+      "Comedy",
+      "Romance"
+    ],
+    "tags": [
+      "douglas fairbanks",
+      "silent"
+    ]
+  },
+  {
+    "filename": "thethreemusketeers",
+    "name": "The Three Musketeers",
+    "length": 127,
+    "description": "The young Gascon D'Artagnan arrives in Paris, his heart set on joining the king's Musketeers. He is taken under the wings of three of the most respected and feared Musketeers, Porthos, Aramis, and Athos.",
+    "descriptionGerman": "Der junge Gascon D'Artagnan kommt in Paris an, sein Herz ist darauf gerichtet, sich den Musketieren des Königs anzuschließen. Er wird von drei der angesehensten und gefürchteten Musketiere, Porthos, Aramis und Athos, erobert.",
+    "descriptionSpanish": "El joven Gascon D'Artagnan llega a París, con el corazón puesto en unirse a los Mosqueteros del rey. Lo llevan bajo las alas de tres de los mosqueteros más respetados y temidos: Porthos, Aramis y Athos.",
+    "director": "Fred Niblo",
+    "release": 1921,
+    "isHighlight": false,
+    "genres": [
+      "Action",
+      "Romance"
+    ],
+    "tags": [
+      "douglas fairbanks",
+      "silent",
+      "history",
+      "novel",
+      "alexandre dumas"
+    ]
+  },
+  {
+    "filename": "hisgirlfriday",
+    "name": "His Girl Friday",
+    "length": 91,
+    "description": "Hilarious romantic comedy starring Cary Grant and Rosalind Russell. Russell is rough and tumble reporter looking to get out of the news racket by marrying and becoming a house wife after her divorce from newspaper publisher Grant. Just when she is about to leave town with her husband-to-be the still lovesick Grant drafts her to cover one final breaking news sensation.",
+    "descriptionGerman": "Witzig-romantische Komödie mit Cary Grant und Rosalind Russell. Russell ist ein rauer und taumelnder Reporter, der nach der Scheidung vom Zeitungsverlag Grant aus dem Nachrichtenrausch herauskommt, indem er heiratet und Hausfrau wird. Gerade als sie mit ihrem zukünftigen Ehemann die Stadt verlassen will, zieht der immer noch verliebte Grant sie zu einer abschließenden Sensation.",
+    "descriptionSpanish": "Hilarante comedia romántica protagonizada por Cary Grant y Rosalind Russell. Russell es un duro reportero que busca salir de la redacción de noticias casándose y convirtiéndose en un ama de casa después de su divorcio de la editora de periódicos Grant. Justo cuando está a punto de irse de la ciudad con su futuro marido, la todavía enferma Grant la redacta para cubrir una última sensación de noticias de última hora.",
+    "director": "Harry O. Hoyt",
+    "release": 1940,
+    "isHighlight": false,
+    "genres": [
+      "Comedies",
+      "Romance"
+    ],
+    "tags": [
+      "cary grant"
+    ]
+  },
+  {
+    "filename": "abrahamlincoln",
+    "name": "Abraham Lincoln",
+    "length": 84,
+    "description": "An episodic biography of the 16th President of the United States.",
+    "descriptionGerman": "Eine episodische Biografie des 16. Präsidenten der Vereinigten Staaten.",
+    "descriptionSpanish": "Una biografía episódica del decimosexto presidente de los Estados Unidos.",
+    "director": "D. W. Griffith",
+    "release": 1930,
+    "isHighlight": false,
+    "genres": [
+      "Documentaries"
+    ],
+    "tags": [
+      "history",
+      "biography",
+      "president"
+    ]
+  },
+  {
+    "filename": "ladyfrankenstein",
+    "name": "Lady Frankenstein",
+    "length": 83,
+    "description": "When Dr. Frankenstein is killed by a monster he created, his daughter and his lab assistant Marshall continue his experiments. The two fall in love and attempt to transplant Marshall's brain in to the muscular body of a retarded servant Stephen, in order to prolong the aging Marshall's life.",
+    "descriptionGerman": "Als Dr. Frankenstein von einem Monster getötet wird, das er erschaffen hat, setzen seine Tochter und sein Laborassistent Marshall seine Experimente fort. Die beiden verlieben sich und versuchen, Marshalls Gehirn in den muskulösen Körper eines zurückgebliebenen Dieners Stephen zu verpflanzen, um das alternde Marshall zu verlängern.",
+    "descriptionSpanish": "Cuando el Dr. Frankenstein es asesinado por un monstruo que él creó, su hija y su asistente de laboratorio Marshall continúan sus experimentos. Los dos se enamoran e intentan trasplantar el cerebro de Marshall al cuerpo musculoso de un sirviente retrasado, Stephen, para prolongar la vida del anciano Marshall.",
+    "director": "Mel Welles",
+    "release": 1971,
+    "isHighlight": false,
+    "genres": [
+      "Horror",
+      "Drama"
+    ],
+    "tags": [
+      "monster",
+      "joseph cotten"
+    ]
   }
 ]
