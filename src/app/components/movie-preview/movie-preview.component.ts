@@ -41,4 +41,13 @@ export class MoviePreviewComponent implements OnInit {
   removeMovieFromList() {
     this.usersService.removeMovieFromList(this.movie);
   }
+
+  mouseEnter(div : string){
+    console.log("mouse enter : " + div);
+  }
+
+  mouseLeave(div : string){
+    console.log('mouse leave : ' + div);
+  }
+
 }
