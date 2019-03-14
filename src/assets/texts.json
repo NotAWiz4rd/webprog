@@ -172,5 +172,17 @@
     "english": "Suggestions for You:",
     "german": "Vorschläge für Dich:",
     "spanish": "Sugerencias para Ti:"
+  },
+  {
+    "logicalName": "usernameText",
+    "english": "Username",
+    "german": "Nutzername",
+    "spanish": "nombre_usuario"
+  },
+  {
+    "logicalName": "passwordText",
+    "english": "Password",
+    "german": "Passwort",
+    "spanish": "contraseña"
   }
 ]
