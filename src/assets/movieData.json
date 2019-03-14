@@ -10,7 +10,8 @@
     "release": 1968,
     "isHighlight": false,
     "genres": [
-      "Horror"
+      "Horror",
+      "Dramas"
     ],
     "tags": [
       "creepy",
@@ -49,7 +50,9 @@
     "release": 1976,
     "isHighlight": false,
     "genres": [
-      "Action"
+      "Action",
+      "Dramas",
+      "Fantasy"
     ],
     "tags": [
       "kung-fu",
@@ -86,7 +89,7 @@
     "release": 1942,
     "isHighlight": true,
     "genres": [
-      "Fantasy",
+      "Dramas",
       "Action"
     ],
     "tags": [
