@@ -1,8 +1,6 @@
 <img (click)="navigateToMovie(movie.filename)" src="{{THUMBNAILS_PATH + movie.filename + '.jpg'}}" (mouseenter) ="mouseEnter(movie.name) "  (mouseleave) ="mouseLeave(movie.name)">
 <h2 (click)="navigateToMovie(movie.filename)" >{{movie.name}}</h2>
-<!--<p>{{movie | getMovieDescription : languageService.getLanguage()}}</p>
-<p>{{globals.staticTexts | getStaticText : 'lengthText' : languageService.getLanguage()}}: {{movie.length}}min</p>
-<p>{{globals.staticTexts | getStaticText : 'directorText' : languageService.getLanguage()}}: {{movie.director}}</p>-->
+<app-movie-description *ngIf="hover" [movie]="movie"></app-movie-description>
 
 <app-basic-button *ngIf="!movieIsInList()" (click)="addMovieToList()"
                   [text]="globals.staticTexts | getStaticText : 'addToListText' : languageService.getLanguage()">
