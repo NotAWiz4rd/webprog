@@ -1,4 +1,4 @@
-# Webprog
+# Moviehub
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.0.
 
@@ -19,7 +19,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 automatically be used when using the configured build script.
 
 ##Deploy
-Build the project, then copy the contents of the /dist/webprog/ folder into the base directory (where the index.html shall reside) of the webserver (/var/www/html for Apache Webserver).
+Build the project, then copy the contents of the /dist/moviehub/ folder into the base directory (where the index.html shall reside) of the webserver (/var/www/html for Apache Webserver).
 The connection details of our testserver are the following:
 IP: 185.230.163.170
 user: root
