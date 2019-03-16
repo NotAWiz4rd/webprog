@@ -1,8 +1,17 @@
 img {
+  width: 50%;
+  heigth: auto;
   max-width: 500px;
   cursor: pointer;
 }
 
 h2 {
   cursor: pointer;
+}
+
+.movie{
+  width: 50%;
+  text-align: center;
+  margin: 10px 20px 10px 50px;
+  padding: 10px;
 }

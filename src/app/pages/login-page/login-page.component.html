@@ -1,8 +1,8 @@
 <div class="border">
   <div>
-  {{globals.staticTexts | getStaticText : 'usernameText' : languageService.getLanguage()}}:<input type="text" #inputMail (keyup)="mailInputChange(inputMail.value)">
+  <input type="text" placeholder="{{globals.staticTexts | getStaticText : 'usernameText' : languageService.getLanguage()}}" #inputMail (keyup)="mailInputChange(inputMail.value)">
   <br>
-  {{globals.staticTexts | getStaticText : 'passwordText' : languageService.getLanguage()}}:<input type="password" #inputPassword (keyup)="passwordInputChange(inputPassword.value)">
+  <input type="password" placeholder="{{globals.staticTexts | getStaticText : 'passwordText' : languageService.getLanguage()}}" #inputPassword (keyup)="passwordInputChange(inputPassword.value)">
 </div>
 
 
