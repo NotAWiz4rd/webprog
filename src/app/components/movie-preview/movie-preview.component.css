@@ -1,6 +1,7 @@
 img {
+  margin: 20px;
+  clip-path: inset(300px 500px);
   width: 100%;
-  heigth: auto;
   max-width: 500px;
   cursor: pointer;
 }
