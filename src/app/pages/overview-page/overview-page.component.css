@@ -28,4 +28,17 @@ app-movie-preview {
   border: 1px solid #ffa31a;
   border-radius: 6px;
   padding: 12px 20px 12px 45px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+.searchbox:focus{
+  width: 20rem;
+}
+
+h2{
+  margin-left: 50px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding:10px;
 }

@@ -1,5 +1,5 @@
 img {
-  width: 50%;
+  width: 100%;
   heigth: auto;
   max-width: 500px;
   cursor: pointer;
@@ -10,8 +10,8 @@ h2 {
 }
 
 .movie{
-  width: 50%;
-  text-align: center;
+  width: 70%;
+  text-align: justify;
   margin: 10px 20px 10px 50px;
   padding: 10px;
 }
