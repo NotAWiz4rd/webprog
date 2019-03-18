@@ -361,5 +361,67 @@
       "monster",
       "joseph cotten"
     ]
+  },
+  {
+    "filename": "captainzro",
+    "name": "Captain Z-Ro",
+    "isSeries": true,
+    "length": 4,
+    "description": "When Dr. Frankenstein is killed by a monster he created, his daughter and his lab assistant Marshall continue his experiments. The two fall in love and attempt to transplant Marshall's brain in to the muscular body of a retarded servant Stephen, in order to prolong the aging Marshall's life.",
+    "descriptionGerman": "Als Dr. Frankenstein von einem Monster getötet wird, das er erschaffen hat, setzen seine Tochter und sein Laborassistent Marshall seine Experimente fort. Die beiden verlieben sich und versuchen, Marshalls Gehirn in den muskulösen Körper eines zurückgebliebenen Dieners Stephen zu verpflanzen, um das alternde Marshall zu verlängern.",
+    "descriptionSpanish": "Cuando el Dr. Frankenstein es asesinado por un monstruo que él creó, su hija y su asistente de laboratorio Marshall continúan sus experimentos. Los dos se enamoran e intentan trasplantar el cerebro de Marshall al cuerpo musculoso de un sirviente retrasado, Stephen, para prolongar la vida del anciano Marshall.",
+    "director": "Mel Welles",
+    "release": 1971,
+    "isHighlight": false,
+    "seasons": [
+      {
+        "name": "Season 1",
+        "key": "season1",
+        "episodes": [
+          {
+            "filename": "episode1",
+            "name": "Episode 1",
+            "description": "",
+            "length": 45,
+            "nextEpisode": "episode2"
+          },
+          {
+            "filename": "episode2",
+            "name": "Episode 2",
+            "description": "",
+            "length": 43,
+            "nextEpisode": ""
+          }
+        ]
+      },
+      {
+        "name": "Season 2",
+        "key": "season2",
+        "episodes": [
+          {
+            "filename": "episode1",
+            "name": "Episode 1",
+            "description": "",
+            "length": 45,
+            "nextEpisode": "episode2"
+          },
+          {
+            "filename": "episode2",
+            "name": "Episode 2",
+            "description": "",
+            "length": 43,
+            "nextEpisode": ""
+          }
+        ]
+      }
+    ],
+    "genres": [
+      "Horror",
+      "Drama"
+    ],
+    "tags": [
+      "monster",
+      "joseph cotten"
+    ]
   }
 ]

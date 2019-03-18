@@ -23,6 +23,7 @@ import {GenreChooserComponent} from "./components/genre-chooser/genre-chooser.co
 import {UsersService} from "./services/users.service";
 import {GetFilteredMoviesPipe} from "./pipes/get-filtered-movies.pipe";
 import {BasicButtonComponent} from "./components/basic-button/basic-button.component";
+import {SeriesPreviewComponent} from "./components/series-preview/series-preview.component";
 import {MyListComponent} from './components/my-list/my-list.component';
 import {LogoComponent} from "./components/logo/logo.component";
 import {MovieSuggestionsComponent} from "./components/movie-suggestions/movie-suggestions.component";
@@ -43,6 +44,7 @@ import {MovieSuggestionsComponent} from "./components/movie-suggestions/movie-su
     GetFilteredMoviesPipe,
     BasicButtonComponent,
     MyListComponent,
+    SeriesPreviewComponent,
     MovieSuggestionsComponent,
     LogoComponent
   ],

@@ -11,9 +11,6 @@ import {UsersService} from "../../services/users.service";
   styleUrls: ['./movie-preview.component.css']
 })
 export class MoviePreviewComponent implements OnInit {
-  // this can't be a const as it has to be accessed from the template
-  THUMBNAILS_PATH = '../../../assets/thumbnails/';
-
   @Input()
   movie: MovieData = new MovieData();
 

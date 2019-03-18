@@ -23,6 +23,13 @@
 </ng-container>
 
 <ng-container *ngFor="let movie of globals.movieData | getFilteredMovies : globals.filter">
-  <app-movie-preview *ngIf="globals.genreFilter === '' || movie.genres.includes(globals.genreFilter)"
-                     [movie]="movie"></app-movie-preview>
+  <app-movie-preview
+    *ngIf="(globals.genreFilter === '' || movie.genres.includes(globals.genreFilter)) && !movie.isSeries"
+    [movie]="movie"></app-movie-preview>
+</ng-container>
+
+<ng-container *ngFor="let series of globals.seriesData">
+  <app-series-preview
+    *ngIf="(globals.genreFilter === '' || series.genres.includes(globals.genreFilter)) && series.isSeries"
+    [series]="series"></app-series-preview>
 </ng-container>

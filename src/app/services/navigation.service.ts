@@ -27,4 +27,10 @@ export class NavigationService {
     console.log('Navigating to previous page');
     this.location.back();
   }
+
+  navigateToEpisode(series: string, seasonKey: string, episode: string) {
+    this.globals.view = 'watch';
+    console.log("Changed view to episode: " + series + ", " + seasonKey + ", " + episode);
+    this.router.navigateByUrl('watch/' + series + "/" + seasonKey + "/" + episode);
+  }
 }

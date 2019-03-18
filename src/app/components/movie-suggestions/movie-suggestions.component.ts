@@ -1,8 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {MovieData} from "../util/MovieData";
-import {Globals} from "../util/Globals";
-import {LanguageService} from "../services/language.service";
-import {MoviesService} from "../services/movies.service";
+import {MovieData} from "../../util/MovieData";
+import {Globals} from "../../util/Globals";
+import {LanguageService} from "../../services/language.service";
+import {MoviesService} from "../../services/movies.service";
 
 @Component({
   selector: 'app-movie-suggestions',

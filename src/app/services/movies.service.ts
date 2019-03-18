@@ -2,6 +2,7 @@ import {Injectable} from "@angular/core";
 import {MovieData} from "../util/MovieData";
 import {Globals} from "../util/Globals";
 import {WatchedMovie} from "../util/WatchedMovie";
+import {EpisodeData} from "../util/EpisodeData";
 
 const MOVIE_SUGGESTION_THRESHOLD: number = 1;
 
@@ -129,5 +130,23 @@ export class MoviesService {
     });
 
     return movies;
+  }
+
+  getEpisode(seriesKey: string, seasonKey: string, episodeKey: string): EpisodeData {
+    let episodeData: EpisodeData = new EpisodeData();
+    this.globals.seriesData.forEach(series => {
+      if (series.filename === seriesKey) {
+        series.seasons.forEach(season => {
+          if (season.key === seasonKey) {
+            season.episodes.forEach(episode => {
+              if (episode.filename === episodeKey) {
+                episodeData = episode;
+              }
+            });
+          }
+        });
+      }
+    });
+    return episodeData;
   }
 }

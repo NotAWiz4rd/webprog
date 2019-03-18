@@ -1,4 +1,4 @@
-<img (click)="navigateToMovie(movie.filename)" src="{{THUMBNAILS_PATH + movie.filename + '.jpg'}}">
+<img (click)="navigateToMovie(movie.filename)" src="{{globals.THUMBNAILS_PATH + movie.filename + '.jpg'}}">
 <h2 (click)="navigateToMovie(movie.filename)">{{movie.name}}</h2>
 <p>{{movie | getMovieDescription : languageService.getLanguage()}}</p>
 <p>{{globals.staticTexts | getStaticText : 'lengthText' : languageService.getLanguage()}}: {{movie.length}}min</p>
