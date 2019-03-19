@@ -6,6 +6,8 @@ import {ActivatedRoute} from "@angular/router";
 import {MovieData} from "../../util/MovieData";
 import {UsersService} from "../../services/users.service";
 import {WatchedMovie} from "../../util/WatchedMovie";
+import {MoviesService} from "../../services/movies.service";
+import {EpisodeData} from "../../util/EpisodeData";
 
 const MOVIES_PATH = '../../../assets/movies/';
 const THUMBNAILS_PATH = '../../../assets/thumbnails/';
@@ -20,8 +22,10 @@ export class PlayerComponent implements OnInit {
   thumbnail: string = '';
   moviename: string = '';
   season: string = '';
-  episode: string = '';
-  // todo add NextEpisode
+
+  episode: EpisodeData = new EpisodeData();
+
+  isSeries: boolean = false;
 
   // todo add controls for episode/season switching under video
 
@@ -32,19 +36,20 @@ export class PlayerComponent implements OnInit {
               public globals: Globals,
               private navigationService: NavigationService,
               private activatedRoute: ActivatedRoute,
-              private usersService: UsersService) {
+              private usersService: UsersService,
+              private moviesService: MoviesService) {
     this.activatedRoute.data.subscribe((res) => {
       let movie = res.movie as MovieData;
       this.source = MOVIES_PATH + movie.filename + '.mp4';
       this.thumbnail = THUMBNAILS_PATH + movie.filename + '.jpg';
       this.moviename = movie.filename;
 
-      if (activatedRoute.toString().includes('series')) {
-        let season = res.seasonKey;
-        let episode = res.episodeKey;
-        this.season = season;
-        this.episode = episode;
-        this.source = MOVIES_PATH + movie.filename + '/' + season + '/' + episode + '.mp4';
+      if (window.location.pathname.includes('series')) {
+        this.isSeries = true;
+        this.season = window.location.pathname.split('/')[4];
+        let episodeKey = window.location.pathname.split('/')[5];
+        this.episode = this.moviesService.getEpisode(this.moviename, this.season, episodeKey);
+        this.source = MOVIES_PATH + movie.filename + '/' + this.season + '/' + this.episode.filename + '.mp4';
       }
     });
   }
@@ -69,9 +74,11 @@ export class PlayerComponent implements OnInit {
   }
 
   goBack() {
-    // todo if series: add season and episode info
     let watchedMovie = new WatchedMovie();
     let vid = document.getElementById('myVideo');
+    if (this.isSeries) {
+      watchedMovie.info = this.season + ';' + this.episode.filename;
+    }
     watchedMovie.movieName = this.moviename;
     // @ts-ignore
     watchedMovie.timestamp = vid.currentTime;
@@ -83,6 +90,14 @@ export class PlayerComponent implements OnInit {
   onResize() {
     this.innerWidth = window.innerWidth;
     this.innerHeight = window.innerHeight;
+  }
+
+  goToNextEpisode() {
+    let episodeDate = this.episode.nextEpisode.split('/');
+    if (episodeDate.length < 2) {
+      console.error('EpisdoData for next episode was faulty: ' + this.episode.nextEpisode);
+    }
+    this.navigationService.navigateToEpisode(this.moviename, episodeDate[0], episodeDate[1]);
   }
 
 }

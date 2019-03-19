@@ -18,6 +18,11 @@ export class MoviesService {
         selectedMovie = movie;
       }
     });
+    this.globals.seriesData.forEach(series => {
+      if (series.filename == movieKey) {
+        selectedMovie = series;
+      }
+    });
     return selectedMovie;
   }
 
@@ -148,5 +153,9 @@ export class MoviesService {
       }
     });
     return episodeData;
+  }
+
+  getNextEpisode(seriesKey: string, seasonKey: string, episodeKey: string): string {
+    return this.getEpisode(seriesKey, seasonKey, episodeKey).nextEpisode;
   }
 }
