@@ -24,9 +24,24 @@ export class SeriesPreviewComponent implements OnInit {
   }
 
   navigateToSeries() {
-    // todo navigate to first episode if not on watchlist
-    // todo navigate to last watched episode if on watchlist
-    // this.navigationService.navigateToEpisode(this.series.filename);
+    let watchedSeries = this.usersService.getWatchedMovie(this.series.filename);
+    if (watchedSeries.info != '') {
+      this.navigateToEpisode(watchedSeries.info);
+    }
+
+    let firstSeason = this.series.seasons[0];
+    this.navigationService.navigateToEpisode(this.series.filename, firstSeason.key, firstSeason.episodes[0].filename);
   }
 
+  private navigateToEpisode(info: string) {
+    let infos = info.split(';');
+    if (infos.length < 2) {
+      console.log('WatchedList contained not enough info to navigate to episode - data might be corrupt.');
+      return;
+    }
+
+    let seasonKey = infos[0];
+    let episode = infos[1];
+    this.navigationService.navigateToEpisode(this.series.filename, seasonKey, episode);
+  }
 }

@@ -27,6 +27,7 @@ import {SeriesPreviewComponent} from "./components/series-preview/series-preview
 import {MyListComponent} from './components/my-list/my-list.component';
 import {LogoComponent} from "./components/logo/logo.component";
 import {MovieSuggestionsComponent} from "./components/movie-suggestions/movie-suggestions.component";
+import {SeriesResolver} from "./resolvers/series.resolver";
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import {MovieSuggestionsComponent} from "./components/movie-suggestions/movie-su
     UsersService,
     MoviesService,
     MoviesResolver,
+    SeriesResolver,
     Globals
   ],
   bootstrap: [AppComponent]

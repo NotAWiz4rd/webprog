@@ -376,14 +376,14 @@
     "seasons": [
       {
         "name": "Season 1",
-        "key": "season1",
+        "key": "s1",
         "episodes": [
           {
-            "filename": "episode1",
+            "filename": "ep1",
             "name": "Episode 1",
             "description": "",
             "length": 45,
-            "nextEpisode": "episode2"
+            "nextEpisode": "ep2"
           },
           {
             "filename": "episode2",

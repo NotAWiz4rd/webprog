@@ -16,9 +16,14 @@ const THUMBNAILS_PATH = '../../../assets/thumbnails/';
   styleUrls: ['./player.component.css']
 })
 export class PlayerComponent implements OnInit {
-  movieSource: string = '';
+  source: string = '';
   thumbnail: string = '';
   moviename: string = '';
+  season: string = '';
+  episode: string = '';
+  // todo add NextEpisode
+
+  // todo add controls for episode/season switching under video
 
   innerWidth: number = 0;
   innerHeight: number = 0;
@@ -30,9 +35,17 @@ export class PlayerComponent implements OnInit {
               private usersService: UsersService) {
     this.activatedRoute.data.subscribe((res) => {
       let movie = res.movie as MovieData;
-      this.movieSource = MOVIES_PATH + movie.filename + '.mp4';
+      this.source = MOVIES_PATH + movie.filename + '.mp4';
       this.thumbnail = THUMBNAILS_PATH + movie.filename + '.jpg';
       this.moviename = movie.filename;
+
+      if (activatedRoute.toString().includes('series')) {
+        let season = res.seasonKey;
+        let episode = res.episodeKey;
+        this.season = season;
+        this.episode = episode;
+        this.source = MOVIES_PATH + movie.filename + '/' + season + '/' + episode + '.mp4';
+      }
     });
   }
 
@@ -56,6 +69,7 @@ export class PlayerComponent implements OnInit {
   }
 
   goBack() {
+    // todo if series: add season and episode info
     let watchedMovie = new WatchedMovie();
     let vid = document.getElementById('myVideo');
     watchedMovie.movieName = this.moviename;

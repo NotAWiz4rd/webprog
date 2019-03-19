@@ -31,6 +31,6 @@ export class NavigationService {
   navigateToEpisode(series: string, seasonKey: string, episode: string) {
     this.globals.view = 'watch';
     console.log("Changed view to episode: " + series + ", " + seasonKey + ", " + episode);
-    this.router.navigateByUrl('watch/' + series + "/" + seasonKey + "/" + episode);
+    this.router.navigateByUrl('watch/' + series + "/series/" + seasonKey + "/" + episode);
   }
 }
