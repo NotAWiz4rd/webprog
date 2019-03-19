@@ -83,7 +83,16 @@ export class UsersService {
   }
 
   addMovieToWatched(movie: WatchedMovie) {
-    this.globals.currentUser.watchedList.push(movie);
+    let movieExisted = false;
+    this.globals.currentUser.watchedList.forEach(watchedMovie => {
+      if (watchedMovie.movieName === movie.movieName) {
+        watchedMovie.timestamp = movie.timestamp;
+        movieExisted = true;
+      }
+    });
+    if (!movieExisted) {
+      this.globals.currentUser.watchedList.push(movie);
+    }
     this.pushUserUpdate();
   }
 
