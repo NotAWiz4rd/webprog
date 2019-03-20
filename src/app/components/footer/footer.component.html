@@ -1,3 +1,5 @@
+<div class="foot"></div>
+
 <div (click)="changeLanguage(0)" [class.active]="languageService.getLanguage() === 0">
   {{globals?.staticTexts | getStaticText : 'englishLanguageText' : languageService.getLanguage()}}
 </div>

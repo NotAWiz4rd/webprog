@@ -3,6 +3,7 @@ app-movie-preview {
 }
 
 .reset-genre {
+  color: white;
   cursor: pointer;
   display: inline-block;
 }
@@ -14,4 +15,31 @@ app-movie-preview {
 .search-container {
   margin-left: 10px;
   display: inline-block;
+}
+
+.searchbox {
+  color: white;
+  background-image: url('../../../assets/icons/search.png');
+  background-position: 8px 8px;
+  background-repeat: no-repeat;
+  background-size: 25px auto;
+  font-size: 16px;
+  box-sizing: border-box;
+  width: 10rem;
+  border: 1px solid #ffa31a;
+  border-radius: 6px;
+  padding: 12px 20px 12px 45px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+.searchbox:focus {
+  width: 20rem;
+}
+
+h2 {
+  color: white;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 10px;
 }

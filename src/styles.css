@@ -7,3 +7,8 @@ body {
   margin: 0;
   padding: 0;
 }
+
+* {
+  background-color: #3C3F41;
+  font-family: "Arial", Arial, sans-serif;
+}

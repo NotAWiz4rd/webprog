@@ -1,27 +1,35 @@
 .open-button {
+  color: white;
+  margin: 15px;
+  font-size: 18px;
+  padding: 10px;
+  width: auto;
+  font-weight: bold;
+  height: auto;
   display: inline-block;
-  padding: 5px;
-  border: 1px solid black;
+  border: 1px solid #ffa31a;
+  border-radius: 25px;
   cursor: pointer;
 }
 
 .open-button:hover {
-  background-color: lightgrey;
+  background-color: #ffa31a;
+  color: #3C3F41;
 }
 
 .genre-container {
   position: absolute;
   z-index: 2;
-  background-color: rgba(0, 0, 0, 0.8);
-  border: 1px solid red;
+  border: 1px solid #ffa31a;
   max-width: 400px;
 }
 
 .genre-text {
   display: inline-block;
   color: white;
+  padding: 3px;
   cursor: pointer;
-  width: 200px;
+  width: 48%;
 }
 
 .genre-text:hover {
