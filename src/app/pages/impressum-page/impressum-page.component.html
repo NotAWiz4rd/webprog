@@ -1,11 +1,13 @@
 <!--  ###############################  Impressum  ###############################  -->
 <p id="footer" class="page-footer"></p>
-<div class="container">
+<div>
   <div class="row">
     <div class="col-md-4"></div>
     <div class="col-md-4">
       <hr class="hidden-md-up"/>
-      <h3 class="text" style="text-align:center;"><p><b>Impressum Gruppe 7</b> Web-Programmierung</p></h3>
+      <h3><b>{{globals.staticTexts | getStaticText : 'impressumText' : languageService.getLanguage()}}
+        {{globals.staticTexts | getStaticText : 'groupText' : languageService.getLanguage()}} 7</b>
+        Web-Programmierung</h3>
     </div>
   </div>
   <div class="col-md-4">
@@ -13,7 +15,7 @@
   </div>
 </div>
 
-<div class="brand">
+<div>
   <p>Lenny Bierwirth, l.bierwirth@ostfalia.de, 70458777</p>
   <p>Max Werner, max.werner@ostfalia.de, 70458108</p>
   <p>Robin Müller, rob.mueller@ostfalia.de, 70460210</p>

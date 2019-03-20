@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Globals} from "../../util/Globals";
+import {LanguageService} from "../../services/language.service";
 
 @Component({
   selector: 'app-impressum-page',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ImpressumPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(public globals: Globals,
+              public languageService: LanguageService) {
+  }
 
   ngOnInit() {
+    this.globals.view = 'impressum';
   }
 
 }

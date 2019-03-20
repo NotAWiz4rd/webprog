@@ -31,7 +31,7 @@
   },
   {
     "logicalName": "impressumText",
-    "english": "Impressum information",
+    "english": "Impressum",
     "german": "Impressum",
     "spanish": "Huella"
   },
@@ -202,5 +202,11 @@
     "english": "Continue watching:",
     "german": "Weitergucken:",
     "spanish": "Sigue viendo:"
+  },
+  {
+    "logicalName": "groupText",
+    "english": "Group",
+    "german": "Gruppe",
+    "spanish": "Grupo"
   }
 ]
