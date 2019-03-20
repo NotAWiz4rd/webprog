@@ -1,11 +1,19 @@
-.button {
-  cursor: pointer;
-  width: 100px;
-  padding: 10px;
-  border: 1px solid black;
-  margin-bottom: 30px;
+:host {
+  height: 100px;
+  align-items: center;
 }
 
-.button:hover {
-  background-color: darkgrey;
+.logout {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+app-basic-button {
+  margin: 10px;
+}
+
+.text {
+  display: inline-block;
+  color: white;
 }

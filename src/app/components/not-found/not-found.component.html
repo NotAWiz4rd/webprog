@@ -1,5 +1,6 @@
 {{globals.staticTexts | getStaticText : 'notFoundText' : languageService.getLanguage()}}
 <div></div>
-<div class="back-button" (click)="navigationService.navigateToView('login')">
-  {{globals.staticTexts | getStaticText : 'backToMainPageText' : languageService.getLanguage()}}
-</div>
+
+<app-basic-button (click)="navigationService.navigateToView('login')"
+                  [text]="globals.staticTexts | getStaticText : 'backToMainPageText' : languageService.getLanguage()">
+</app-basic-button>

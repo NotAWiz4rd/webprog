@@ -34,6 +34,6 @@ export class GenreChooserComponent implements OnInit {
   }
 
   private createGenreArray() {
-    this.genres = [Genre.ACTION, Genre.COMEDIES, Genre.SCIFI, Genre.ROMANCE, Genre.HORROR, Genre.FANTASY, Genre.ANIMATIION, Genre.DOCUMENTARIES]
+    this.genres = [Genre.ACTION, Genre.COMEDIES, Genre.SCIFI, Genre.ROMANCE, Genre.HORROR, Genre.FANTASY, Genre.ANIMATIION, Genre.DRAMAS, Genre.DOCUMENTARIES]
   }
 }

@@ -6,5 +6,6 @@ export enum Genre {
   HORROR = 'Horror',
   FANTASY = 'Fantasy',
   ANIMATIION = 'Animation',
-  DOCUMENTARIES = 'Documentaries'
+  DOCUMENTARIES = 'Documentaries',
+  DRAMAS = 'Dramas'
 }

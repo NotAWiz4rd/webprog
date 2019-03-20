@@ -20,7 +20,14 @@ import {MoviesService} from "./services/movies.service";
 import {PlayerComponent} from "./pages/player/player.component";
 import {MoviePreviewComponent} from "./components/movie-preview/movie-preview.component";
 import {GenreChooserComponent} from "./components/genre-chooser/genre-chooser.component";
+import {UsersService} from "./services/users.service";
 import {GetFilteredMoviesPipe} from "./pipes/get-filtered-movies.pipe";
+import {BasicButtonComponent} from "./components/basic-button/basic-button.component";
+import {MyListComponent} from './components/my-list/my-list.component';
+import {MovieSuggestionsComponent} from './movie-suggestions/movie-suggestions.component';
+import {MovieDescriptionComponent} from './components/movie-description/movie-description.component';
+import {ImpressumPageComponent} from './pages/impressum-page/impressum-page.component';
+import {LogoComponent} from "./components/logo/logo.component";
 import {HighlightComponent} from "./components/highlight/highlight.component";
 
 @NgModule({
@@ -37,6 +44,14 @@ import {HighlightComponent} from "./components/highlight/highlight.component";
     MoviePreviewComponent,
     GenreChooserComponent,
     GetFilteredMoviesPipe,
+    BasicButtonComponent,
+    MyListComponent,
+    MovieSuggestionsComponent,
+    MovieDescriptionComponent,
+    ImpressumPageComponent,
+    MovieSuggestionsComponent,
+    LogoComponent,
+    GetFilteredMoviesPipe,
     HighlightComponent
   ],
   imports: [
@@ -51,6 +66,7 @@ import {HighlightComponent} from "./components/highlight/highlight.component";
     AuthService,
     LanguageService,
     NavigationService,
+    UsersService,
     MoviesService,
     MoviesResolver,
     Globals

@@ -1,5 +1,15 @@
+:host {
+  color: white;
+  width: 70%;
+  text-align: justify;
+  margin: 10px 20px 10px 50px;
+  padding: 10px;
+}
+
 img {
-  max-width: 500px;
+  margin: 20px;
+  width: 600px;
+  height: 450px;
   cursor: pointer;
 }
 
