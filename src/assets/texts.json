@@ -30,6 +30,12 @@
     "spanish": "Español"
   },
   {
+    "logicalName": "impressumText",
+    "english": "Impressum information",
+    "german": "Impressum",
+    "spanish": "Huella"
+  },
+  {
     "logicalName": "directorText",
     "english": "Director",
     "german": "Regisseur",

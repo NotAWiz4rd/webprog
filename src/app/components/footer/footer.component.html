@@ -9,3 +9,7 @@
 <div (click)="changeLanguage(2)" [class.active]="languageService.getLanguage() === 2">
   {{globals?.staticTexts | getStaticText : 'spanishLanguageText' : languageService.getLanguage()}}
 </div>
+
+<div (click)="navigationService.navigateToView('impressum')">
+  {{globals?.staticTexts | getStaticText : 'impressumText' : languageService.getLanguage()}}
+</div>

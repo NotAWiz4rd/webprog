@@ -5,6 +5,7 @@ import {AuthService} from "./services/auth.service";
 import {MoviesResolver} from "./resolvers/movies.resolver";
 import {PlayerComponent} from "./pages/player/player.component";
 import {MyListComponent} from "./components/my-list/my-list.component";
+import {ImpressumPageComponent} from './pages/impressum-page/impressum-page.component';
 
 export const APP_ROUTES = [
   {
@@ -15,6 +16,10 @@ export const APP_ROUTES = [
   {
     path: 'login',
     component: LoginPageComponent
+  },
+  {
+    path: 'impressum',
+    component: ImpressumPageComponent
   },
   {
     path: 'overview',
