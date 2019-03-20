@@ -26,8 +26,6 @@ import {BasicButtonComponent} from "./components/basic-button/basic-button.compo
 import { MyListComponent } from './components/my-list/my-list.component';
 import { MovieSuggestionsComponent } from './movie-suggestions/movie-suggestions.component';
 import { ImpressumPageComponent } from './pages/impressum-page/impressum-page.component';
-import {MyListComponent} from './components/my-list/my-list.component';
-import {MovieSuggestionsComponent} from './movie-suggestions/movie-suggestions.component';
 import {LogoComponent} from "./components/logo/logo.component";
 
 @NgModule({
@@ -47,7 +45,7 @@ import {LogoComponent} from "./components/logo/logo.component";
     BasicButtonComponent,
     MyListComponent,
     MovieSuggestionsComponent,
-    ImpressumPageComponent
+    ImpressumPageComponent,
     MovieSuggestionsComponent,
     LogoComponent
   ],
