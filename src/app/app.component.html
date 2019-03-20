@@ -1,5 +1,5 @@
-<app-header *ngIf="globals.view != ('login' || 'watch')"></app-header>
+<app-header *ngIf="globals.view != 'watch'"></app-header>
 
 <router-outlet></router-outlet>
 
-<app-footer *ngIf="globals.view != 'watch'"></app-footer>
+<app-footer [class.non-scrollable]="globals.view === 'login'" *ngIf="globals.view != 'watch'"></app-footer>

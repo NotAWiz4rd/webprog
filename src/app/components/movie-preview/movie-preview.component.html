@@ -1,4 +1,3 @@
-<div class="movie">
 <img (click)="navigateToMovie(movie.filename)" src="{{THUMBNAILS_PATH + movie.filename + '.jpg'}}">
 <h2 (click)="navigateToMovie(movie.filename)">{{movie.name}}</h2>
 <p>{{movie | getMovieDescription : languageService.getLanguage()}}</p>
@@ -11,4 +10,3 @@
 <app-basic-button *ngIf="movieIsInList()" (click)="removeMovieFromList()"
                   [text]="globals.staticTexts | getStaticText : 'removeFromListText' : languageService.getLanguage()">
 </app-basic-button>
-</div>

@@ -1,6 +1,6 @@
-.border{
+.border {
   position: absolute;
-  left:50%;
+  left: 50%;
   top: 50%;
   width: auto;
   height: auto;
@@ -12,9 +12,14 @@
   box-shadow: 5px 10px 8px #000000;
 }
 
-input{
+input {
+  color: white;
   width: 80%;
   margin: 10px;
   font-size: 24px;
   padding: 12px 20px;
+}
+
+app-basic-button {
+  margin: 10px;
 }

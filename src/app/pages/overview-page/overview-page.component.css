@@ -3,6 +3,7 @@ app-movie-preview {
 }
 
 .reset-genre {
+  color: white;
   cursor: pointer;
   display: inline-block;
 }
@@ -14,10 +15,10 @@ app-movie-preview {
 .search-container {
   margin-left: 10px;
   display: inline-block;
-
 }
 
-.searchbox{
+.searchbox {
+  color: white;
   background-image: url('../../../assets/icons/search.png');
   background-position: 8px 8px;
   background-repeat: no-repeat;
@@ -32,13 +33,13 @@ app-movie-preview {
   transition: width 0.4s ease-in-out;
 }
 
-.searchbox:focus{
+.searchbox:focus {
   width: 20rem;
 }
 
-h2{
-  margin-left: 50px;
+h2 {
+  color: white;
   margin-top: 15px;
   margin-bottom: 15px;
-  padding:10px;
+  padding: 10px;
 }

@@ -1,24 +1,23 @@
 div {
-  margin: 10px;
   height: 3rem;
   line-height: 3rem;
-  width: 10rem;
+  min-width: 10rem;
   text-align: center;
   display: inline-block;
   cursor: pointer;
-  background-color:#ffa31a;
+  font-weight: bold;
+  background-color: #ffa31a;
   color: #3C3F41;
   border-radius: 6px;
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
+  -webkit-transition-duration: 0.2s; /* Safari */
+  transition-duration: 0.2s;
 }
 
 div:hover {
-  box-shadow: 5px 10px 8px #2b2b2b;
-  background-color:#3C3F41;
-  color: #ffa31a;
+  background-color: #db9327;
+  color: white;
 }
 
-div:active{
+div:active {
   transform: translateY(2px);
 }

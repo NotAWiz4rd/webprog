@@ -1,18 +1,18 @@
+:host {
+  color: white;
+  width: 70%;
+  text-align: justify;
+  margin: 10px 20px 10px 50px;
+  padding: 10px;
+}
+
 img {
   margin: 20px;
-  clip-path: inset(300px 500px);
-  width: 100%;
-  max-width: 500px;
+  width: 600px;
+  height: 450px;
   cursor: pointer;
 }
 
 h2 {
   cursor: pointer;
-}
-
-.movie{
-  width: 70%;
-  text-align: justify;
-  margin: 10px 20px 10px 50px;
-  padding: 10px;
 }

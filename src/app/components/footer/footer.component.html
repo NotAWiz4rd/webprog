@@ -1,4 +1,4 @@
-<div class="foot">
+<div class="foot"></div>
 
 <div (click)="changeLanguage(0)" [class.active]="languageService.getLanguage() === 0">
   {{globals?.staticTexts | getStaticText : 'englishLanguageText' : languageService.getLanguage()}}
@@ -10,5 +10,4 @@
 
 <div (click)="changeLanguage(2)" [class.active]="languageService.getLanguage() === 2">
   {{globals?.staticTexts | getStaticText : 'spanishLanguageText' : languageService.getLanguage()}}
-</div>
 </div>
