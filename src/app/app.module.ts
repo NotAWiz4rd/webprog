@@ -26,6 +26,8 @@ import {BasicButtonComponent} from "./components/basic-button/basic-button.compo
 import { MyListComponent } from './components/my-list/my-list.component';
 import { MovieSuggestionsComponent } from './movie-suggestions/movie-suggestions.component';
 import { MovieDescriptionComponent } from './components/movie-description/movie-description.component';
+import { ImpressumPageComponent } from './pages/impressum-page/impressum-page.component';
+import {LogoComponent} from "./components/logo/logo.component";
 
 @NgModule({
   declarations: [
@@ -44,7 +46,10 @@ import { MovieDescriptionComponent } from './components/movie-description/movie-
     BasicButtonComponent,
     MyListComponent,
     MovieSuggestionsComponent,
-    MovieDescriptionComponent
+    MovieDescriptionComponent,
+    ImpressumPageComponent,
+    MovieSuggestionsComponent,
+    LogoComponent
   ],
   imports: [
     BrowserModule,

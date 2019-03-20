@@ -34,8 +34,6 @@ export class PlayerComponent implements OnInit {
       this.thumbnail = THUMBNAILS_PATH + movie.filename + '.jpg';
       this.moviename = movie.filename;
     });
-
-    this.getMovieTimestamp();
   }
 
   ngOnInit() {

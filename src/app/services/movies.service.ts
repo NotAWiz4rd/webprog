@@ -104,6 +104,11 @@ export class MoviesService {
     return suggestedMovies;
   }
 
+  getRecentlyWatchedMovies(amount: number): MovieData[] {
+    let start = this.globals.currentUser.watchedList.length - amount >= 0 ? this.globals.currentUser.watchedList.length - amount : 0;
+    return this.getMovies(this.globals.currentUser.watchedList.slice(start, this.globals.currentUser.watchedList.length)).reverse();
+  }
+
   private getNumberedMap(strings: string[]): Map<string, number> {
     let analyzedStrings: Map<string, number> = new Map();
     strings.forEach(string => {

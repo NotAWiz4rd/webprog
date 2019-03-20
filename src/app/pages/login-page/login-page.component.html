@@ -1,12 +1,12 @@
 <div>
-  <input type="text" #inputMail (keyup)="mailInputChange(inputMail.value)">
-  <input type="password" #inputPassword (keyup)="passwordInputChange(inputPassword.value)">
+  {{globals.staticTexts | getStaticText : 'usernameText' : languageService.getLanguage()}}:<input type="text" #inputMail (keyup)="mailInputChange(inputMail.value)">
+  <br>
+  {{globals.staticTexts | getStaticText : 'passwordText' : languageService.getLanguage()}}:<input type="password" #inputPassword (keyup)="passwordInputChange(inputPassword.value)">
 </div>
 
 
 <app-basic-button (click)="onLogin()"
                   [text]=" globals?.staticTexts | getStaticText : 'loginText': languageService.getLanguage()">
-
 </app-basic-button>
 
 <app-basic-button (click)="onRegister()"

@@ -5,7 +5,7 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {MovieData} from "../util/MovieData";
 import {WatchedMovie} from "../util/WatchedMovie";
 
-const DATABASE_PATH = 'https://api.mlab.com/api/1/databases/primetime-users/collections/users?apiKey=06Yem6JpYP8TSlm48U-Ze0Tb49Gnu0NA';
+const DATABASE_PATH = 'https://api.mlab.com/api/1/databases/moviehub-users/collections/users?apiKey=06Yem6JpYP8TSlm48U-Ze0Tb49Gnu0NA';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -83,7 +83,16 @@ export class UsersService {
   }
 
   addMovieToWatched(movie: WatchedMovie) {
-    this.globals.currentUser.watchedList.push(movie);
+    let movieExisted = false;
+    this.globals.currentUser.watchedList.forEach(watchedMovie => {
+      if (watchedMovie.movieName === movie.movieName) {
+        watchedMovie.timestamp = movie.timestamp;
+        movieExisted = true;
+      }
+    });
+    if (!movieExisted) {
+      this.globals.currentUser.watchedList.push(movie);
+    }
     this.pushUserUpdate();
   }
 

@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Globals} from "../../util/Globals";
 import {LanguageService} from "../../services/language.service";
+import {NavigationService} from '../../services/navigation.service';
 
 @Component({
   selector: 'app-footer',
@@ -9,7 +10,7 @@ import {LanguageService} from "../../services/language.service";
 })
 export class FooterComponent implements OnInit {
 
-  constructor(public globals: Globals, public languageService: LanguageService) {
+  constructor(public globals: Globals, public languageService: LanguageService, public navigationService: NavigationService) {
   }
 
   ngOnInit() {

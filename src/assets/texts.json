@@ -30,6 +30,12 @@
     "spanish": "Español"
   },
   {
+    "logicalName": "impressumText",
+    "english": "Impressum information",
+    "german": "Impressum",
+    "spanish": "Huella"
+  },
+  {
     "logicalName": "directorText",
     "english": "Director",
     "german": "Regisseur",
@@ -172,5 +178,29 @@
     "english": "Suggestions for You:",
     "german": "Vorschläge für Dich:",
     "spanish": "Sugerencias para Ti:"
+  },
+  {
+    "logicalName": "usernameText",
+    "english": "Username",
+    "german": "Nutzername",
+    "spanish": "nombre_usuario"
+  },
+  {
+    "logicalName": "passwordText",
+    "english": "Password",
+    "german": "Passwort",
+    "spanish": "contraseña"
+  },
+  {
+    "logicalName": "genreTextDramas",
+    "english": "Dramas",
+    "german": "Dramas",
+    "spanish": "Dramas"
+  },
+  {
+    "logicalName": "continueWatchingText",
+    "english": "Continue watching:",
+    "german": "Weitergucken:",
+    "spanish": "Sigue viendo:"
   }
 ]
