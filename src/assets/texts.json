@@ -208,5 +208,11 @@
     "english": "Group",
     "german": "Gruppe",
     "spanish": "Grupo"
+  },
+  {
+    "logicalName": "randomText",
+    "english": "Im bored!",
+    "german": "Such du aus...",
+    "spanish": "casualidad"
   }
 ]
