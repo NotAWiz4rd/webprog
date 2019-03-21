@@ -16,6 +16,7 @@ export class NavigationService {
   }
 
   navigateToMovie(movie: string) {
+    this.globals.view = 'watch';
     console.log('Changed view to movie: ' + movie);
     this.router.navigateByUrl('watch/' + movie);
   }
