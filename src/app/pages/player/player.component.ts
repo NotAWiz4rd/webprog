@@ -62,7 +62,7 @@ export class PlayerComponent implements OnInit {
     // @ts-ignore
     watchedMovie.timestamp = vid.currentTime;
     this.usersService.addMovieToWatched(watchedMovie);
-    this.navigationService.navigateBack('overview');
+    this.navigationService.navigateBack();
   }
 
   @HostListener('window:resize', ['$event'])

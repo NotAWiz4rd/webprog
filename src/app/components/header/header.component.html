@@ -1,4 +1,4 @@
-<app-logo (click)="navigateToOverview()"></app-logo>
+<app-logo (click)="navigateToLogin()"></app-logo>
 <ng-container *ngIf="authService.isLoggedIn()">
   <app-basic-button class="logout" (click)="logoutUser()"
                     [text]="globals?.staticTexts | getStaticText : 'logoutText' : languageService.getLanguage()">

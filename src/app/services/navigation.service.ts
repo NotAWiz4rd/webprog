@@ -11,19 +11,16 @@ export class NavigationService {
   }
 
   navigateToView(view: string) {
-    this.globals.view = view;
     console.log('Changed view to ' + view);
     this.router.navigateByUrl(view);
   }
 
   navigateToMovie(movie: string) {
-    this.globals.view = 'watch';
     console.log('Changed view to movie: ' + movie);
     this.router.navigateByUrl('watch/' + movie);
   }
 
-  navigateBack(view: string) {
-    this.globals.view = view;
+  navigateBack() {
     console.log('Navigating to previous page');
     this.location.back();
   }
