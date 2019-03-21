@@ -11,6 +11,7 @@ export class NavigationService {
   }
 
   navigateToView(view: string) {
+    this.globals.view = view;
     console.log('Changed view to ' + view);
     this.router.navigateByUrl(view);
   }
