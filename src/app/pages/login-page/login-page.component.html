@@ -1,19 +1,28 @@
 <div class="border">
   <div>
-    <input type="text"
+    <form>
+
+      <div>
+        <input type="text"
            placeholder="{{globals.staticTexts | getStaticText : 'usernameText' : languageService.getLanguage()}}"
            #inputMail (keyup)="mailInputChange(inputMail.value)">
-    <br>
-    <input type="password"
+        <br>
+        <input type="password"
            placeholder="{{globals.staticTexts | getStaticText : 'passwordText' : languageService.getLanguage()}}"
-           #inputPassword (keyup)="passwordInputChange(inputPassword.value)">
+           #inputPassword (keyup)="passwordInputChange(inputPassword.value)"
+           (keydown)="keyDownFunction($event)">
+      </div>
+
+      <app-basic-button (click)="onLogin()"
+                        [text]=" globals?.staticTexts | getStaticText : 'loginText': languageService.getLanguage()">
+      </app-basic-button>
+
+      <app-basic-button (click)="onRegister()"
+                        [text]="globals?.staticTexts | getStaticText : 'registerText': languageService.getLanguage()">
+      </app-basic-button>
+
+    </form>
   </div>
 
-  <app-basic-button (click)="onLogin()"
-                    [text]=" globals?.staticTexts | getStaticText : 'loginText': languageService.getLanguage()">
-  </app-basic-button>
 
-  <app-basic-button (click)="onRegister()"
-                    [text]="globals?.staticTexts | getStaticText : 'registerText': languageService.getLanguage()">
-  </app-basic-button>
 </div>

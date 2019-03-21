@@ -6,6 +6,7 @@ import {LanguageService} from "../../services/language.service";
 import {AuthService} from "../../services/auth.service";
 import {NavigationService} from "../../services/navigation.service";
 import {UsersService} from "../../services/users.service";
+import {ignore} from "selenium-webdriver/testing";
 
 @Component({
   selector: 'app-login-page',
@@ -78,6 +79,13 @@ export class LoginPageComponent implements OnInit {
     user.password = this.loginPassword;
     this.usersService.addUser(user);
     return true;
+  }
+
+  keyDownFunction(event: Event) {
+    // @ts-ignore
+    if(event.keyCode === 13) {
+      this.onLogin();
+     }
   }
 }
 
