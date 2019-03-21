@@ -79,5 +79,11 @@ export class LoginPageComponent implements OnInit {
     this.usersService.addUser(user);
     return true;
   }
+
+  keyDownFunction(event) {
+    if(event.keyCode === 13) {
+      this.onLogin();
+     }
+  }
 }
 

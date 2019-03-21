@@ -6,7 +6,8 @@
     <br>
     <input type="password"
            placeholder="{{globals.staticTexts | getStaticText : 'passwordText' : languageService.getLanguage()}}"
-           #inputPassword (keyup)="passwordInputChange(inputPassword.value)">
+           #inputPassword (keyup)="passwordInputChange(inputPassword.value)"
+           (keydown)="keyDownFunction($event)">
   </div>
 
   <app-basic-button (click)="onLogin()"
