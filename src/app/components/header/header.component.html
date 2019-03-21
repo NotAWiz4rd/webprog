@@ -11,6 +11,10 @@
   <app-basic-button (click)="navigateToList()"
                     [text]="globals.staticTexts | getStaticText : 'myListText' : languageService.getLanguage()">
   </app-basic-button>
+  <app-basic-button (click)="randomVideo()"
+                    [text]="(globals?.staticTexts | getStaticText : 'randomText' : languageService.getLanguage())">
+  </app-basic-button>
+
 </ng-container>
 
 <app-basic-button *ngIf="!authService.isLoggedIn() && globals.view != 'login'" (click)="navigateToLogin()"
