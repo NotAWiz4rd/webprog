@@ -23,10 +23,10 @@ import {GenreChooserComponent} from "./components/genre-chooser/genre-chooser.co
 import {UsersService} from "./services/users.service";
 import {GetFilteredMoviesPipe} from "./pipes/get-filtered-movies.pipe";
 import {BasicButtonComponent} from "./components/basic-button/basic-button.component";
-import { MyListComponent } from './components/my-list/my-list.component';
-import { MovieSuggestionsComponent } from './movie-suggestions/movie-suggestions.component';
-import { MovieDescriptionComponent } from './components/movie-description/movie-description.component';
-import { ImpressumPageComponent } from './pages/impressum-page/impressum-page.component';
+import {MyListComponent} from './components/my-list/my-list.component';
+import {MovieSuggestionsComponent} from './components/movie-suggestions/movie-suggestions.component';
+import {MovieDescriptionComponent} from './components/movie-description/movie-description.component';
+import {ImpressumPageComponent} from './pages/impressum-page/impressum-page.component';
 import {LogoComponent} from "./components/logo/logo.component";
 
 @NgModule({
