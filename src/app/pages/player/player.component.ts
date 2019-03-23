@@ -71,4 +71,27 @@ export class PlayerComponent implements OnInit {
     this.innerHeight = window.innerHeight;
   }
 
+  playpause() {
+    // @ts-ignore
+    let video = document.getElementById('myVideo');
+    // @ts-ignore
+    if (video.ended || video.paused) {
+      video.play();
+    } else {
+      video.pause();
+    }
+  }
+
+  toggleMute() {
+
+    let video = document.getElementById('myVideo');
+    // @ts-ignore
+    if (video.muted) {
+      video.muted = false;
+    }
+    else {
+      video.muted = true;
+    }
+  }
+
 }
