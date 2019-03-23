@@ -23,3 +23,8 @@ input {
 app-basic-button {
   margin: 10px;
 }
+
+.message{
+  color: #ffa31a;
+  margin: 1rem;
+}

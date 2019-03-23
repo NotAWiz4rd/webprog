@@ -1,12 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {User} from "../../util/User";
-import {Globals} from "../../util/Globals";
-import {LanguageService} from "../../services/language.service";
-import {AuthService} from "../../services/auth.service";
-import {NavigationService} from "../../services/navigation.service";
-import {UsersService} from "../../services/users.service";
-import {ignore} from "selenium-webdriver/testing";
+import {User} from '../../util/User';
+import {Globals} from '../../util/Globals';
+import {LanguageService} from '../../services/language.service';
+import {AuthService} from '../../services/auth.service';
+import {NavigationService} from '../../services/navigation.service';
+import {UsersService} from '../../services/users.service';
+import {ignore} from 'selenium-webdriver/testing';
 
 @Component({
   selector: 'app-login-page',
@@ -14,8 +14,11 @@ import {ignore} from "selenium-webdriver/testing";
   styleUrls: ['./login-page.component.css']
 })
 export class LoginPageComponent implements OnInit {
-  loginName: string = '';
-  loginPassword: string = '';
+  loginName : string = '';
+  loginPassword : string = '';
+  message : string = '';
+  showMessage : boolean= false;
+
 
   constructor(public globals: Globals,
               public languageService: LanguageService,
@@ -35,14 +38,19 @@ export class LoginPageComponent implements OnInit {
 
   onLogin(): boolean {
     if (this.loginPassword.length < 4 || this.loginName.length < 4) {
+      this.showMessage = true;
+      this.message = 'Login attempt failed: Password or name too short.';
       console.log('Login attempt failed: Password or name too short.');
       return false;
     }
 
     if (this.authService.isLoggedIn() || this.lookForMatch()) {
+      this.showMessage = false;
       this.navigationService.navigateToView('overview');
       return true;
     }
+    this.showMessage = true;
+    this.message = 'Login attempt failed: Password or name wrong or user doesnt exist.';
     console.log('Login attempt failed: Password or name wrong or user doesnt exist.');
     return false;
   }
@@ -69,12 +77,17 @@ export class LoginPageComponent implements OnInit {
   }
 
   onRegister(): boolean {
+    this.showMessage = true;
     if (this.loginPassword.length < 4 || this.loginName.length < 4) {
+      this.message = 'Register attempt failed: Password or name too short.';
       console.log('Register attempt failed: Password or name too short.');
       return false;
+    } else {
+      console.log('Register successful');
+      this.message = 'Successfully registered.';
     }
 
-    let user = new User();
+    const user = new User();
     user.name = this.loginName;
     user.password = this.loginPassword;
     this.usersService.addUser(user);
@@ -83,7 +96,7 @@ export class LoginPageComponent implements OnInit {
 
   keyDownFunction(event: Event) {
     // @ts-ignore
-    if(event.keyCode === 13) {
+    if (event.keyCode === 13) {
       this.onLogin();
      }
   }
