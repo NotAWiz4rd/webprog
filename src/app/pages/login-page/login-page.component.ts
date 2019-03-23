@@ -14,10 +14,10 @@ import {ignore} from 'selenium-webdriver/testing';
   styleUrls: ['./login-page.component.css']
 })
 export class LoginPageComponent implements OnInit {
-  loginName : string = '';
-  loginPassword : string = '';
-  message : string = '';
-  showMessage : boolean= false;
+  loginName: string = '';
+  loginPassword: string = '';
+  message: string = '';
+  showMessage: boolean = false;
 
 
   constructor(public globals: Globals,
