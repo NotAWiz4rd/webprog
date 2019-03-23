@@ -76,8 +76,10 @@ export class PlayerComponent implements OnInit {
     let video = document.getElementById('myVideo');
     // @ts-ignore
     if (video.ended || video.paused) {
+      // @ts-ignore
       video.play();
     } else {
+      // @ts-ignore
       video.pause();
     }
   }
@@ -87,11 +89,63 @@ export class PlayerComponent implements OnInit {
     let video = document.getElementById('myVideo');
     // @ts-ignore
     if (video.muted) {
+      // @ts-ignore
       video.muted = false;
     }
     else {
+      // @ts-ignore
       video.muted = true;
     }
   }
 
+  increaseVolume() {
+    let video = document.getElementById('myVideo');
+    // @ts-ignore
+    video.volume += video.volume == 1 ? 0 : 0.1;
+  }
+
+  decreaseVolume() {
+    let video = document.getElementById('myVideo');
+    // @ts-ignore
+    video.volume -= (video.volume == 0 ? 0 : 0.1);
+  }
+
+  skipSeconds(time: number) {
+    let video = document.getElementById('myVideo')
+    // @ts-ignore
+    video.currentTime += video.currentTime == 0 ? 0 : time;
+  }
+
+  keyDownFunction(event: Event) {
+    // @ts-ignore
+    switch (event.keyCode) {
+      case 75:
+        //K
+        this.playpause();
+        break;
+
+      case 74:
+        //J
+        this.skipSeconds(-10);
+        break;
+
+      case 76:
+        //L
+        this.skipSeconds(10);
+        break;
+
+      case 77:
+        //M
+        this.toggleMute();
+
+      case 173:
+        //-
+        this.decreaseVolume();
+        break;
+
+      case 171:
+        //+
+        this.increaseVolume();
+    }
+  }
 }

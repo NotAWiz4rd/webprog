@@ -1,32 +1,45 @@
-<app-basic-button (click)="goBack()"
-                  [text]="globals.staticTexts | getStaticText : 'goBackText' : languageService.getLanguage()"></app-basic-button>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<div class="videoControl" id="playpause" (click)="playpause()">
-  play
+<div (keypress)="keyDownFunction($event)">
+
+  <app-basic-button (click)="goBack()"
+                    [text]="globals.staticTexts | getStaticText : 'goBackText' : languageService.getLanguage()"></app-basic-button>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="videoControl" (click)="playpause()">
+    play
+  </div>
+  <div class="videoControl" (click)="toggleMute()">
+    mute
+  </div>
+  <div class="videoControl" (click)="increaseVolume()">
+    increaseVolume
+  </div>
+  <div class="videoControl" (click)="decreaseVolume()">
+    decreaseVolume
+  </div>
+  <div class="videoControl" (click)="skipSeconds(-10)">
+    -10
+  </div>
+  <div class="videoControl" (click)="skipSeconds(10)">
+    +10
+  </div>
+
+
+  <video id="myVideo" controls
+         autoplay
+         disablePictureInPicture
+         controlsList="nodownload"
+         oncontextmenu="return false;"
+         poster="{{thumbnail}}"
+         height="{{innerHeight-4}}"
+         width="{{innerWidth}}">
+    <source src="{{movieSource}}" type="video/mp4" (keypress)="keyDownFunction($event)">
+    <p>
+      {{globals.staticTexts | getStaticText : 'noVideoSupportText' : languageService.getLanguage()}}
+    </p>
+
+  </video>
 </div>
-<div class="videoControl" id="toggleMute" (click)="toggleMute()">
-  mute
-</div>
-
-
-
-
-<video id="myVideo" controls
-       autoplay
-       disablePictureInPicture
-       controlsList="nodownload"
-       oncontextmenu="return false;"
-       poster="{{thumbnail}}"
-       height="{{innerHeight-4}}"
-       width="{{innerWidth}}">
-  <source src="{{movieSource}}" type="video/mp4">
-  <p>
-    {{globals.staticTexts | getStaticText : 'noVideoSupportText' : languageService.getLanguage()}}
-  </p>
-
-</video>
