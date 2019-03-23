@@ -111,12 +111,14 @@ export class PlayerComponent implements OnInit {
   }
 
   skipSeconds(time: number) {
-    let video = document.getElementById('myVideo')
+    let video = document.getElementById('myVideo');
     // @ts-ignore
     video.currentTime += video.currentTime == 0 ? 0 : time;
   }
 
   keyDownFunction(event: Event) {
+    // @ts-ignore
+    console.log(event.keyCode);
     // @ts-ignore
     switch (event.keyCode) {
       case 75:
@@ -137,6 +139,7 @@ export class PlayerComponent implements OnInit {
       case 77:
         // M
         this.toggleMute();
+        break;
 
       case 173:
         // -
@@ -146,6 +149,7 @@ export class PlayerComponent implements OnInit {
       case 171:
         // +
         this.increaseVolume();
+        break;
     }
   }
 }
