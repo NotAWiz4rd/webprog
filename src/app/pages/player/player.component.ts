@@ -120,31 +120,31 @@ export class PlayerComponent implements OnInit {
     // @ts-ignore
     switch (event.keyCode) {
       case 75:
-        //K
+        // K
         this.playpause();
         break;
 
       case 74:
-        //J
+        // J
         this.skipSeconds(-10);
         break;
 
       case 76:
-        //L
+        // L
         this.skipSeconds(10);
         break;
 
       case 77:
-        //M
+        // M
         this.toggleMute();
 
       case 173:
-        //-
+        // -
         this.decreaseVolume();
         break;
 
       case 171:
-        //+
+        // +
         this.increaseVolume();
     }
   }
