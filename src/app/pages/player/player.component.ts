@@ -141,7 +141,7 @@ export class PlayerComponent implements OnInit {
         this.toggleMute();
         break;
 
-      case 173:
+      /*case 173:
         // -
         this.decreaseVolume();
         break;
@@ -149,7 +149,7 @@ export class PlayerComponent implements OnInit {
       case 171:
         // +
         this.increaseVolume();
-        break;
+        break;*/
     }
   }
 }
