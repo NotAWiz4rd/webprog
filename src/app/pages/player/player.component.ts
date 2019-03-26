@@ -23,6 +23,9 @@ export class PlayerComponent implements OnInit {
   innerWidth: number = 0;
   innerHeight: number = 0;
 
+  playIc: string = 'play.png';
+  muteIc: string = 'volumeUp.png';
+
   constructor(public languageService: LanguageService,
               public globals: Globals,
               private navigationService: NavigationService,
@@ -45,6 +48,8 @@ export class PlayerComponent implements OnInit {
     let vid = document.getElementById('myVideo');
     // @ts-ignore
     vid.currentTime = this.getMovieTimestamp();
+    // @ts-ignore
+    vid.controls = false;
   }
 
   private getMovieTimestamp(): number {
@@ -73,45 +78,49 @@ export class PlayerComponent implements OnInit {
 
   playpause() {
     // @ts-ignore
-    let video = document.getElementById('myVideo');
+    let video = document.getElementById('myVideo') as HTMLVideoElement;
     // @ts-ignore
     if (video.ended || video.paused) {
       // @ts-ignore
       video.play();
+      this.playIc = 'pause.png';
     } else {
       // @ts-ignore
       video.pause();
+      this.playIc = 'play.png';
     }
   }
 
   toggleMute() {
 
-    let video = document.getElementById('myVideo');
+    let video = document.getElementById('myVideo') as HTMLVideoElement;
     // @ts-ignore
     if (video.muted) {
       // @ts-ignore
       video.muted = false;
+      this.muteIc = 'volumeUp.png';
     }
     else {
       // @ts-ignore
       video.muted = true;
+      this.muteIc = 'mute.png';
     }
   }
 
   increaseVolume() {
-    let video = document.getElementById('myVideo');
+    let video = document.getElementById('myVideo') as HTMLVideoElement;
     // @ts-ignore
     video.volume += video.volume == 1 ? 0 : 0.1;
   }
 
   decreaseVolume() {
-    let video = document.getElementById('myVideo');
+    let video = document.getElementById('myVideo') as HTMLVideoElement;
     // @ts-ignore
     video.volume -= (video.volume == 0 ? 0 : 0.1);
   }
 
   skipSeconds(time: number) {
-    let video = document.getElementById('myVideo');
+    let video = document.getElementById('myVideo') as HTMLVideoElement;
     // @ts-ignore
     video.currentTime += video.currentTime == 0 ? 0 : time;
   }
@@ -150,6 +159,23 @@ export class PlayerComponent implements OnInit {
         // +
         this.increaseVolume();
         break;*/
+    }
+  }
+
+  toggleFullscreen() {
+    let video = document.getElementById('myVideo');
+    // @ts-ignore
+    if (video.requestFullscreen) {
+      // @ts-ignore
+      video.requestFullscreen();
+      // @ts-ignore
+    } else if (video.mozRequestFullScreen) {
+      // @ts-ignore
+      video.mozRequestFullScreen();
+      // @ts-ignore
+    } else if (video.webkitRequestFullscreen) {
+      // @ts-ignore
+      video.webkitRequestFullscreen();
     }
   }
 }

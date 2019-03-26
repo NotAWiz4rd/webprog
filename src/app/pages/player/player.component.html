@@ -17,24 +17,21 @@
     </p>
   </video>
   <div class="controlPanel">
-    <div class="videoControl" (click)="playpause()">
-      play
-    </div>
-    <div class="videoControl" (click)="toggleMute()">
-      mute
-    </div>
-    <div class="videoControl" (click)="increaseVolume()">
-      V+
-    </div>
-    <div class="videoControl" (click)="decreaseVolume()">
-      V-
-    </div>
-    <div class="videoControl" (click)="skipSeconds(-10)">
-      <- (-10)
-    </div>
-    <div class="videoControl" (click)="skipSeconds(10)">
-      ->(+10)
-    </div>
+    <div class="videoControl" (click)="playpause()" id="play"
+         [ngStyle]="{background: 'url(../../../assets/icons/' + playIc + ')'}"></div>
+    <div class="videoControl" (click)="toggleMute()" id="mute"
+         [ngStyle]="{background: 'url(../../../assets/icons/' + muteIc + ')'}"></div>
+    <div class="videoControl" (click)="decreaseVolume()"
+         style="background-image: url('../../../assets/icons/volumeDown.png');"></div>
+    <div class="videoControl" (click)="increaseVolume()"
+         style="background-image: url('../../../assets/icons/volumeUp.png');"></div>
+    <div class="videoControl" (click)="skipSeconds(-10)"
+         style="background-image: url('../../../assets/icons/back.png');"></div>
+    <div class="videoControl" (click)="skipSeconds(10)"
+         style="background-image: url('../../../assets/icons/forward.png');"></div>
+    <div class="videoControl" (click)="toggleFullscreen()"
+         style="background-image: url('../../../assets/icons/fullscreen.png');"></div>
     <div>
+    </div>
     </div>
   </div>
