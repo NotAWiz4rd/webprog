@@ -6,7 +6,6 @@ import {LanguageService} from '../../services/language.service';
 import {AuthService} from '../../services/auth.service';
 import {NavigationService} from '../../services/navigation.service';
 import {UsersService} from '../../services/users.service';
-import {ignore} from 'selenium-webdriver/testing';
 
 @Component({
   selector: 'app-login-page',
@@ -37,21 +36,14 @@ export class LoginPageComponent implements OnInit {
   }
 
   onLogin(): boolean {
-    if (this.loginPassword.length < 4 || this.loginName.length < 4) {
-      this.showMessage = true;
-      this.message = 'Login attempt failed: Password or name too short.';
-      console.log('Login attempt failed: Password or name too short.');
-      return false;
-    }
-
     if (this.authService.isLoggedIn() || this.lookForMatch()) {
       this.showMessage = false;
       this.navigationService.navigateToView('overview');
       return true;
     }
     this.showMessage = true;
+    // todo translate messages into other languages
     this.message = 'Login attempt failed: Password or name wrong or user doesnt exist.';
-    console.log('Login attempt failed: Password or name wrong or user doesnt exist.');
     return false;
   }
 
@@ -79,6 +71,7 @@ export class LoginPageComponent implements OnInit {
   onRegister(): boolean {
     this.showMessage = true;
     if (this.loginPassword.length < 4 || this.loginName.length < 4) {
+      // todo translate message texts
       this.message = 'Register attempt failed: Password or name too short.';
       console.log('Register attempt failed: Password or name too short.');
       return false;
@@ -98,7 +91,7 @@ export class LoginPageComponent implements OnInit {
     // @ts-ignore
     if (event.keyCode === 13) {
       this.onLogin();
-     }
+    }
   }
 }
 
