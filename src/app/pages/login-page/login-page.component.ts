@@ -16,6 +16,12 @@ import {ignore} from "selenium-webdriver/testing";
 export class LoginPageComponent implements OnInit {
   loginName: string = '';
   loginPassword: string = '';
+  registerUsername: string = '';
+  registerEmail: string = '';
+  registerPassword: string = '';
+  registerRepeatPassword: string = '';
+  registerCheckedAGB: boolean = false;
+  showRegister: boolean = false;
 
   constructor(public globals: Globals,
               public languageService: LanguageService,
@@ -55,6 +61,26 @@ export class LoginPageComponent implements OnInit {
     this.loginPassword = password;
   }
 
+  userNameRegisterChange(username: string) {
+    this.registerUsername = username;
+  }
+
+  passwordRegisterChange(password: string) {
+    this.registerPassword = password;
+  }
+
+  repeatpasswordRegisterChange(password: string) {
+    this.registerRepeatPassword = password;
+  }
+
+  checkedAGBRegisterChange(checked: boolean) {
+    this.registerCheckedAGB = checked;
+  }
+
+  emailRegsiterChange(mail: string) {
+    this.registerEmail = mail;
+  }
+
   private lookForMatch(): boolean {
     let foundUser = false;
     this.globals.userData.forEach(user => {
@@ -69,23 +95,32 @@ export class LoginPageComponent implements OnInit {
   }
 
   onRegister(): boolean {
-    if (this.loginPassword.length < 4 || this.loginName.length < 4) {
+    if (this.registerPassword.length < 4 || this.registerUsername.length < 4) {
       console.log('Register attempt failed: Password or name too short.');
       return false;
     }
 
-    let user = new User();
-    user.name = this.loginName;
-    user.password = this.loginPassword;
-    this.usersService.addUser(user);
-    return true;
+    if (this.registerPassword === this.registerRepeatPassword) {
+      let user = new User();
+      user.name = this.registerUsername;
+      user.password = this.registerPassword;
+      user.email = this.registerEmail;
+      this.usersService.addUser(user);
+      return true;
+    } else {
+      return false;
+    }
   }
 
   keyDownFunction(event: Event) {
     // @ts-ignore
-    if(event.keyCode === 13) {
+    if (event.keyCode === 13) {
       this.onLogin();
-     }
+    }
+  }
+
+  showRegistertoUser() {
+    this.showRegister = !this.showRegister;
   }
 }
 

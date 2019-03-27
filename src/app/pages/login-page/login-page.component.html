@@ -2,7 +2,7 @@
   <div>
     <form>
 
-      <div>
+      <div *ngIf="!showRegister">
         <input type="text"
            placeholder="{{globals.staticTexts | getStaticText : 'usernameText' : languageService.getLanguage()}}"
            #inputMail (keyup)="mailInputChange(inputMail.value)">
@@ -11,15 +11,24 @@
            placeholder="{{globals.staticTexts | getStaticText : 'passwordText' : languageService.getLanguage()}}"
            #inputPassword (keyup)="passwordInputChange(inputPassword.value)"
            (keydown)="keyDownFunction($event)">
-      </div>
 
+      </div>
       <app-basic-button (click)="onLogin()"
                         [text]=" globals?.staticTexts | getStaticText : 'loginText': languageService.getLanguage()">
       </app-basic-button>
-
-      <app-basic-button (click)="onRegister()"
+      <app-basic-button (click)="showRegistertoUser()"
                         [text]="globals?.staticTexts | getStaticText : 'registerText': languageService.getLanguage()">
       </app-basic-button>
+
+      <div *ngIf="showRegister">
+        <input type="text" placeholder="username" #inputUsername (keyup)="userNameRegisterChange(inputUsername.value)">
+        <input type="email" placeholder="email" #inputeMail (keyup)="emailRegsiterChange(inputeMail.value)">
+        <input type="password" placeholder="password" #inputRegPassword (keyup)="passwordRegisterChange(inputRegPassword.value)">
+        <input type="password" placeholder="repeat password" #inputRepRegPassword (keyup)="repeatpasswordRegisterChange(inputRepRegPassword.value)">
+        <input type="checkbox" name="AGBaccepted" #inputCheck (keyup)="checkedAGBRegisterChange(inputCheck.checked)"> AcceptAGB
+        <app-basic-button (click)="onRegister()" text="Abschicken"></app-basic-button>
+      </div>
+
 
     </form>
   </div>
