@@ -1,11 +1,23 @@
 div {
   height: 3rem;
-  width: 10rem;
+  line-height: 3rem;
+  min-width: 10rem;
+  text-align: center;
   display: inline-block;
-  border: 1px solid black;
   cursor: pointer;
+  font-weight: bold;
+  background-color: #ffa31a;
+  color: #3C3F41;
+  border-radius: 6px;
+  -webkit-transition-duration: 0.2s; /* Safari */
+  transition-duration: 0.2s;
 }
 
 div:hover {
-  background-color: lightgrey;
+  background-color: #db9327;
+  color: white;
+}
+
+div:active {
+  transform: translateY(2px);
 }

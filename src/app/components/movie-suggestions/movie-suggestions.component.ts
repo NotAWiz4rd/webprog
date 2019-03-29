@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MovieData} from "../../util/MovieData";
 import {Globals} from "../../util/Globals";
 import {LanguageService} from "../../services/language.service";

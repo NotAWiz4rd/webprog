@@ -2,4 +2,5 @@
 
 <router-outlet></router-outlet>
 
-<app-footer *ngIf="globals.view != 'watch'"></app-footer>
+<app-footer [class.non-scrollable]="globals.view === 'login' || globals.view === 'impressum'"
+            *ngIf="globals.view != 'watch'"></app-footer>

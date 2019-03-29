@@ -30,6 +30,12 @@
     "spanish": "Español"
   },
   {
+    "logicalName": "impressumText",
+    "english": "Impressum",
+    "german": "Impressum",
+    "spanish": "Huella"
+  },
+  {
     "logicalName": "directorText",
     "english": "Director",
     "german": "Regisseur",
@@ -196,5 +202,17 @@
     "english": "Continue watching:",
     "german": "Weitergucken:",
     "spanish": "Sigue viendo:"
+  },
+  {
+    "logicalName": "groupText",
+    "english": "Group",
+    "german": "Gruppe",
+    "spanish": "Grupo"
+  },
+  {
+    "logicalName": "randomText",
+    "english": "Im bored!",
+    "german": "Such du aus...",
+    "spanish": "casualidad"
   }
 ]

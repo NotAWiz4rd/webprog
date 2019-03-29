@@ -25,6 +25,9 @@ import {GetFilteredMoviesPipe} from "./pipes/get-filtered-movies.pipe";
 import {BasicButtonComponent} from "./components/basic-button/basic-button.component";
 import {SeriesPreviewComponent} from "./components/series-preview/series-preview.component";
 import {MyListComponent} from './components/my-list/my-list.component';
+import {MovieSuggestionsComponent} from './components/movie-suggestions/movie-suggestions.component';
+import {MovieDescriptionComponent} from './components/movie-description/movie-description.component';
+import {ImpressumPageComponent} from './pages/impressum-page/impressum-page.component';
 import {LogoComponent} from "./components/logo/logo.component";
 import {MovieSuggestionsComponent} from "./components/movie-suggestions/movie-suggestions.component";
 
@@ -45,6 +48,9 @@ import {MovieSuggestionsComponent} from "./components/movie-suggestions/movie-su
     BasicButtonComponent,
     MyListComponent,
     SeriesPreviewComponent,
+    MovieSuggestionsComponent,
+    MovieDescriptionComponent,
+    ImpressumPageComponent,
     MovieSuggestionsComponent,
     LogoComponent
   ],
