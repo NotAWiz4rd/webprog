@@ -1,0 +1,11 @@
+p {
+  color: white;
+}
+
+app-row-element {
+  padding: 2px;
+}
+
+.linked {
+  cursor: pointer;
+}

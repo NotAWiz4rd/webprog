@@ -15,14 +15,16 @@
   : (globals.staticTexts | getStaticText : 'allMoviesText' : languageService.getLanguage())}}
 </h2>
 
-<app-movie-suggestions *ngIf="globals.genreFilter === '' && globals.filter === ''"></app-movie-suggestions>
+<!--<app-movie-suggestions *ngIf="globals.genreFilter === '' && globals.filter === ''"></app-movie-suggestions>-->
 
-<ng-container *ngIf="globals.genreFilter === '' && globals.filter === ''">
-  <h2>{{globals.staticTexts | getStaticText : 'continueWatchingText' : languageService.getLanguage()}}</h2>
-  <app-movie-preview *ngFor="let movie of getRecentlyWatched()" [movie]="movie"></app-movie-preview>
-</ng-container>
+<!--<ng-container *ngIf="globals.genreFilter === '' && globals.filter === ''">-->
+<!--<h2>{{globals.staticTexts | getStaticText : 'continueWatchingText' : languageService.getLanguage()}}</h2>-->
+<!--<app-movie-preview *ngFor="let movie of getRecentlyWatched()" [movie]="movie"></app-movie-preview>-->
+<!--</ng-container>-->
 
-<ng-container *ngFor="let movie of globals.movieData | getFilteredMovies : globals.filter">
-  <app-movie-preview *ngIf="globals.genreFilter === '' || movie.genres.includes(globals.genreFilter)"
-                     [movie]="movie"></app-movie-preview>
-</ng-container>
+<!--<ng-container *ngFor="let movie of globals.movieData | getFilteredMovies : globals.filter">-->
+<!--<app-movie-preview *ngIf="globals.genreFilter === '' || movie.genres.includes(globals.genreFilter)"-->
+<!--[movie]="movie"></app-movie-preview>-->
+<!--</ng-container>-->
+
+<app-row [headline]="'All'" [movies]="getRecentlyWatched()" [link]="'all-movies'"></app-row>

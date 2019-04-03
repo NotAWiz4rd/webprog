@@ -1,0 +1,4 @@
+<p (click)="navigate()" [class.linked]="link != ''">{{headline}}</p>
+<div>
+  <app-row-element *ngFor="let movie of movies" [movie]="movie"></app-row-element>
+</div>
