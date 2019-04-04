@@ -39,3 +39,8 @@ label {
 .other {
   color: white;
 }
+
+.message{
+  color: #ffa31a;
+  margin: 1rem;
+}
