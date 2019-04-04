@@ -39,6 +39,7 @@ export class LoginPageComponent implements OnInit {
     if (this.authService.isLoggedIn() || this.lookForMatch()) {
       this.showMessage = false;
       this.navigationService.navigateToView('overview');
+      this.languageService.changeLanguage(this.globals.currentUser.language);
       return true;
     }
     this.showMessage = true;
