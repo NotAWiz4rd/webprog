@@ -23,3 +23,19 @@ input {
 app-basic-button {
   margin: 10px;
 }
+
+button:disabled,
+button[disabled],
+button[disabled=disabled] {
+  border: 1px solid black;
+  background-color: darkred;
+  color: darkred;
+}
+
+label {
+  color: lightgrey;
+}
+
+.other {
+  color: white;
+}

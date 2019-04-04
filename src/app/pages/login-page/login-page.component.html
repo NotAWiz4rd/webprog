@@ -1,6 +1,6 @@
 <div class="border">
   <div>
-    <form>
+    <form name="loginAndRegisterForm">
 
       <div *ngIf="!showRegister">
         <input type="text"
@@ -11,9 +11,10 @@
            placeholder="{{globals.staticTexts | getStaticText : 'passwordText' : languageService.getLanguage()}}"
            #inputPassword (keyup)="passwordInputChange(inputPassword.value)"
            (keydown)="keyDownFunction($event)">
+        <br>
 
       </div>
-      <app-basic-button (click)="onLogin()"
+      <app-basic-button ng-disabled="!loginButtonClickable()" (click)="onLogin()"
                         [text]=" globals?.staticTexts | getStaticText : 'loginText': languageService.getLanguage()">
       </app-basic-button>
       <app-basic-button (click)="showRegistertoUser()"
@@ -22,11 +23,29 @@
 
       <div *ngIf="showRegister">
         <input type="text" placeholder="username" #inputUsername (keyup)="userNameRegisterChange(inputUsername.value)">
+        <div ng-messages="loginAndRegisterForm.Username.$error" style="color:white" role="alert">
+          <div ng-message-default>Bitte einen Usernamen mit ausreichender Laenge angeben.</div>
+        </div>
         <input type="email" placeholder="email" #inputeMail (keyup)="emailRegsiterChange(inputeMail.value)">
+        <div ng-messages="loginAndRegisterForm.email.$error" style="color:white" role="alert">
+          <div ng-message-default>Bitte eine richtige E-Mail angeben.</div>
+        </div>
         <input type="password" placeholder="password" #inputRegPassword (keyup)="passwordRegisterChange(inputRegPassword.value)">
+
+        <div ng-messages="loginAndRegisterForm.password.$error" style="color:white" role="alert">
+          <div ng-message-default>Das Passwort ist nicht sicher genug. Bitte geben Sie ein Passwort mit mindestens 4 Zeichen ein.</div>
+        </div>
         <input type="password" placeholder="repeat password" #inputRepRegPassword (keyup)="repeatpasswordRegisterChange(inputRepRegPassword.value)">
-        <input type="checkbox" name="AGBaccepted" #inputCheck (keyup)="checkedAGBRegisterChange(inputCheck.checked)"> AcceptAGB
-        <app-basic-button (click)="onRegister()" text="Abschicken"></app-basic-button>
+        <div ng-messages="loginAndRegisterForm.repeat password.$error" style="color:white" role="alert">
+          <div ng-message-default>Das Passwort muss mit dem zuvor eingegebenen Passwort uebereinstimmen.</div>
+        </div>
+        <input id="AGBCheckbox" type="checkbox" name="AGBaccepted" #inputCheck (keyup)="checkedAGBRegisterChange(inputCheck.checked)">
+        <div> <label for="AGBCheckbox">I have read and accept the AGB</label> </div>
+        <div ng-messages="loginAndRegisterForm.AGBaccepted.$error" style="color:white" role="alert">
+          <div ng-message-default>Sie muessen die AGB akzeptieren um sich registrieren zu können.</div>
+        </div>
+        <br>
+        <app-basic-button ng-disabled="!registerButtonClickable()" (click)="onRegister()" text="Abschicken"></app-basic-button>
       </div>
 
 

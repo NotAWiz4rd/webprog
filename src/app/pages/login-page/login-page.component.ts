@@ -1,12 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {User} from "../../util/User";
-import {Globals} from "../../util/Globals";
-import {LanguageService} from "../../services/language.service";
-import {AuthService} from "../../services/auth.service";
-import {NavigationService} from "../../services/navigation.service";
-import {UsersService} from "../../services/users.service";
-import {ignore} from "selenium-webdriver/testing";
+import {User} from '../../util/User';
+import {Globals} from '../../util/Globals';
+import {LanguageService} from '../../services/language.service';
+import {AuthService} from '../../services/auth.service';
+import {NavigationService} from '../../services/navigation.service';
+import {UsersService} from '../../services/users.service';
+import {ignore} from 'selenium-webdriver/testing';
 
 @Component({
   selector: 'app-login-page',
@@ -22,6 +22,7 @@ export class LoginPageComponent implements OnInit {
   registerRepeatPassword: string = '';
   registerCheckedAGB: boolean = false;
   showRegister: boolean = false;
+
 
   constructor(public globals: Globals,
               public languageService: LanguageService,
@@ -39,6 +40,27 @@ export class LoginPageComponent implements OnInit {
     }
   }
 
+  // ToDo: Is this working???
+  registerButtonClickable(): boolean {
+    if (this.registerUsername >= 4 && this.registerCheckedAGB && this.registerPassword >= 4
+      && this.registerPassword === this.registerRepeatPassword) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+
+  // ToDo: Is this working???
+  loginButtonClickable(): boolean {
+    if (this.loginPassword.length >= 4 && this.loginName.length >= 4) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+
   onLogin(): boolean {
     if (this.loginPassword.length < 4 || this.loginName.length < 4) {
       console.log('Login attempt failed: Password or name too short.');
@@ -49,7 +71,7 @@ export class LoginPageComponent implements OnInit {
       this.navigationService.navigateToView('overview');
       return true;
     }
-    console.log('Login attempt failed: Password or name wrong or user doesnt exist.');
+    console.log('Login attempt failed: Password or name wrong or user does not exist.');
     return false;
   }
 
@@ -94,19 +116,29 @@ export class LoginPageComponent implements OnInit {
     return foundUser;
   }
 
-  onRegister(): boolean {
-    if (this.registerPassword.length < 4 || this.registerUsername.length < 4) {
-      console.log('Register attempt failed: Password or name too short.');
-      return false;
-    }
 
-    if (this.registerPassword === this.registerRepeatPassword) {
-      let user = new User();
-      user.name = this.registerUsername;
-      user.password = this.registerPassword;
-      user.email = this.registerEmail;
-      this.usersService.addUser(user);
-      return true;
+  onRegister(): boolean {
+    if (this.registerCheckedAGB) {
+
+      console.log('AGB checked');
+      if (this.registerPassword.length < 4 || this.registerUsername.length < 4) {
+        console.log('Register attempt failed: Password or name too short.');
+        return false;
+        // ToDo: Error Message???
+      }
+      if (this.registerPassword === this.registerRepeatPassword) {
+        let user = new User();
+        user.name = this.registerUsername;
+        user.password = this.registerPassword;
+        user.email = this.registerEmail;
+        this.usersService.addUser(user);
+        return true;
+      } else {
+        console.log('AGB not checked');
+        return false;
+      }
+
+
     } else {
       return false;
     }
@@ -120,6 +152,7 @@ export class LoginPageComponent implements OnInit {
   }
 
   showRegistertoUser() {
+    // ToDo: Disable if already on register. Enable change to Login register when login register button is clicked
     this.showRegister = !this.showRegister;
   }
 }
