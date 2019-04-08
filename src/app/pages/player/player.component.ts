@@ -19,7 +19,7 @@ export class PlayerComponent implements OnInit {
   movieSource: string = '';
   thumbnail: string = '';
   moviename: string = '';
-
+  hover: boolean = true;
   innerWidth: number = 0;
   innerHeight: number = 0;
 
@@ -177,5 +177,13 @@ export class PlayerComponent implements OnInit {
       // @ts-ignore
       video.webkitRequestFullscreen();
     }
+  }
+
+  mouseEnter() {
+    this.hover = true;
+  }
+
+  mouseLeave() {
+    this.hover = false;
   }
 }

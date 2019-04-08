@@ -11,12 +11,12 @@
          poster="{{thumbnail}}"
          height="{{innerHeight-4}}"
          width="{{innerWidth}}">
-    <source src="{{movieSource}}" type="video/mp4" (keypress)="keyDownFunction($event)">
+    <source src="{{movieSource}}" type="video/mp4" (keypress)="keyDownFunction($event)" (mouseenter) ="mouseEnter() "  (mouseleave) ="mouseLeave()">
     <p>
       {{globals.staticTexts | getStaticText : 'noVideoSupportText' : languageService.getLanguage()}}
     </p>
   </video>
-  <div class="controlPanel">
+  <div class="controlPanel" *ngIf="hover">
     <div class="videoControl" (click)="playpause()" id="play"
          [ngStyle]="{background: 'url(../../../assets/icons/' + playIc + ')'}"></div>
     <div class="videoControl" (click)="toggleMute()" id="mute"
