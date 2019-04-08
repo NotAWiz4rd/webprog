@@ -59,7 +59,7 @@ export class LoginPageComponent implements OnInit {
   private lookForMatch(): boolean {
     let foundUser = false;
     this.globals.userData.forEach(user => {
-      if (user.name === this.loginName && user.password === this.loginPassword) {
+      if (user.name === this.loginName && window.atob(user.password) === this.loginPassword) {
         console.log('Correct login for user ' + this.loginName + ' received.');
         this.globals.currentUser = user;
         this.authService.setLoggedIn(true);
@@ -83,7 +83,7 @@ export class LoginPageComponent implements OnInit {
 
     const user = new User();
     user.name = this.loginName;
-    user.password = this.loginPassword;
+    user.password = LoginPageComponent.encryptPw(this.loginPassword);
     this.usersService.addUser(user);
     return true;
   }
@@ -93,6 +93,10 @@ export class LoginPageComponent implements OnInit {
     if (event.keyCode === 13) {
       this.onLogin();
     }
+  }
+
+  static encryptPw(password: string): string {
+    return window.btoa(password);
   }
 }
 
