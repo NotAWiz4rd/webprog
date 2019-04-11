@@ -4,6 +4,8 @@ app-basic-button {
 }
 
 .videoControl{
+  /*position: absolute;
+  z-index: 3;*/
   display: inline-block;
   border: 2px solid #ffa31a;
   width: 24px;
@@ -17,8 +19,13 @@ app-basic-button {
 }
 
 .controlPanel{
-  width: 100%;
+  position: absolute;
+  bottom: 5%;
+  left: 15%;
+  z-index: 3;
+  width: auto;
   height: auto;
   padding: 0.5rem;
+  background-color: transparent;
 }
 

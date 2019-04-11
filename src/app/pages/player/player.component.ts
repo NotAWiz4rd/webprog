@@ -23,7 +23,7 @@ export class PlayerComponent implements OnInit {
   innerWidth: number = 0;
   innerHeight: number = 0;
 
-  playIc: string = 'play.png';
+  playIc: string = 'pause.png';
   muteIc: string = 'volumeUp.png';
 
   constructor(public languageService: LanguageService,
@@ -36,6 +36,8 @@ export class PlayerComponent implements OnInit {
       this.movieSource = MOVIES_PATH + movie.filename + '.mp4';
       this.thumbnail = THUMBNAILS_PATH + movie.filename + '.jpg';
       this.moviename = movie.filename;
+      let vid = document.getElementById('myVideo');
+      //vid.focus();
     });
   }
 
@@ -130,20 +132,36 @@ export class PlayerComponent implements OnInit {
     console.log(event.keyCode);
     // @ts-ignore
     switch (event.keyCode) {
-      case 75:
+      case 75 || 107:
         // K
         this.playpause();
         break;
 
-      case 74:
+      case 107:
+        // K
+        this.playpause();
+        break;
+
+      case 74 || 106:
         // J
         this.skipSeconds(-10);
         break;
 
-      case 76:
+      case 106:
+        // J
+        this.skipSeconds(-10);
+        break;
+
+      case 76 || 108:
         // L
         this.skipSeconds(10);
         break;
+
+      case 108:
+        // L
+        this.skipSeconds(10);
+        break;
+
 
       case 77:
         // M
@@ -181,9 +199,11 @@ export class PlayerComponent implements OnInit {
 
   mouseEnter() {
     this.hover = true;
+    console.log('Hover = ' + this.hover);
   }
 
   mouseLeave() {
     this.hover = false;
+    console.log('Hover = ' + this.hover);
   }
 }
