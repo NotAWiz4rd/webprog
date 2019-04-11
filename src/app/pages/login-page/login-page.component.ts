@@ -1,12 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {User} from "../../util/User";
-import {Globals} from "../../util/Globals";
-import {LanguageService} from "../../services/language.service";
-import {AuthService} from "../../services/auth.service";
-import {NavigationService} from "../../services/navigation.service";
-import {UsersService} from "../../services/users.service";
-import {ignore} from "selenium-webdriver/testing";
+import {User} from '../../util/User';
+import {Globals} from '../../util/Globals';
+import {LanguageService} from '../../services/language.service';
+import {AuthService} from '../../services/auth.service';
+import {NavigationService} from '../../services/navigation.service';
+import {UsersService} from '../../services/users.service';
 
 @Component({
   selector: 'app-login-page',
@@ -16,6 +15,9 @@ import {ignore} from "selenium-webdriver/testing";
 export class LoginPageComponent implements OnInit {
   loginName: string = '';
   loginPassword: string = '';
+  message: string = '';
+  showMessage: boolean = false;
+
 
   constructor(public globals: Globals,
               public languageService: LanguageService,
@@ -34,16 +36,15 @@ export class LoginPageComponent implements OnInit {
   }
 
   onLogin(): boolean {
-    if (this.loginPassword.length < 4 || this.loginName.length < 4) {
-      console.log('Login attempt failed: Password or name too short.');
-      return false;
-    }
-
     if (this.authService.isLoggedIn() || this.lookForMatch()) {
+      this.showMessage = false;
       this.navigationService.navigateToView('overview');
+      this.languageService.changeLanguage(this.globals.currentUser.language);
       return true;
     }
-    console.log('Login attempt failed: Password or name wrong or user doesnt exist.');
+    this.showMessage = true;
+    // todo translate messages into other languages
+    this.message = 'Login attempt failed: Password or name wrong or user doesnt exist.';
     return false;
   }
 
@@ -58,7 +59,7 @@ export class LoginPageComponent implements OnInit {
   private lookForMatch(): boolean {
     let foundUser = false;
     this.globals.userData.forEach(user => {
-      if (user.name === this.loginName && user.password === this.loginPassword) {
+      if (user.name === this.loginName && window.atob(user.password) === this.loginPassword) {
         console.log('Correct login for user ' + this.loginName + ' received.');
         this.globals.currentUser = user;
         this.authService.setLoggedIn(true);
@@ -69,23 +70,33 @@ export class LoginPageComponent implements OnInit {
   }
 
   onRegister(): boolean {
+    this.showMessage = true;
     if (this.loginPassword.length < 4 || this.loginName.length < 4) {
+      // todo translate message texts
+      this.message = 'Register attempt failed: Password or name too short.';
       console.log('Register attempt failed: Password or name too short.');
       return false;
+    } else {
+      console.log('Register successful');
+      this.message = 'Successfully registered.';
     }
 
-    let user = new User();
+    const user = new User();
     user.name = this.loginName;
-    user.password = this.loginPassword;
+    user.password = LoginPageComponent.encryptPw(this.loginPassword);
     this.usersService.addUser(user);
     return true;
   }
 
   keyDownFunction(event: Event) {
     // @ts-ignore
-    if(event.keyCode === 13) {
+    if (event.keyCode === 13) {
       this.onLogin();
-     }
+    }
+  }
+
+  static encryptPw(password: string): string {
+    return window.btoa(password);
   }
 }
 

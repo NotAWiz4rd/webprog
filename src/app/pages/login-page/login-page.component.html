@@ -4,13 +4,17 @@
 
       <div>
         <input type="text"
-           placeholder="{{globals.staticTexts | getStaticText : 'usernameText' : languageService.getLanguage()}}"
-           #inputMail (keyup)="mailInputChange(inputMail.value)">
+               placeholder="{{globals.staticTexts | getStaticText : 'usernameText' : languageService.getLanguage()}}"
+               #inputMail (keyup)="mailInputChange(inputMail.value)">
         <br>
         <input type="password"
-           placeholder="{{globals.staticTexts | getStaticText : 'passwordText' : languageService.getLanguage()}}"
-           #inputPassword (keyup)="passwordInputChange(inputPassword.value)"
-           (keydown)="keyDownFunction($event)">
+               placeholder="{{globals.staticTexts | getStaticText : 'passwordText' : languageService.getLanguage()}}"
+               #inputPassword (keyup)="passwordInputChange(inputPassword.value)"
+               (keydown)="keyDownFunction($event)">
+
+        <div *ngIf="showMessage" class="message">
+          {{message}}
+        </div>
       </div>
 
       <app-basic-button (click)="onLogin()"
