@@ -214,5 +214,11 @@
     "english": "Im bored!",
     "german": "Such du aus...",
     "spanish": "casualidad"
+  },
+  {
+    "logicalName": "contactText",
+    "english": "Contact us!",
+    "german": "Kontakt",
+    "spanish": "Contacto"
   }
 ]
