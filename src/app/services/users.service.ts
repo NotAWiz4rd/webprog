@@ -53,6 +53,12 @@ export class UsersService {
     return success;
   }
 
+  changeLanguage(language: number) {
+    this.globals.currentUser.language = language;
+    console.log('Language changed to ' + language);
+    this.pushUserUpdate();
+  }
+
   addMovieToList(movie: MovieData) {
     this.globals.currentUser.movieList.push(movie.filename);
     this.pushUserUpdate();
