@@ -37,7 +37,6 @@ export class PlayerComponent implements OnInit {
       this.thumbnail = THUMBNAILS_PATH + movie.filename + '.jpg';
       this.moviename = movie.filename;
       let vid = document.getElementById('myVideo');
-      //vid.focus();
     });
   }
 
@@ -47,11 +46,19 @@ export class PlayerComponent implements OnInit {
 
     this.globals.view = 'watch';
 
-    let vid = document.getElementById('myVideo');
+    let vid = document.getElementById('myVideo') as HTMLVideoElement;
     // @ts-ignore
     vid.currentTime = this.getMovieTimestamp();
     // @ts-ignore
     vid.controls = false;
+    // @ts-ignore
+    vid.addEventListener('timeupdate', () => {
+      let timePos = vid.currentTime / vid.duration;
+      console.log('Time ' + vid.currentTime)
+      let timeline = document.getElementById('timeline') as HTMLDivElement;
+      timeline.style.width = ((timePos * 100 ) + '%');
+      console.log((timePos * 100 ));
+    });
   }
 
   private getMovieTimestamp(): number {

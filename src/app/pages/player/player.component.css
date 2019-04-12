@@ -29,3 +29,8 @@ app-basic-button {
   background-color: transparent;
 }
 
+.timeline{
+  height: 1rem;
+  background-color: #ffa31a;
+}
+
