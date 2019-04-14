@@ -1,7 +1,7 @@
 import {Component, NgModule, OnInit} from '@angular/core';
 import {Globals} from '../../util/Globals';
 import {LanguageService} from '../../services/language.service';
-import {FormsModule, NgModel} from "@angular/forms";
+import {FormsModule} from "@angular/forms";
 import {BrowserModule} from "@angular/platform-browser";
 
 @Component({
@@ -26,11 +26,10 @@ export class ContactPageComponent implements OnInit {
 
   constructor(public globals: Globals,
               public languageService: LanguageService) {
-
   }
 
-  onSend(){
-    console.log("send" )
+  onSend() {
+    console.log("send");
     const allInfo = `My name is ${this.name}. My email is ${this.email}. My message is ${this.message}`;
     alert(allInfo);
   }
