@@ -220,5 +220,11 @@
     "english": "Contact us!",
     "german": "Kontakt",
     "spanish": "Contacto"
+  },
+  {
+    "logicalName": "send",
+    "english": "Send",
+    "german": "Senden",
+    "spanish": "transmisora"
   }
 ]

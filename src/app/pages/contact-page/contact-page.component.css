@@ -1,0 +1,10 @@
+@import "../login-page/login-page.component.css";
+textarea {
+  color: white;
+  width: 80%;
+  height: 200px;
+  margin: 10px;
+  font-size: 24px;
+  padding: 12px 20px;
+}
+
