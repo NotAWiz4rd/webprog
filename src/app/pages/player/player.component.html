@@ -18,7 +18,7 @@
     </p>
   </video>
   <div class="controlPanel" *ngIf="hover" >
-    <div class="timeline" id="timeline"></div>
+    <div class="timeline" id="timeline" (click)="clickLine($event)"></div>
     <div class="videoControl" (click)="playpause()" id="play"
          [ngStyle]="{background: 'url(../../../assets/icons/' + playIc + ')'}"></div>
     <div class="videoControl" (click)="toggleMute()" id="mute"

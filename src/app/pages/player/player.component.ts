@@ -59,6 +59,12 @@ export class PlayerComponent implements OnInit {
       timeline.style.width = ((timePos * 100 ) + '%');
       console.log((timePos * 100 ));
     });
+    let line = document.getElementById('timeline') as HTMLDivElement;
+    line.addEventListener('click', (e: MouseEvent) => {
+      var pos = (e.pageX);
+      console.log(pos);
+       vid.currentTime = pos * vid.duration;
+    });
   }
 
   private getMovieTimestamp(): number {
