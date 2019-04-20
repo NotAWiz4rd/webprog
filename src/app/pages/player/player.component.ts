@@ -19,7 +19,7 @@ export class PlayerComponent implements OnInit {
   movieSource: string = '';
   thumbnail: string = '';
   moviename: string = '';
-  hover: boolean = true;
+  hover: boolean = false;
   innerWidth: number = 0;
   innerHeight: number = 0;
 
@@ -56,15 +56,17 @@ export class PlayerComponent implements OnInit {
       let timePos = vid.currentTime / vid.duration;
       console.log('Time ' + vid.currentTime)
       let timeline = document.getElementById('timeline') as HTMLDivElement;
+      let timeSlider = document.getElementById('myRange') as HTMLInputElement;
+      timeSlider.value = ((timePos * 100)).toString();
       timeline.style.width = ((timePos * 100 ) + '%');
       console.log((timePos * 100 ));
     });
-    let line = document.getElementById('timeline') as HTMLDivElement;
+    /*let line = document.getElementById('timeline') as HTMLDivElement;
     line.addEventListener('click', (e: MouseEvent) => {
       var pos = (e.pageX);
       console.log(pos);
        vid.currentTime = pos * vid.duration;
-    });
+    });*/
   }
 
   private getMovieTimestamp(): number {
@@ -213,6 +215,7 @@ export class PlayerComponent implements OnInit {
   mouseEnter() {
     this.hover = true;
     console.log('Hover = ' + this.hover);
+
   }
 
   mouseLeave() {

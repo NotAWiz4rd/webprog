@@ -18,6 +18,7 @@
     </p>
   </video>
   <div class="controlPanel" *ngIf="hover" >
+    <input type="range" min="0" max="100" value="0" class="slider" id="myRange">
     <div class="timeline" id="timeline" (click)="clickLine($event)"></div>
     <div class="videoControl" (click)="playpause()" id="play"
          [ngStyle]="{background: 'url(../../../assets/icons/' + playIc + ')'}"></div>
