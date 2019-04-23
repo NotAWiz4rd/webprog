@@ -1,4 +1,4 @@
-import {Component, HostListener, OnInit} from '@angular/core';
+import {AfterViewInit, Component, HostListener, OnInit} from '@angular/core';
 import {LanguageService} from "../../services/language.service";
 import {Globals} from "../../util/Globals";
 import {NavigationService} from "../../services/navigation.service";
@@ -15,7 +15,7 @@ const THUMBNAILS_PATH = '../../../assets/thumbnails/';
   templateUrl: './player.component.html',
   styleUrls: ['./player.component.css']
 })
-export class PlayerComponent implements OnInit {
+export class PlayerComponent implements OnInit, AfterViewInit {
   movieSource: string = '';
   thumbnail: string = '';
   moviename: string = '';
@@ -45,21 +45,21 @@ export class PlayerComponent implements OnInit {
     this.innerHeight = window.innerHeight;
 
     this.globals.view = 'watch';
+  }
 
+  ngAfterViewInit() {
     let vid = document.getElementById('myVideo') as HTMLVideoElement;
     // @ts-ignore
     vid.currentTime = this.getMovieTimestamp();
     // @ts-ignore
     vid.controls = false;
-    // @ts-ignore
+    // @ts-ignor
     vid.addEventListener('timeupdate', () => {
       let timePos = vid.currentTime / vid.duration;
-      console.log('Time ' + vid.currentTime)
+      console.log('Time ' + vid.currentTime);
       let timeline = document.getElementById('timeline') as HTMLDivElement;
-      let timeSlider = document.getElementById('myRange') as HTMLInputElement;
-      timeSlider.value = ((timePos * 100)).toString();
-      timeline.style.width = ((timePos * 100 ) + '%');
-      console.log((timePos * 100 ));
+      timeline.style.width = ((timePos * 100) + '%');
+      console.log((timePos * 100));
     });
     /*let line = document.getElementById('timeline') as HTMLDivElement;
     line.addEventListener('click', (e: MouseEvent) => {
@@ -116,8 +116,7 @@ export class PlayerComponent implements OnInit {
       // @ts-ignore
       video.muted = false;
       this.muteIc = 'volumeUp.png';
-    }
-    else {
+    } else {
       // @ts-ignore
       video.muted = true;
       this.muteIc = 'mute.png';
@@ -209,26 +208,16 @@ export class PlayerComponent implements OnInit {
     } else if (video.webkitRequestFullscreen) {
       // @ts-ignore
       video.webkitRequestFullscreen();
-    } else {
     }
   }
 
   mouseEnter() {
-    //this.hover = true;
+    this.hover = true;
     console.log('Hover = ' + this.hover);
-
   }
 
   mouseLeave() {
-    //this.hover = false;
+    this.hover = false;
     console.log('Hover = ' + this.hover);
-  }
-
-  changeTime() {
-    let timeSlider = document.getElementById('myRange') as HTMLInputElement;
-    let value  =  parseInt(timeSlider.value);
-    let video = document.getElementById('myVideo') as HTMLVideoElement;
-    video.currentTime = (value / 100) * video.duration;
-    console.log(video.currentTime);
   }
 }
