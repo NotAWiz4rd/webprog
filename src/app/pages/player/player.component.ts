@@ -19,7 +19,7 @@ export class PlayerComponent implements OnInit {
   movieSource: string = '';
   thumbnail: string = '';
   moviename: string = '';
-  hover: boolean = false;
+  hover: boolean = true;
   innerWidth: number = 0;
   innerHeight: number = 0;
 
@@ -196,7 +196,7 @@ export class PlayerComponent implements OnInit {
   }
 
   toggleFullscreen() {
-    let video = document.getElementById('myVideo');
+    let video = document.getElementById('videoContainer') as HTMLDivElement;
     // @ts-ignore
     if (video.requestFullscreen) {
       // @ts-ignore
@@ -209,17 +209,26 @@ export class PlayerComponent implements OnInit {
     } else if (video.webkitRequestFullscreen) {
       // @ts-ignore
       video.webkitRequestFullscreen();
+    } else {
     }
   }
 
   mouseEnter() {
-    this.hover = true;
+    //this.hover = true;
     console.log('Hover = ' + this.hover);
 
   }
 
   mouseLeave() {
-    this.hover = false;
+    //this.hover = false;
     console.log('Hover = ' + this.hover);
+  }
+
+  changeTime() {
+    let timeSlider = document.getElementById('myRange') as HTMLInputElement;
+    let value  =  parseInt(timeSlider.value);
+    let video = document.getElementById('myVideo') as HTMLVideoElement;
+    video.currentTime = (value / 100) * video.duration;
+    console.log(video.currentTime);
   }
 }

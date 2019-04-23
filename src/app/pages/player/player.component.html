@@ -1,4 +1,4 @@
-<div (keypress)="keyDownFunction($event)">
+<div (keypress)="keyDownFunction($event)" ID="videoContainer">
 
   <app-basic-button (click)="goBack()"
                     [text]="globals.staticTexts | getStaticText : 'goBackText' : languageService.getLanguage()"></app-basic-button>
@@ -18,7 +18,7 @@
     </p>
   </video>
   <div class="controlPanel" *ngIf="hover" >
-    <input type="range" min="0" max="100" value="0" class="slider" id="myRange">
+    <input type="range" min="0" max="100" value="0" class="slider" id="myRange" (click)="changeTime()">
     <div class="timeline" id="timeline" (click)="clickLine($event)"></div>
     <div class="videoControl" (click)="playpause()" id="play"
          [ngStyle]="{background: 'url(../../../assets/icons/' + playIc + ')'}"></div>
