@@ -37,11 +37,10 @@ export class PlayerComponent implements OnInit, AfterViewInit {
               private activatedRoute: ActivatedRoute,
               private usersService: UsersService) {
     this.activatedRoute.data.subscribe((res) => {
-      let movie = res.movie as MovieData;
+      const movie = res.movie as MovieData;
       this.movieSource = MOVIES_PATH + movie.filename + '.mp4';
       this.thumbnail = THUMBNAILS_PATH + movie.filename + '.jpg';
       this.moviename = movie.filename;
-      let vid = document.getElementById('myVideo');
     });
   }
 
@@ -53,21 +52,11 @@ export class PlayerComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    let vid = document.getElementById('myVideo') as HTMLVideoElement;
-    // @ts-ignore
+    const vid = document.getElementById('myVideo') as HTMLVideoElement;
     this.vidTime = (this.getMovieTimestamp() / vid.duration) * 100;
-    // @ts-ignore
     vid.controls = false;
-    // @ts-ignor
     vid.addEventListener('timeupdate', () => {
       this.vidTime = (vid.currentTime / vid.duration) * 100;
-   /*   let timePos = vid.currentTime / vid.duration;
-      console.log('Time ' + vid.currentTime);
-      let timeline = document.getElementById('timeline') as HTMLDivElement;
-      let myRange = document.getElementById('myRange') as HTMLInputElement;
-      myRange.value = (timePos * 100).toString();
-      timeline.style.width = ((timePos * 100) + '%');
-      console.log((timePos * 100));*/
     });
     vid.addEventListener('volumechange', () => {
 
@@ -78,7 +67,7 @@ export class PlayerComponent implements OnInit, AfterViewInit {
       console.log('controls should disappear');
     }, 5000);
     console.log('Timer set');
-    let vidContainer = document.getElementById('videoContainer') as HTMLDivElement;
+    const vidContainer = document.getElementById('videoContainer') as HTMLDivElement;
     vidContainer.addEventListener('mousemove', () => {
       clearTimeout(timerId);
       this.hover = true;
@@ -92,7 +81,7 @@ export class PlayerComponent implements OnInit, AfterViewInit {
   }
 
   private getMovieTimestamp(): number {
-    let watchedMovie = this.usersService.getWatchedMovie(this.moviename);
+    const watchedMovie = this.usersService.getWatchedMovie(this.moviename);
     if (watchedMovie.timestamp > 10) {
       watchedMovie.timestamp -= 10;
     }
@@ -100,10 +89,9 @@ export class PlayerComponent implements OnInit, AfterViewInit {
   }
 
   goBack() {
-    let watchedMovie = new WatchedMovie();
-    let vid = document.getElementById('myVideo') as HTMLVideoElement;
+    const watchedMovie = new WatchedMovie();
+    const vid = document.getElementById('myVideo') as HTMLVideoElement;
     watchedMovie.movieName = this.moviename;
-    // @ts-ignore
     watchedMovie.timestamp = vid.currentTime;
     this.usersService.addMovieToWatched(watchedMovie);
     this.navigationService.navigateBack();
@@ -116,15 +104,11 @@ export class PlayerComponent implements OnInit, AfterViewInit {
   }
 
   playpause() {
-    // @ts-ignore
-    let video = document.getElementById('myVideo') as HTMLVideoElement;
-    // @ts-ignore
+    const video = document.getElementById('myVideo') as HTMLVideoElement;
     if (video.ended || video.paused) {
-      // @ts-ignore
       video.play();
       this.playIc = 'pause.png';
     } else {
-      // @ts-ignore
       video.pause();
       this.playIc = 'play.png';
     }
@@ -132,44 +116,38 @@ export class PlayerComponent implements OnInit, AfterViewInit {
 
   toggleMute() {
 
-    let video = document.getElementById('myVideo') as HTMLVideoElement;
-    // @ts-ignore
+    const video = document.getElementById('myVideo') as HTMLVideoElement;
     if (video.muted) {
-      // @ts-ignore
       video.muted = false;
-      let myRange = document.getElementById('volumeRange') as HTMLInputElement;
+      const myRange = document.getElementById('volumeRange') as HTMLInputElement;
       myRange.value = (video.volume * 100).toString();
       this.muteIc = 'volumeUp.png';
     } else {
-      // @ts-ignore
       video.muted = true;
-      let myRange = document.getElementById('volumeRange') as HTMLInputElement;
+      const myRange = document.getElementById('volumeRange') as HTMLInputElement;
       myRange.value = (0).toString();
       this.muteIc = 'mute.png';
     }
   }
 
   setVolume() {
-    let video = document.getElementById('myVideo') as HTMLVideoElement;
-    let range = document.getElementById('volumeRange') as HTMLInputElement;
+    const video = document.getElementById('myVideo') as HTMLVideoElement;
+    const range = document.getElementById('volumeRange') as HTMLInputElement;
     video.volume = parseInt(range.value, 10) / 100;
   }
 
   increaseVolume() {
-    let video = document.getElementById('myVideo') as HTMLVideoElement;
-    // @ts-ignore
+    const video = document.getElementById('myVideo') as HTMLVideoElement;
     video.volume += video.volume == 1 ? 0 : 0.1;
   }
 
   decreaseVolume() {
-    let video = document.getElementById('myVideo') as HTMLVideoElement;
-    // @ts-ignore
+    const video = document.getElementById('myVideo') as HTMLVideoElement;
     video.volume -= (video.volume == 0 ? 0 : 0.1);
   }
 
   skipSeconds(time: number) {
-    let video = document.getElementById('myVideo') as HTMLVideoElement;
-    // @ts-ignore
+    const video = document.getElementById('myVideo') as HTMLVideoElement;
     video.currentTime += video.currentTime == 0 ? 0 : time;
   }
 
@@ -213,21 +191,11 @@ export class PlayerComponent implements OnInit, AfterViewInit {
         // M
         this.toggleMute();
         break;
-
-      /*case 173:
-        // -
-        this.decreaseVolume();
-        break;
-
-      case 171:
-        // +
-        this.increaseVolume();
-        break;*/
     }
   }
 
   toggleFullscreen() {
-    let video = document.getElementById('videoContainer') as HTMLDivElement;
+    const video = document.getElementById('videoContainer') as HTMLDivElement;
     // @ts-ignore
     if (video.requestFullscreen) {
       // @ts-ignore
@@ -245,8 +213,6 @@ export class PlayerComponent implements OnInit, AfterViewInit {
 
   mouseEnter() {
     this.hover = true;
-    //this.setVolume();
-   // this.changeTime();
     console.log('Hover = ' + this.hover);
 
   }
@@ -257,8 +223,8 @@ export class PlayerComponent implements OnInit, AfterViewInit {
   }
 
   changeTime() {
-    let vid = document.getElementById('myVideo') as HTMLVideoElement;
-    let range = document.getElementById('myRange') as HTMLInputElement;
+    const vid = document.getElementById('myVideo') as HTMLVideoElement;
+    const range = document.getElementById('myRange') as HTMLInputElement;
     vid.currentTime = (parseInt(range.value, 10) / 100) * vid.duration;
   }
 
