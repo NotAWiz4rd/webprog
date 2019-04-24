@@ -53,7 +53,7 @@ export class PlayerComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     const vid = document.getElementById('myVideo') as HTMLVideoElement;
-    this.vidTime = (this.getMovieTimestamp() / vid.duration) * 100;
+    vid.currentTime = this.getMovieTimestamp();
     vid.controls = false;
     vid.addEventListener('timeupdate', () => {
       this.vidTime = (vid.currentTime / vid.duration) * 100;
@@ -64,19 +64,14 @@ export class PlayerComponent implements OnInit, AfterViewInit {
     });
     let timerId = setTimeout(() => {
       this.hover = false;
-      console.log('controls should disappear');
     }, 5000);
-    console.log('Timer set');
     const vidContainer = document.getElementById('videoContainer') as HTMLDivElement;
     vidContainer.addEventListener('mousemove', () => {
       clearTimeout(timerId);
       this.hover = true;
-      console.log('Timer Canceled');
       timerId = setTimeout(() => {
         this.hover = false;
-        console.log('controls should disappear');
       }, 5000);
-      console.log('New Timer Set!');
     });
   }
 
@@ -93,6 +88,7 @@ export class PlayerComponent implements OnInit, AfterViewInit {
     const vid = document.getElementById('myVideo') as HTMLVideoElement;
     watchedMovie.movieName = this.moviename;
     watchedMovie.timestamp = vid.currentTime;
+    console.log(vid.currentTime);
     this.usersService.addMovieToWatched(watchedMovie);
     this.navigationService.navigateBack();
   }
