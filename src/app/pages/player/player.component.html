@@ -2,7 +2,7 @@
 
   <app-basic-button (click)="goBack()"
                     [text]="globals.staticTexts | getStaticText : 'goBackText' : languageService.getLanguage()"></app-basic-button>
-  <div (mouseenter) ="mouseEnter() "
+  <div (mouseenter) ="mouseEnter() " id="smallerContainer"
   (mouseleave) ="mouseLeave()" (keypress)="keyDownFunction($event)" >
   <video id="myVideo" controls
          autoplay
@@ -18,21 +18,17 @@
     </p>
   </video>
   <div class="controlPanel" *ngIf="hover" >
-    <input type="range" min="0" max="100" value="0" class="slider" id="myRange" (click)="changeTime()">
-    <div class="timeline" id="timeline" (click)="clickLine($event)"></div>
+    <input type="range" min="0" max="100" [valueAsNumber]="vidTime" class="slider" id="myRange" (click)="changeTime()" class="range">
     <div class="videoControl" (click)="playpause()" id="play"
          [ngStyle]="{background: 'url(../../../assets/icons/' + playIc + ')'}"></div>
     <div class="videoControl" (click)="toggleMute()" id="mute"
          [ngStyle]="{background: 'url(../../../assets/icons/' + muteIc + ')'}"></div>
-    <div class="videoControl" (click)="decreaseVolume()"
-         style="background-image: url('../../../assets/icons/volumeDown.png');"></div>
-    <div class="videoControl" (click)="increaseVolume()"
-         style="background-image: url('../../../assets/icons/volumeUp.png');"></div>
-    <div class="videoControl" (click)="skipSeconds(-10)"
+    <input type="range" min="0" max="100" [valueAsNumber]="vidVolume" id="volumeRange" (click)="setVolume()" class="range">
+    <div class="videoControl" (click)="skipSeconds(-10)" id="backwardsBtn"
          style="background-image: url('../../../assets/icons/back.png');"></div>
-    <div class="videoControl" (click)="skipSeconds(10)"
+    <div class="videoControl" (click)="skipSeconds(10)" id="forwardBtn"
          style="background-image: url('../../../assets/icons/forward.png');"></div>
-    <div class="videoControl" (click)="toggleFullscreen()"
+    <div class="videoControl" (click)="toggleFullscreen()" id="fullScreenBtn"
          style="background-image: url('../../../assets/icons/fullscreen.png');"></div>
     </div>
   </div>

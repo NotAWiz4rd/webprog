@@ -6,6 +6,7 @@ import {ActivatedRoute} from "@angular/router";
 import {MovieData} from "../../util/MovieData";
 import {UsersService} from "../../services/users.service";
 import {WatchedMovie} from "../../util/WatchedMovie";
+import {falseIfMissing} from "protractor/built/util";
 
 const MOVIES_PATH = '../../../assets/movies/';
 const THUMBNAILS_PATH = '../../../assets/thumbnails/';
@@ -25,6 +26,10 @@ export class PlayerComponent implements OnInit, AfterViewInit {
 
   playIc: string = 'pause.png';
   muteIc: string = 'volumeUp.png';
+
+  vidTime: number = 0;
+  vidVolume: number = 100;
+
 
   constructor(public languageService: LanguageService,
               public globals: Globals,
@@ -50,23 +55,40 @@ export class PlayerComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
     let vid = document.getElementById('myVideo') as HTMLVideoElement;
     // @ts-ignore
-    vid.currentTime = this.getMovieTimestamp();
+    this.vidTime = (this.getMovieTimestamp() / vid.duration) * 100;
     // @ts-ignore
     vid.controls = false;
     // @ts-ignor
     vid.addEventListener('timeupdate', () => {
-      let timePos = vid.currentTime / vid.duration;
+      this.vidTime = (vid.currentTime / vid.duration) * 100;
+   /*   let timePos = vid.currentTime / vid.duration;
       console.log('Time ' + vid.currentTime);
       let timeline = document.getElementById('timeline') as HTMLDivElement;
+      let myRange = document.getElementById('myRange') as HTMLInputElement;
+      myRange.value = (timePos * 100).toString();
       timeline.style.width = ((timePos * 100) + '%');
-      console.log((timePos * 100));
+      console.log((timePos * 100));*/
     });
-    /*let line = document.getElementById('timeline') as HTMLDivElement;
-    line.addEventListener('click', (e: MouseEvent) => {
-      var pos = (e.pageX);
-      console.log(pos);
-       vid.currentTime = pos * vid.duration;
-    });*/
+    vid.addEventListener('volumechange', () => {
+
+      this.vidVolume = vid.volume * 100;
+    });
+    let timerId = setTimeout(() => {
+      this.hover = false;
+      console.log('controls should disappear');
+    }, 5000);
+    console.log('Timer set');
+    let vidContainer = document.getElementById('videoContainer') as HTMLDivElement;
+    vidContainer.addEventListener('mousemove', () => {
+      clearTimeout(timerId);
+      this.hover = true;
+      console.log('Timer Canceled');
+      timerId = setTimeout(() => {
+        this.hover = false;
+        console.log('controls should disappear');
+      }, 5000);
+      console.log('New Timer Set!');
+    });
   }
 
   private getMovieTimestamp(): number {
@@ -79,7 +101,7 @@ export class PlayerComponent implements OnInit, AfterViewInit {
 
   goBack() {
     let watchedMovie = new WatchedMovie();
-    let vid = document.getElementById('myVideo');
+    let vid = document.getElementById('myVideo') as HTMLVideoElement;
     watchedMovie.movieName = this.moviename;
     // @ts-ignore
     watchedMovie.timestamp = vid.currentTime;
@@ -115,12 +137,22 @@ export class PlayerComponent implements OnInit, AfterViewInit {
     if (video.muted) {
       // @ts-ignore
       video.muted = false;
+      let myRange = document.getElementById('volumeRange') as HTMLInputElement;
+      myRange.value = (video.volume * 100).toString();
       this.muteIc = 'volumeUp.png';
     } else {
       // @ts-ignore
       video.muted = true;
+      let myRange = document.getElementById('volumeRange') as HTMLInputElement;
+      myRange.value = (0).toString();
       this.muteIc = 'mute.png';
     }
+  }
+
+  setVolume() {
+    let video = document.getElementById('myVideo') as HTMLVideoElement;
+    let range = document.getElementById('volumeRange') as HTMLInputElement;
+    video.volume = parseInt(range.value, 10) / 100;
   }
 
   increaseVolume() {
@@ -213,11 +245,22 @@ export class PlayerComponent implements OnInit, AfterViewInit {
 
   mouseEnter() {
     this.hover = true;
+    //this.setVolume();
+   // this.changeTime();
     console.log('Hover = ' + this.hover);
+
   }
 
   mouseLeave() {
     this.hover = false;
     console.log('Hover = ' + this.hover);
   }
+
+  changeTime() {
+    let vid = document.getElementById('myVideo') as HTMLVideoElement;
+    let range = document.getElementById('myRange') as HTMLInputElement;
+    vid.currentTime = (parseInt(range.value, 10) / 100) * vid.duration;
+  }
+
+
 }
