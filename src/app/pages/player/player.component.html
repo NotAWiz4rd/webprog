@@ -1,15 +1,35 @@
-<app-basic-button (click)="goBack()"
-                  [text]="globals.staticTexts | getStaticText : 'goBackText' : languageService.getLanguage()"></app-basic-button>
-<video id="myVideo" controls
-       autoplay
-       disablePictureInPicture
-       controlsList="nodownload"
-       oncontextmenu="return false;"
-       poster="{{thumbnail}}"
-       height="{{innerHeight-4}}"
-       width="{{innerWidth}}">
-  <source src="{{movieSource}}" type="video/mp4">
-  <p>
-    {{globals.staticTexts | getStaticText : 'noVideoSupportText' : languageService.getLanguage()}}
-  </p>
-</video>
+<div (keypress)="keyDownFunction($event)" ID="videoContainer">
+
+  <app-basic-button (click)="goBack()"
+                    [text]="globals.staticTexts | getStaticText : 'goBackText' : languageService.getLanguage()"></app-basic-button>
+  <div (mouseenter) ="mouseEnter() " id="smallerContainer"
+  (mouseleave) ="mouseLeave()" (keypress)="keyDownFunction($event)" >
+  <video id="myVideo" controls
+         autoplay
+         disablePictureInPicture
+         controlsList="nodownload"
+         oncontextmenu="return false;"
+         poster="{{thumbnail}}"
+         height="{{innerHeight-4}}"
+         width="{{innerWidth}}" >
+    <source src="{{movieSource}}" type="video/mp4">
+    <p>
+      {{globals.staticTexts | getStaticText : 'noVideoSupportText' : languageService.getLanguage()}}
+    </p>
+  </video>
+  <div class="controlPanel" *ngIf="hover" >
+    <input type="range" min="0" max="100" [valueAsNumber]="vidTime" class="slider" id="myRange" (click)="changeTime()" class="range">
+    <div class="videoControl" (click)="playpause()" id="play"
+         [ngStyle]="{background: 'url(../../../assets/icons/' + playIc + ')'}"></div>
+    <div class="videoControl" (click)="toggleMute()" id="mute"
+         [ngStyle]="{background: 'url(../../../assets/icons/' + muteIc + ')'}"></div>
+    <input type="range" min="0" max="100" [valueAsNumber]="vidVolume" id="volumeRange" (click)="setVolume()" class="range">
+    <div class="videoControl" (click)="skipSeconds(-10)" id="backwardsBtn"
+         style="background-image: url('../../../assets/icons/back.png');"></div>
+    <div class="videoControl" (click)="skipSeconds(10)" id="forwardBtn"
+         style="background-image: url('../../../assets/icons/forward.png');"></div>
+    <div class="videoControl" (click)="toggleFullscreen()" id="fullScreenBtn"
+         style="background-image: url('../../../assets/icons/fullscreen.png');"></div>
+    </div>
+  </div>
+  </div>
