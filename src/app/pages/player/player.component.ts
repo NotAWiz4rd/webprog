@@ -136,7 +136,7 @@ export class PlayerComponent implements OnInit, AfterViewInit {
     video.volume = parseInt(range.value, 10) / 100;
   }
 
-  increaseVolume() {
+  /*increaseVolume() {
     const video = document.getElementById('myVideo') as HTMLVideoElement;
     video.volume += video.volume == 1 ? 0 : 0.1;
   }
@@ -144,7 +144,7 @@ export class PlayerComponent implements OnInit, AfterViewInit {
   decreaseVolume() {
     const video = document.getElementById('myVideo') as HTMLVideoElement;
     video.volume -= (video.volume == 0 ? 0 : 0.1);
-  }
+  }*/
 
   skipSeconds(time: number) {
     const video = document.getElementById('myVideo') as HTMLVideoElement;
