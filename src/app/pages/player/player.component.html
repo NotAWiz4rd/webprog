@@ -1,6 +1,6 @@
 <div (keypress)="keyDownFunction($event)" ID="videoContainer">
 
-  <app-basic-button (click)="goBack()"
+  <app-basic-button (click)="goBack()" *ngIf="hover"
                     [text]="globals.staticTexts | getStaticText : 'goBackText' : languageService.getLanguage()"></app-basic-button>
   <div (mouseenter) ="mouseEnter() " id="smallerContainer"
   (mouseleave) ="mouseLeave()" (keypress)="keyDownFunction($event)" >
