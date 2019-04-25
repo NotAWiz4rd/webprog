@@ -5,7 +5,6 @@ import {LanguageService} from '../../services/language.service';
 import {AuthService} from '../../services/auth.service';
 import {NavigationService} from '../../services/navigation.service';
 import {UsersService} from '../../services/users.service';
-import {ignore} from 'selenium-webdriver/testing';
 import {Globals} from '../../util/Globals';
 @Component({
   selector: 'app-login-page',
@@ -15,13 +14,10 @@ import {Globals} from '../../util/Globals';
 export class LoginPageComponent implements OnInit {
   loginName: string = '';
   loginPassword: string = '';
-  registerUsername: string = '';
   registerEmail: string = '';
   registerPassword: string = '';
   registerRepeatPassword: string = '';
-  registerCheckedAGB: boolean = false;
   showRegister: boolean = false;
-  registerUsernameValid: boolean = false;
   registerPasswordValid: boolean = false;
   registerRepeatPasswordValid: boolean = false;
   registerEmailValid: boolean = false;
@@ -71,13 +67,7 @@ export class LoginPageComponent implements OnInit {
 
   // ToDo: Is this working???
   registerButtonClickable(): boolean {
-    if (this.registerUsernameValid && this.registerAgbValid && this.registerPasswordValid
-      && this.registerRepeatPasswordValid && this.registerEmailValid) {
-      return true;
-    }
-    else {
-      return false;
-    }
+    return true;
   }
 
   // ToDo: Is this working???
@@ -90,26 +80,10 @@ export class LoginPageComponent implements OnInit {
     }
   }
 
-  userNameRegisterChange(username: string) {
-    this.registerUsername = username;
-    if (username.length >= 4) {
-      this.registerUsernameValid = true;
-    }
-    else {
-      this.registerPasswordValid = false;
-    }
-  }
-
   passwordRegisterChange(pass: string) {
     this.registerPassword = pass;
-    if(pass.length >= 4) {
-      this.registerPasswordValid = true;
-    }
-    else {
-      this.registerPasswordValid = false;
-    }
-    //ToDo: OK smh this is not working. Work on this together.
-    if (pass === this.registerPassword && this.registerPassword) {
+    this.registerPasswordValid = pass.length >= 4;
+    if (pass === this.registerRepeatPassword && this.registerRepeatPassword && this.registerRepeatPassword.length >= 4) {
       this.registerRepeatPasswordValid = true;
     }
     else {
@@ -119,7 +93,7 @@ export class LoginPageComponent implements OnInit {
 
   repeatPasswordRegisterChange(regPass: string) {
     this.registerRepeatPassword = regPass;
-    if (regPass === this. registerPassword) {
+    if (regPass === this. registerPassword && this.registerRepeatPassword.length >= 4) {
       this.registerRepeatPasswordValid = true;
     }
     else {
@@ -128,13 +102,7 @@ export class LoginPageComponent implements OnInit {
   }
 
   checkedAGBRegisterChange(checked: boolean) {
-    this.registerCheckedAGB = checked;
-    if (checked) {
-      this.registerAgbValid = true;
-    }
-    else {
-      this.registerAgbValid = false;
-    }
+    this.registerAgbValid = checked;
   }
 
   emailRegsiterChange(mail: string) {
@@ -162,17 +130,16 @@ export class LoginPageComponent implements OnInit {
 
 
   onRegister(): boolean {
-    if (this.registerCheckedAGB) {
+    if (this.registerAgbValid) {
 
       console.log('AGB checked');
-      if (this.registerPassword.length < 4 || this.registerUsername.length < 4) {
-        console.log('Register attempt failed: Password or name too short.');
+      if (this.registerPassword.length < 4) {
+        console.log('Register attempt failed: Password too short.');
         return false;
         // ToDo: Error Message???
       }
       if (this.registerPassword === this.registerRepeatPassword) {
         let user = new User();
-        user.name = this.registerUsername;
         user.password = this.registerPassword;
         user.email = this.registerEmail;
         this.usersService.addUser(user);

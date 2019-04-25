@@ -24,6 +24,8 @@ app-basic-button {
   margin: 10px;
 }
 
+
+
 button:disabled,
 button[disabled],
 button[disabled=disabled] {
@@ -40,7 +42,7 @@ label {
   color: white;
 }
 
-.message{
+.message {
   color: #ffa31a;
   margin: 1rem;
 }
