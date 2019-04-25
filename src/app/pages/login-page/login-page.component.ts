@@ -1,19 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {User} from '../../util/User';
-import {Globals} from '../../util/Globals';
 import {LanguageService} from '../../services/language.service';
 import {AuthService} from '../../services/auth.service';
 import {NavigationService} from '../../services/navigation.service';
 import {UsersService} from '../../services/users.service';
 import {ignore} from 'selenium-webdriver/testing';
-import {User} from '../../util/User';
 import {Globals} from '../../util/Globals';
-import {LanguageService} from '../../services/language.service';
-import {AuthService} from '../../services/auth.service';
-import {NavigationService} from '../../services/navigation.service';
-import {UsersService} from '../../services/users.service';
-
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
@@ -28,6 +21,11 @@ export class LoginPageComponent implements OnInit {
   registerRepeatPassword: string = '';
   registerCheckedAGB: boolean = false;
   showRegister: boolean = false;
+  registerUsernameValid: boolean = false;
+  registerPasswordValid: boolean = false;
+  registerRepeatPasswordValid: boolean = false;
+  registerEmailValid: boolean = false;
+  registerAgbValid: boolean = false;
 
   message: string = '';
   showMessage: boolean = false;
@@ -49,26 +47,6 @@ export class LoginPageComponent implements OnInit {
     }
   }
 
-  // ToDo: Is this working???
-  registerButtonClickable(): boolean {
-    if (this.registerUsername >= 4 && this.registerCheckedAGB && this.registerPassword >= 4
-      && this.registerPassword === this.registerRepeatPassword) {
-      return true;
-    }
-    else {
-      return false;
-    }
-  }
-
-  // ToDo: Is this working???
-  loginButtonClickable(): boolean {
-    if (this.loginPassword.length >= 4 && this.loginName.length >= 4) {
-      return true;
-    }
-    else {
-      return false;
-    }
-  }
 
   onLogin(): boolean {
     if (this.authService.isLoggedIn() || this.lookForMatch()) {
@@ -91,23 +69,81 @@ export class LoginPageComponent implements OnInit {
     this.loginPassword = password;
   }
 
+  // ToDo: Is this working???
+  registerButtonClickable(): boolean {
+    if (this.registerUsernameValid && this.registerAgbValid && this.registerPasswordValid
+      && this.registerRepeatPasswordValid && this.registerEmailValid) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+
+  // ToDo: Is this working???
+  loginButtonClickable(): boolean {
+    if (this.loginPassword.length >= 4 && this.loginName.length >= 4) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+
   userNameRegisterChange(username: string) {
     this.registerUsername = username;
+    if (username.length >= 4) {
+      this.registerUsernameValid = true;
+    }
+    else {
+      this.registerPasswordValid = false;
+    }
   }
 
-  passwordRegisterChange(password: string) {
-    this.registerPassword = password;
+  passwordRegisterChange(pass: string) {
+    this.registerPassword = pass;
+    if(pass.length >= 4) {
+      this.registerPasswordValid = true;
+    }
+    else {
+      this.registerPasswordValid = false;
+    }
+    //ToDo: OK smh this is not working. Work on this together.
+    if (pass === this.registerPassword && this.registerPassword) {
+      this.registerRepeatPasswordValid = true;
+    }
+    else {
+      this.registerRepeatPasswordValid = false;
+    }
   }
 
-  repeatpasswordRegisterChange(password: string) {
-    this.registerRepeatPassword = password;
+  repeatPasswordRegisterChange(regPass: string) {
+    this.registerRepeatPassword = regPass;
+    if (regPass === this. registerPassword) {
+      this.registerRepeatPasswordValid = true;
+    }
+    else {
+      this.registerRepeatPasswordValid = false;
+    }
   }
 
   checkedAGBRegisterChange(checked: boolean) {
     this.registerCheckedAGB = checked;
+    if (checked) {
+      this.registerAgbValid = true;
+    }
+    else {
+      this.registerAgbValid = false;
+    }
   }
 
   emailRegsiterChange(mail: string) {
+    if (mail.length >= 4){
+      this.registerEmailValid = true;
+    }
+    else {
+      this.registerEmailValid = false;
+    }
     this.registerEmail = mail;
   }
 
