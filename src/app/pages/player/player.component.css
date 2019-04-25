@@ -3,7 +3,7 @@ app-basic-button {
   z-index: 3;
 }
 
-.videoControl{
+.videoControl {
   /*position: absolute;
   z-index: 3;*/
   display: inline-block;
@@ -18,7 +18,7 @@ app-basic-button {
   background-color: #ffa31a !important;
 }
 
-.controlPanel{
+.controlPanel {
   position: absolute;
   bottom: 5%;
   left: 25%;
@@ -29,19 +29,19 @@ app-basic-button {
   background-color: transparent;
 }
 
-.timeline{
+.timeline {
   height: 1rem;
   background-color: #ffa31a;
 }
 
-.range{
+.range {
   -webkit-appearance: none;
-  width: 100%;
+  width: 60%;
   height: 1rem;
   border-radius: 5px;
 }
 
-.range::-webkit-slider-thumb{
+.range::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 0.5rem;
@@ -58,23 +58,34 @@ app-basic-button {
   cursor: pointer;
 }
 
-#fullScreenBtn{
+#fullScreenBtn {
   position: absolute;
   right: 0%
 }
 
-#volumeRange{
-  width: 20%;
+#volumeRange {
   position: absolute;
-  bottom: 30%;
+  width: 1rem;
+  height: 5rem;
+  z-index: 1;
 }
 
-#forwardBtn{
+#mute {
+  position: absolute;
+  z-index: 3;
+}
+
+#forwardBtn {
   position: absolute;
   left: 45%;
 }
 
-#backwardsBtn{
+#backwardsBtn {
   position: absolute;
   left: 40%;
+}
+
+.volumeControl {
+  width: 15%;
+  background-color: transparent;
 }

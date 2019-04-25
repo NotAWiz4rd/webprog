@@ -21,6 +21,7 @@ export class PlayerComponent implements OnInit, AfterViewInit {
   thumbnail: string = '';
   moviename: string = '';
   hover: boolean = true;
+  showVolume: boolean = false;
   innerWidth: number = 0;
   innerHeight: number = 0;
 
@@ -224,5 +225,12 @@ export class PlayerComponent implements OnInit, AfterViewInit {
     vid.currentTime = (parseInt(range.value, 10) / 100) * vid.duration;
   }
 
+  volumeEnter() {
+    this.showVolume = true;
+  }
+
+  volumeLeave() {
+    this.showVolume = false;
+  }
 
 }
