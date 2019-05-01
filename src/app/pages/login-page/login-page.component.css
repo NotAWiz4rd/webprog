@@ -12,7 +12,7 @@
   box-shadow: 5px 10px 8px #000000;
 }
 
-input {
+.text-input {
   color: white;
   width: 80%;
   margin: 10px;
@@ -23,8 +23,6 @@ input {
 app-basic-button {
   margin: 10px;
 }
-
-
 
 button:disabled,
 button[disabled],

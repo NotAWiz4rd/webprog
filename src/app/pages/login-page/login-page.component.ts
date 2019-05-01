@@ -6,6 +6,7 @@ import {AuthService} from '../../services/auth.service';
 import {NavigationService} from '../../services/navigation.service';
 import {UsersService} from '../../services/users.service';
 import {Globals} from '../../util/Globals';
+
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
@@ -74,8 +75,7 @@ export class LoginPageComponent implements OnInit {
   loginButtonClickable(): boolean {
     if (this.loginPassword.length >= 4 && this.loginName.length >= 4) {
       return true;
-    }
-    else {
+    } else {
       return false;
     }
   }
@@ -85,18 +85,16 @@ export class LoginPageComponent implements OnInit {
     this.registerPasswordValid = pass.length >= 4;
     if (pass === this.registerRepeatPassword && this.registerRepeatPassword && this.registerRepeatPassword.length >= 4) {
       this.registerRepeatPasswordValid = true;
-    }
-    else {
+    } else {
       this.registerRepeatPasswordValid = false;
     }
   }
 
   repeatPasswordRegisterChange(regPass: string) {
     this.registerRepeatPassword = regPass;
-    if (regPass === this. registerPassword && this.registerRepeatPassword.length >= 4) {
+    if (regPass === this.registerPassword && this.registerRepeatPassword.length >= 4) {
       this.registerRepeatPasswordValid = true;
-    }
-    else {
+    } else {
       this.registerRepeatPasswordValid = false;
     }
   }
@@ -105,11 +103,10 @@ export class LoginPageComponent implements OnInit {
     this.registerAgbValid = checked;
   }
 
-  emailRegsiterChange(mail: string) {
-    if (mail.length >= 4){
+  emailRegisterChange(mail: string) {
+    if (mail.length >= 4) {
       this.registerEmailValid = true;
-    }
-    else {
+    } else {
       this.registerEmailValid = false;
     }
     this.registerEmail = mail;
@@ -148,8 +145,6 @@ export class LoginPageComponent implements OnInit {
         console.log('AGB not checked');
         return false;
       }
-
-
     } else {
       return false;
     }
