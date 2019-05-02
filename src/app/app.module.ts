@@ -29,6 +29,7 @@ import {MovieDescriptionComponent} from './components/movie-description/movie-de
 import {ImpressumPageComponent} from './pages/impressum-page/impressum-page.component';
 import {LogoComponent} from "./components/logo/logo.component";
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { ContactPageComponent } from './pages/contact-page/contact-page.componen
     RouterModule.forRoot(APP_ROUTES, {
       scrollPositionRestoration: 'disabled',
       onSameUrlNavigation: 'reload'
-    })
+    }),
+    FormsModule
   ],
   providers: [
     AuthService,
