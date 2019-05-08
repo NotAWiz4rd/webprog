@@ -3,15 +3,21 @@
     <form (ngSubmit)="onSend()">
 
       <div class="field">
-        <input type="text" name="name" class="input" placeholder="Your Name" [(ngModel)]="name">
+        <input type="text" name="name" class="input"
+               placeholder="{{globals.staticTexts | getStaticText : 'yourNameText' : languageService.getLanguage()}}"
+               [(ngModel)]="name">
       </div>
 
       <div class="field">
-        <input type="text" name="subject" class="input" placeholder="What's it about?" [(ngModel)]="subject">
+        <input type="text" name="subject" class="input"
+               placeholder="{{globals.staticTexts | getStaticText : 'subjectText' : languageService.getLanguage()}}"
+               [(ngModel)]="subject">
       </div>
 
       <div class="field">
-        <textarea class="textarea" name="message" ID="myText  " placeholder="What's on your mind?" [(ngModel)]="message"></textarea>
+        <textarea class="textarea" name="message" ID="myText  "
+                  placeholder="{{globals.staticTexts | getStaticText : 'messageText' : languageService.getLanguage()}}"
+                  [(ngModel)]="message"></textarea>
       </div>
 
       <app-basic-button (click)="onSend()"

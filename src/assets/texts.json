@@ -226,5 +226,23 @@
     "english": "Send",
     "german": "Senden",
     "spanish": "transmisora"
+  },
+  {
+    "logicalName": "yourNameText",
+    "english": "Your name goes here",
+    "german": "Wie ist dein Name?",
+    "spanish": "Cual es tu nombre"
+  },
+  {
+    "logicalName": "subjectText",
+    "english": "I want to talk about...",
+    "german": "Das Thema ist?",
+    "spanish": "Cual es el tema"
+  },
+  {
+    "logicalName": "messageText",
+    "english": "What's on your mind?",
+    "german": "Worum geht es?",
+    "spanish": "Qué tienes en mente"
   }
 ]
