@@ -15,3 +15,8 @@
 <div *ngIf="globals.view != 'impressum'" (click)="navigationService.navigateToView('impressum')">
   {{globals?.staticTexts | getStaticText : 'impressumText' : languageService.getLanguage()}}
 </div>
+
+<div *ngIf="globals.view != 'contact'" (click)="navigationService.navigateToView('contact')">
+  {{globals?.staticTexts | getStaticText : 'contactText' : languageService.getLanguage()}}
+</div>
+
