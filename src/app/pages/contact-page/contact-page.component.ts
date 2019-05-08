@@ -20,7 +20,7 @@ import {BrowserModule} from "@angular/platform-browser";
 export class ContactPageComponent implements OnInit {
 
   name!: string;
-  email!: string;
+  subject!: string;
   message!: string;
 
 
@@ -29,9 +29,10 @@ export class ContactPageComponent implements OnInit {
   }
 
   onSend() {
+    window.location.href = `mailto:rob.mueller@ostfalia.de?subject=${this.subject}&amp;body=Hi,%0D%0A%0D%0Amy%20name%20is%20${this.name},%0D%0A%0D%0A${this.message}`;
     console.log("send");
-    const allInfo = `My name is ${this.name}. My email is ${this.email}. My message is ${this.message}`;
-    alert(allInfo);
+    //const allInfo = `My name is ${this.name}. My email is ${this.email}. My message is ${this.message}`;
+    //alert(allInfo);
   }
 
   ngOnInit() {
