@@ -4,6 +4,9 @@ app-footer, app-header {
 
 app-footer {
   bottom: 0;
+  position: fixed;
+  left: 0;
+  width: 100%;
 }
 
 .non-scrollable {
