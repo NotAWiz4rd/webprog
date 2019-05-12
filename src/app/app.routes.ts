@@ -6,6 +6,7 @@ import {MoviesResolver} from "./resolvers/movies.resolver";
 import {PlayerComponent} from "./pages/player/player.component";
 import {MyListComponent} from "./components/my-list/my-list.component";
 import {ImpressumPageComponent} from './pages/impressum-page/impressum-page.component';
+import {ContactPageComponent} from "./pages/contact-page/contact-page.component";
 
 export const APP_ROUTES = [
   {
@@ -20,6 +21,10 @@ export const APP_ROUTES = [
   {
     path: 'impressum',
     component: ImpressumPageComponent
+  },
+  {
+    path: 'contact',
+    component: ContactPageComponent
   },
   {
     path: 'overview',

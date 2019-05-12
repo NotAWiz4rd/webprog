@@ -76,15 +76,16 @@ export class LoginPageComponent implements OnInit {
       this.message = 'Register attempt failed: Password or name too short.';
       console.log('Register attempt failed: Password or name too short.');
       return false;
-    } else {
-      console.log('Register successful');
-      this.message = 'Successfully registered.';
     }
 
     const user = new User();
     user.name = this.loginName;
     user.password = LoginPageComponent.encryptPw(this.loginPassword);
-    this.usersService.addUser(user);
+    if (this.usersService.addUser(user)) {
+      this.message = 'Successfully registered.';
+    } else {
+      this.message = 'Registering failed.';
+    }
     return true;
   }
 
