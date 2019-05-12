@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {MovieData} from "../../util/MovieData";
+import {NavigationService} from "../../services/navigation.service";
 
 @Component({
   selector: 'app-row-element',
@@ -13,13 +14,13 @@ export class RowElementComponent implements OnInit {
   @Input()
   movie: MovieData = new MovieData();
 
-  constructor() {
+  constructor(private navigationService: NavigationService) {
   }
 
   ngOnInit() {
   }
 
   navigateToMovie() {
-
+    this.navigationService.navigateToMovie(this.movie.filename);
   }
 }
