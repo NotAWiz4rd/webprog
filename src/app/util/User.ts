@@ -5,6 +5,7 @@ export class User {
   _id: number = 0;
   name: string = '';
   password: string = '';
+  language: number = 0;
   movieList: string[] = [];
   watchedList: WatchedMovie[] = [];
 }

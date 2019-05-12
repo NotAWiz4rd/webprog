@@ -42,4 +42,8 @@ export class OverviewPageComponent implements OnInit {
   getRecentlyWatched(): MovieData[] {
     return this.moviesService.getRecentlyWatchedMovies(5);
   }
+
+  getTestMovies(): MovieData[] {
+    return this.globals.movieData.slice(0, 10);
+  }
 }
