@@ -7,6 +7,7 @@ import {MovieData} from "../../util/MovieData";
 import {UsersService} from "../../services/users.service";
 import {WatchedMovie} from "../../util/WatchedMovie";
 import {falseIfMissing} from "protractor/built/util";
+import {timer} from "rxjs";
 
 const MOVIES_PATH = '../../../assets/movies/';
 const THUMBNAILS_PATH = '../../../assets/thumbnails/';
@@ -21,6 +22,7 @@ export class PlayerComponent implements OnInit, AfterViewInit {
   thumbnail: string = '';
   moviename: string = '';
   hover: boolean = true;
+  isFullscreen: boolean = false;
   showVolume: boolean = false;
   innerWidth: number = 0;
   innerHeight: number = 0;
@@ -74,6 +76,7 @@ export class PlayerComponent implements OnInit, AfterViewInit {
         this.hover = false;
       }, 5000);
     });
+    // document.onfullscreenchange = (() => {console.log('Fullscreen toggeled'); this.isFullscreen = !this.isFullscreen; } );
   }
 
   private getMovieTimestamp(): number {
@@ -191,20 +194,32 @@ export class PlayerComponent implements OnInit, AfterViewInit {
     }
   }
 
+  // @ts-ignore
   toggleFullscreen() {
-    const video = document.getElementById('videoContainer') as HTMLDivElement;
+    const elem = document.documentElement as HTMLElement;
     // @ts-ignore
-    if (video.requestFullscreen) {
-      // @ts-ignore
-      video.requestFullscreen();
-      // @ts-ignore
-    } else if (video.mozRequestFullScreen) {
-      // @ts-ignore
-      video.mozRequestFullScreen();
-      // @ts-ignore
-    } else if (video.webkitRequestFullscreen) {
-      // @ts-ignore
-      video.webkitRequestFullscreen();
+    if (document.fullscreenElement == null
+      || document.mozFullScreenElement == null
+      || document.msFullscreenElement == null
+      || document.webkitFullscreenElement == null) {
+      if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+      } else if (elem.mozRequestFullScreen) {
+        /* Firefox */
+        elem.mozRequestFullScreen();
+      } else if (elem.webkitRequestFullscreen) {
+        /* Chrome, Safari and Opera */
+        elem.webkitRequestFullscreen();
+      } else if (elem.msRequestFullscreen) {
+        /* IE/Edge */
+        elem.msRequestFullscreen();
+      }
+      this.isFullscreen = true;
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      }
+      this.isFullscreen = false;
     }
   }
 

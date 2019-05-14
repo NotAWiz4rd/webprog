@@ -21,9 +21,9 @@ app-basic-button {
 .controlPanel {
   position: absolute;
   bottom: 5%;
-  left: 25%;
+  left: 0%;
   z-index: 3;
-  width: 50%;
+  width: 100%;
   height: auto;
   padding: 0.5rem;
   background-color: transparent;
@@ -36,7 +36,7 @@ app-basic-button {
 
 .range {
   -webkit-appearance: none;
-  width: 60%;
+  width: 75%;
   height: 1rem;
   border-radius: 5px;
 }
@@ -59,30 +59,21 @@ app-basic-button {
 }
 
 #fullScreenBtn {
-  position: absolute;
-  right: 0%
+
 }
 
 #volumeRange {
+  /*
   position: absolute;
   width: 1rem;
   height: 5rem;
   z-index: 1;
+  */
 }
 
 #mute {
   position: absolute;
   z-index: 3;
-}
-
-#forwardBtn {
-  position: absolute;
-  left: 45%;
-}
-
-#backwardsBtn {
-  position: absolute;
-  left: 40%;
 }
 
 .volumeControl {

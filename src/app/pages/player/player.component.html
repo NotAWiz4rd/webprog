@@ -18,19 +18,20 @@
       </p>
     </video>
     <div class="controlPanel" *ngIf="hover">
-      <input type="range" min="0" max="100" [valueAsNumber]="vidTime" class="slider" id="myRange" (click)="changeTime()"
-             class="range">
       <div class="videoControl" (click)="playpause()" id="play"
            [ngStyle]="{background: 'url(../../../assets/icons/' + playIc + ')'}"></div>
-      <div class="volumeControl" (mouseenter)="volumeEnter()"
-           (mouseleave)="volumeLeave()">
-        <div class="videoControl" (click)="toggleMute()" id="mute"
+
+        <div class="videoControl" (click)="toggleMute()" (mouseenter)="volumeEnter()"
+             (mouseleave)="volumeLeave()"id="mute"
              [ngStyle]="{background: 'url(../../../assets/icons/' + muteIc + ')'}"></div>
         <input *ngIf="showVolume" orient="vertical" type="range" min="0" max="100" [valueAsNumber]="vidVolume"
                id="volumeRange" (click)="setVolume()" class="range">
-      </div>
+
+    <input type="range" min="0" max="100" [valueAsNumber]="vidTime" class="slider" id="myRange" (click)="changeTime()"
+           class="range">
       <div class="videoControl" (click)="toggleFullscreen()" id="fullScreenBtn"
            style="background-image: url('../../../assets/icons/fullscreen.png');"></div>
+
     </div>
   </div>
 </div>
