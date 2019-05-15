@@ -30,6 +30,7 @@ import {ImpressumPageComponent} from './pages/impressum-page/impressum-page.comp
 import {LogoComponent} from "./components/logo/logo.component";
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
 import {FormsModule} from "@angular/forms";
+import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import {FormsModule} from "@angular/forms";
     ImpressumPageComponent,
     MovieSuggestionsComponent,
     LogoComponent,
-    ContactPageComponent
+    ContactPageComponent,
+    LandingPageComponent
   ],
   imports: [
     BrowserModule,

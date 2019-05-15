@@ -7,11 +7,12 @@ import {PlayerComponent} from "./pages/player/player.component";
 import {MyListComponent} from "./components/my-list/my-list.component";
 import {ImpressumPageComponent} from './pages/impressum-page/impressum-page.component';
 import {ContactPageComponent} from "./pages/contact-page/contact-page.component";
+import {LandingPageComponent} from "./pages/landing-page/landing-page.component";
 
 export const APP_ROUTES = [
   {
     path: '',
-    component: LoginPageComponent,
+    component: LandingPageComponent,
     pathMatch: 'full'
   },
   {
