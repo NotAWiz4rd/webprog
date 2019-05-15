@@ -6,6 +6,8 @@ import {ActivatedRoute} from "@angular/router";
 import {MovieData} from "../../util/MovieData";
 import {UsersService} from "../../services/users.service";
 import {WatchedMovie} from "../../util/WatchedMovie";
+import {falseIfMissing} from "protractor/built/util";
+import {timer} from "rxjs";
 
 const MOVIES_PATH = '../../../assets/movies/';
 const THUMBNAILS_PATH = '../../../assets/thumbnails/';
@@ -20,6 +22,8 @@ export class PlayerComponent implements OnInit, AfterViewInit {
   thumbnail: string = '';
   moviename: string = '';
   hover: boolean = true;
+  isFullscreen: boolean = false;
+  showVolume: boolean = false;
   innerWidth: number = 0;
   innerHeight: number = 0;
 
@@ -90,6 +94,28 @@ export class PlayerComponent implements OnInit, AfterViewInit {
     console.log(vid.currentTime);
     this.usersService.addMovieToWatched(watchedMovie);
     this.navigationService.navigateBack();
+    // @ts-ignore
+    if (!(!document.fullscreenElement && !document.mozFullScreenElement &&
+      // @ts-ignore
+      !document.webkitFullscreenElement && !document.msFullscreenElement)) {
+      // @ts-ignore
+      if (document.exitFullscreen) {
+        // @ts-ignore
+        document.exitFullscreen();
+        // @ts-ignore
+      } else if (document.msExitFullscreen) {
+        // @ts-ignore
+        document.msExitFullscreen();
+        // @ts-ignore
+      } else if (document.mozCancelFullScreen) {
+        // @ts-ignore
+        document.mozCancelFullScreen();
+        // @ts-ignore
+      } else if (document.webkitExitFullscreen) {
+        // @ts-ignore
+        document.webkitExitFullscreen();
+      }
+    }
   }
 
   @HostListener('window:resize', ['$event'])
@@ -190,31 +216,54 @@ export class PlayerComponent implements OnInit, AfterViewInit {
   }
 
   toggleFullscreen() {
-    const video = document.getElementById('videoContainer') as HTMLDivElement;
+    const elem = document.documentElement as HTMLElement;
     // @ts-ignore
-    if (video.requestFullscreen) {
+    if (!document.fullscreenElement && !document.mozFullScreenElement &&
       // @ts-ignore
-      video.requestFullscreen();
+      !document.webkitFullscreenElement && !document.msFullscreenElement) {
+      if (elem.requestFullscreen) {
+        // @ts-ignore
+        elem.requestFullscreen();
+        // @ts-ignore
+      } else if (elem.msRequestFullscreen) {
+        // @ts-ignore
+        elem.msRequestFullscreen();
+        // @ts-ignore
+      } else if (elem.mozRequestFullScreen) {
+        // @ts-ignore
+        elem.mozRequestFullScreen();
+        // @ts-ignore
+      } else if (elem.webkitRequestFullscreen) {
+        // @ts-ignore
+        elem.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+      }
+    } else {
       // @ts-ignore
-    } else if (video.mozRequestFullScreen) {
-      // @ts-ignore
-      video.mozRequestFullScreen();
-      // @ts-ignore
-    } else if (video.webkitRequestFullscreen) {
-      // @ts-ignore
-      video.webkitRequestFullscreen();
+      if (document.exitFullscreen) {
+        // @ts-ignore
+        document.exitFullscreen();
+        // @ts-ignore
+      } else if (document.msExitFullscreen) {
+        // @ts-ignore
+        document.msExitFullscreen();
+        // @ts-ignore
+      } else if (document.mozCancelFullScreen) {
+        // @ts-ignore
+        document.mozCancelFullScreen();
+        // @ts-ignore
+      } else if (document.webkitExitFullscreen) {
+        // @ts-ignore
+        document.webkitExitFullscreen();
+      }
     }
   }
 
   mouseEnter() {
     this.hover = true;
-    console.log('Hover = ' + this.hover);
-
   }
 
   mouseLeave() {
     this.hover = false;
-    console.log('Hover = ' + this.hover);
   }
 
   changeTime() {
@@ -223,5 +272,12 @@ export class PlayerComponent implements OnInit, AfterViewInit {
     vid.currentTime = (parseInt(range.value, 10) / 100) * vid.duration;
   }
 
+  volumeEnter() {
+    this.showVolume = true;
+  }
+
+  volumeLeave() {
+    this.showVolume = false;
+  }
 
 }
