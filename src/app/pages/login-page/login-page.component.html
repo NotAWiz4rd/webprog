@@ -32,6 +32,8 @@
         </div>
       </div>
 
+
+      <br>
       <input class="text-input" type="password" placeholder="password" #inputRegPassword
              (keyup)="passwordRegisterChange(inputRegPassword.value)">
       <div ng-messages="loginAndRegisterForm.password.$error" style="color:white" role="alert">
@@ -40,6 +42,7 @@
         </div>
       </div>
 
+      <br>
       <input class="text-input" type="password" placeholder="repeat password" #inputRepRegPassword
              (keyup)="repeatPasswordRegisterChange(inputRepRegPassword.value)">
       <div ng-messages="loginAndRegisterForm.repeat password.$error" style="color:white" role="alert">
@@ -48,15 +51,23 @@
         </div>
       </div>
 
+      <br>
+
       <input id="AGBCheckbox" type="checkbox" #inputCheck (click)="checkedAGBRegisterChange(inputCheck.checked)">
       <label for="AGBCheckbox">I have read and accept the AGB</label>
       <div ng-messages="loginAndRegisterForm.AGBaccepted.$error" style="color:white" role="alert">
         <div *ngIf="!registerAgbValid">Sie muessen die AGB akzeptieren um sich registrieren zu können.</div>
       </div>
+
       <br>
-      <app-basic-button id="sendButton" [disabled]="registerButtonClickable()" (click)="onRegister()"
+
+      <app-basic-button id="sendButton"
+      [disabled]="!registerButtonClickable()"
+                        (click)="onRegister()"
                         text="Abschicken"></app-basic-button>
-    </div>
+
+
+      </div>
 
 
   </form>

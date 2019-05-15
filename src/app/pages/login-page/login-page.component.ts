@@ -52,8 +52,8 @@ export class LoginPageComponent implements OnInit {
       return true;
     }
     this.showMessage = true;
-    // todo translate messages into other languages
-    this.message = 'Login attempt failed: Password or name wrong or user doesnt exist.';
+    //ToDo: translate messages into other languages
+    this.message = 'Login attempt failed: Password or name wrong or user does not exist.';
     console.log('Login attempt failed: Password or name wrong or user does not exist.');
     return false;
   }
@@ -68,7 +68,12 @@ export class LoginPageComponent implements OnInit {
 
   // ToDo: Is this working???
   registerButtonClickable(): boolean {
-    return true;
+    if(this.registerPasswordValid && this.registerRepeatPasswordValid && this.registerAgbValid && this.registerEmailValid){
+      return true;
+    }
+    else {
+      return false;
+    }
   }
 
   // ToDo: Is this working???
@@ -148,6 +153,7 @@ export class LoginPageComponent implements OnInit {
     } else {
       return false;
     }
+    //ToDo: This Code is unreachable? Why is it there?
     this.showMessage = true;
     if (this.loginPassword.length < 4 || this.loginName.length < 4) {
       // todo translate message texts
