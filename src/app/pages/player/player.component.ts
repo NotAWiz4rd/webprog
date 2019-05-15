@@ -95,6 +95,28 @@ export class PlayerComponent implements OnInit, AfterViewInit {
     console.log(vid.currentTime);
     this.usersService.addMovieToWatched(watchedMovie);
     this.navigationService.navigateBack();
+    // @ts-ignore
+    if (!(!document.fullscreenElement && !document.mozFullScreenElement &&
+      // @ts-ignore
+      !document.webkitFullscreenElement && !document.msFullscreenElement)) {
+      // @ts-ignore
+      if (document.exitFullscreen) {
+        // @ts-ignore
+        document.exitFullscreen();
+        // @ts-ignore
+      } else if (document.msExitFullscreen) {
+        // @ts-ignore
+        document.msExitFullscreen();
+        // @ts-ignore
+      } else if (document.mozCancelFullScreen) {
+        // @ts-ignore
+        document.mozCancelFullScreen();
+        // @ts-ignore
+      } else if (document.webkitExitFullscreen) {
+        // @ts-ignore
+        document.webkitExitFullscreen();
+      }
+    }
   }
 
   @HostListener('window:resize', ['$event'])
@@ -194,44 +216,55 @@ export class PlayerComponent implements OnInit, AfterViewInit {
     }
   }
 
-  // @ts-ignore
   toggleFullscreen() {
     const elem = document.documentElement as HTMLElement;
     // @ts-ignore
-    if (document.fullscreenElement == null
-      || document.mozFullScreenElement == null
-      || document.msFullscreenElement == null
-      || document.webkitFullscreenElement == null) {
+    if (!document.fullscreenElement && !document.mozFullScreenElement &&
+      // @ts-ignore
+      !document.webkitFullscreenElement && !document.msFullscreenElement) {
       if (elem.requestFullscreen) {
+        // @ts-ignore
         elem.requestFullscreen();
-      } else if (elem.mozRequestFullScreen) {
-        /* Firefox */
-        elem.mozRequestFullScreen();
-      } else if (elem.webkitRequestFullscreen) {
-        /* Chrome, Safari and Opera */
-        elem.webkitRequestFullscreen();
+        // @ts-ignore
       } else if (elem.msRequestFullscreen) {
-        /* IE/Edge */
+        // @ts-ignore
         elem.msRequestFullscreen();
+        // @ts-ignore
+      } else if (elem.mozRequestFullScreen) {
+        // @ts-ignore
+        elem.mozRequestFullScreen();
+        // @ts-ignore
+      } else if (elem.webkitRequestFullscreen) {
+        // @ts-ignore
+        elem.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
       }
-      this.isFullscreen = true;
     } else {
+      // @ts-ignore
       if (document.exitFullscreen) {
+        // @ts-ignore
         document.exitFullscreen();
+        // @ts-ignore
+      } else if (document.msExitFullscreen) {
+        // @ts-ignore
+        document.msExitFullscreen();
+        // @ts-ignore
+      } else if (document.mozCancelFullScreen) {
+        // @ts-ignore
+        document.mozCancelFullScreen();
+        // @ts-ignore
+      } else if (document.webkitExitFullscreen) {
+        // @ts-ignore
+        document.webkitExitFullscreen();
       }
-      this.isFullscreen = false;
     }
   }
 
   mouseEnter() {
     this.hover = true;
-    console.log('Hover = ' + this.hover);
-
   }
 
   mouseLeave() {
     this.hover = false;
-    console.log('Hover = ' + this.hover);
   }
 
   changeTime() {

@@ -12,6 +12,7 @@ app-basic-button {
   height: 24px;
   border-radius: 4px;
   margin: 1rem;
+  bottom: 0%;
   background-position: 0px 0px;
   background-repeat: no-repeat;
   background-size: 25px auto;
@@ -58,25 +59,24 @@ app-basic-button {
   cursor: pointer;
 }
 
-#fullScreenBtn {
-
-}
-
 #volumeRange {
-  /*
-  position: absolute;
   width: 1rem;
   height: 5rem;
   z-index: 1;
-  */
+  padding: 0rem;
+  margin: 0rem;
 }
 
 #mute {
-  position: absolute;
   z-index: 3;
 }
 
 .volumeControl {
   width: 15%;
   background-color: transparent;
+}
+
+#myRange {
+  padding: 1px;
+  margin: 1.3rem;
 }
