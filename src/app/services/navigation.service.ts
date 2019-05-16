@@ -22,8 +22,7 @@ export class NavigationService {
     this.router.navigateByUrl('watch/' + movie);
   }
 
-  navigateBack(view: string) {
-    this.globals.view = view;
+  navigateBack() {
     console.log('Navigating to previous page');
     this.location.back();
   }

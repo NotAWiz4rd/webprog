@@ -1,4 +1,4 @@
-<app-logo (click)="navigateToOverview()"></app-logo>
+<app-logo (click)="navigateToLogin()"></app-logo>
 <ng-container *ngIf="authService.isLoggedIn()">
   <app-basic-button class="logout" (click)="logoutUser()"
                     [text]="globals?.staticTexts | getStaticText : 'logoutText' : languageService.getLanguage()">
@@ -11,6 +11,10 @@
   <app-basic-button (click)="navigateToList()"
                     [text]="globals.staticTexts | getStaticText : 'myListText' : languageService.getLanguage()">
   </app-basic-button>
+  <app-basic-button (click)="randomVideo()"
+                    [text]="(globals?.staticTexts | getStaticText : 'randomText' : languageService.getLanguage())">
+  </app-basic-button>
+
 </ng-container>
 
 <app-basic-button *ngIf="!authService.isLoggedIn() && globals.view != 'login'" (click)="navigateToLogin()"
@@ -18,5 +22,6 @@
 </app-basic-button>
 
 <div class="text" *ngIf="authService.isLoggedIn()">
-  {{globals.staticTexts | getStaticText : 'currentUserText' : languageService.getLanguage()}} {{globals.currentUser.name}}
+  {{globals.staticTexts | getStaticText : 'currentUserText' : languageService.getLanguage()}} {{globals.currentUser.email}}
+  <ng-container *ngIf="globals.currentUser.isAdmin">isAdmin</ng-container>
 </div>

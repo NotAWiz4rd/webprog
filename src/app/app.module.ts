@@ -24,10 +24,17 @@ import {UsersService} from "./services/users.service";
 import {GetFilteredMoviesPipe} from "./pipes/get-filtered-movies.pipe";
 import {BasicButtonComponent} from "./components/basic-button/basic-button.component";
 import {MyListComponent} from './components/my-list/my-list.component';
+import {MovieSuggestionsComponent} from './components/movie-suggestions/movie-suggestions.component';
+import {MovieDescriptionComponent} from './components/movie-description/movie-description.component';
+import {ImpressumPageComponent} from './pages/impressum-page/impressum-page.component';
+import {MyListComponent} from './components/my-list/my-list.component';
 import {MovieSuggestionsComponent} from './movie-suggestions/movie-suggestions.component';
 import {MovieDescriptionComponent} from './components/movie-description/movie-description.component';
 import {ImpressumPageComponent} from './pages/impressum-page/impressum-page.component';
 import {LogoComponent} from "./components/logo/logo.component";
+import {RegisterPageComponent} from './pages/register-page/register-page.component';
+import {ContactPageComponent} from './pages/contact-page/contact-page.component';
+import {FormsModule} from "@angular/forms";
 import {HighlightComponent} from "./components/highlight/highlight.component";
 
 @NgModule({
@@ -51,6 +58,9 @@ import {HighlightComponent} from "./components/highlight/highlight.component";
     ImpressumPageComponent,
     MovieSuggestionsComponent,
     LogoComponent,
+    RegisterPageComponent,
+    ContactPageComponent,
+    LogoComponent,
     GetFilteredMoviesPipe,
     HighlightComponent
   ],
@@ -60,7 +70,8 @@ import {HighlightComponent} from "./components/highlight/highlight.component";
     RouterModule.forRoot(APP_ROUTES, {
       scrollPositionRestoration: 'disabled',
       onSameUrlNavigation: 'reload'
-    })
+    }),
+    FormsModule
   ],
   providers: [
     AuthService,

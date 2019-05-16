@@ -1,15 +1,34 @@
-<app-basic-button (click)="goBack()"
-                  [text]="globals.staticTexts | getStaticText : 'goBackText' : languageService.getLanguage()"></app-basic-button>
-<video id="myVideo" controls
-       autoplay
-       disablePictureInPicture
-       controlsList="nodownload"
-       oncontextmenu="return false;"
-       poster="{{thumbnail}}"
-       height="{{innerHeight-4}}"
-       width="{{innerWidth}}">
-  <source src="{{movieSource}}" type="video/mp4">
-  <p>
-    {{globals.staticTexts | getStaticText : 'noVideoSupportText' : languageService.getLanguage()}}
-  </p>
-</video>
+<div (keypress)="keyDownFunction($event)" ID="videoContainer" (mouseenter)="mouseEnter() " (mouseleave)="mouseLeave()">
+
+  <app-basic-button (click)="goBack()" *ngIf="hover"
+                    [text]="globals.staticTexts | getStaticText : 'goBackText' : languageService.getLanguage()"></app-basic-button>
+  <div id="smallerContainer"
+       (keypress)="keyDownFunction($event)">
+    <video id="myVideo" controls
+           autoplay
+           disablePictureInPicture
+           controlsList="nodownload"
+           oncontextmenu="return false;"
+           poster="{{thumbnail}}"
+           height="{{innerHeight-4}}"
+           width="{{innerWidth}}">
+      <source src="{{movieSource}}" type="video/mp4">
+      <p>
+        {{globals.staticTexts | getStaticText : 'noVideoSupportText' : languageService.getLanguage()}}
+      </p>
+    </video>
+    <div class="controlPanel" *ngIf="hover" (mouseleave)="volumeLeave()">
+      <div class="videoControl" (click)="playpause()" id="play"
+           [ngStyle]="{background: 'url(../../../assets/icons/' + playIc + ')'}"></div>
+      <div class="videoControl" (click)="toggleMute()" (mouseenter)="volumeEnter()" id="mute"
+           [ngStyle]="{background: 'url(../../../assets/icons/' + muteIc + ')'}"></div>
+      <input *ngIf="showVolume" orient="vertical" type="range" min="0" max="100" [valueAsNumber]="vidVolume"
+             id="volumeRange" (click)="setVolume()" class="range" (mouseleave)="volumeLeave()">
+      <input type="range" min="0" max="100" [valueAsNumber]="vidTime" class="slider" id="myRange" (click)="changeTime()"
+             class="range">
+      <div class="videoControl" (click)="toggleFullscreen()" id="fullScreenBtn"
+           style="background-image: url('../../../assets/icons/fullscreen.png');"></div>
+
+    </div>
+  </div>
+</div>

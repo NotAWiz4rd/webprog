@@ -16,7 +16,7 @@ export class AuthService implements CanActivate {
 
   setLoggedIn(isLoggedIn: boolean) {
     localStorage.setItem('loggedIn', String(isLoggedIn));
-    localStorage.setItem('user', this.globals.currentUser.name);
+    localStorage.setItem('user', this.globals.currentUser.email);
   }
 
   logoutUser() {

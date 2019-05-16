@@ -21,3 +21,13 @@ div:hover {
 div:active {
   transform: translateY(2px);
 }
+
+.disabled {
+  margin: 10px;
+  background-color: grey;
+}
+
+.disabled:hover {
+  background-color: grey;
+  color: #3C3F41;
+}

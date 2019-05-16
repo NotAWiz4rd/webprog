@@ -1,19 +1,21 @@
 <div class="border">
-  <div>
-    <input type="text"
-           placeholder="{{globals.staticTexts | getStaticText : 'usernameText' : languageService.getLanguage()}}"
-           #inputMail (keyup)="mailInputChange(inputMail.value)">
-    <br>
-    <input type="password"
-           placeholder="{{globals.staticTexts | getStaticText : 'passwordText' : languageService.getLanguage()}}"
-           #inputPassword (keyup)="passwordInputChange(inputPassword.value)">
-  </div>
+  <form name="loginAndRegisterForm">
 
-  <app-basic-button (click)="onLogin()"
-                    [text]=" globals?.staticTexts | getStaticText : 'loginText': languageService.getLanguage()">
-  </app-basic-button>
-
-  <app-basic-button (click)="onRegister()"
-                    [text]="globals?.staticTexts | getStaticText : 'registerText': languageService.getLanguage()">
-  </app-basic-button>
+    <div>
+      <input class="text-input" type="text"
+             placeholder="{{globals.staticTexts | getStaticText : 'mailText' : languageService.getLanguage()}}"
+             #inputMail (keyup)="mailInputChange(inputMail.value)">
+      <br>
+      <input class="text-input" type="password"
+             placeholder="{{globals.staticTexts | getStaticText : 'passwordText' : languageService.getLanguage()}}"
+             #inputPassword (keyup)="passwordInputChange(inputPassword.value)"
+             (keydown)="keyDownFunction($event)">
+    </div>
+    <app-basic-button [disabled]="!loginButtonClickable()" (click)="onLogin()"
+                      [text]=" globals?.staticTexts | getStaticText : 'loginText': languageService.getLanguage()">
+    </app-basic-button>
+    <app-basic-button (click)="navigateToRegister()"
+                      [text]="globals?.staticTexts | getStaticText : 'registerText': languageService.getLanguage()">
+    </app-basic-button>
+  </form>
 </div>
