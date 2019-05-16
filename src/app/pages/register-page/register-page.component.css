@@ -33,12 +33,12 @@ app-basic-button[disabled=disabled] {
 }
 
 div:disabled,
- div[disabled],
- div[disabled=disabled] {
-   border: 1px solid black;
-   background-color: darkred;
-   color: darkred;
- }
+div[disabled],
+div[disabled=disabled] {
+  border: 1px solid black;
+  background-color: darkred;
+  color: darkred;
+}
 
 button:disabled,
 button[disabled],
@@ -46,4 +46,13 @@ button[disabled=disabled] {
   border: 1px solid black;
   background-color: darkred;
   color: darkred;
+}
+
+label {
+  color: lightgrey;
+}
+
+#AGBCheckbox {
+  margin-top: 15px;
+  margin-bottom: 7px;
 }

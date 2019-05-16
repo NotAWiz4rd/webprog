@@ -22,5 +22,6 @@
 </app-basic-button>
 
 <div class="text" *ngIf="authService.isLoggedIn()">
-  {{globals.staticTexts | getStaticText : 'currentUserText' : languageService.getLanguage()}} {{globals.currentUser.name}}
+  {{globals.staticTexts | getStaticText : 'currentUserText' : languageService.getLanguage()}} {{globals.currentUser.email}}
+  <ng-container *ngIf="globals.currentUser.isAdmin">isAdmin</ng-container>
 </div>

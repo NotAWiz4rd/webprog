@@ -1,0 +1,45 @@
+<div class="border">
+  <div>
+    <input class="text-input" type="email"
+           placeholder="{{globals.staticTexts | getStaticText : 'mailText' : languageService.getLanguage()}}"
+           #inputMail
+           (keyup)="emailRegisterChange(inputMail.value)">
+    <div style="color:white" role="alert">
+      <div [style.visibility]="registerEmailValid ? 'hidden' : 'visible'">
+        {{globals.staticTexts | getStaticText : 'validMailText' : languageService.getLanguage()}}
+      </div>
+    </div>
+    <input class="text-input" type="password"
+           placeholder="{{globals.staticTexts | getStaticText : 'passwordText' : languageService.getLanguage()}}"
+           #inputRegPassword
+           (keyup)="passwordRegisterChange(inputRegPassword.value)">
+    <div style="color:white" role="alert">
+      <div [style.visibility]="registerPasswordValid ? 'hidden' : 'visible'">
+        {{globals.staticTexts | getStaticText : 'validPasswordText' : languageService.getLanguage()}}
+      </div>
+    </div>
+    <input class="text-input" type="password"
+           placeholder="{{globals.staticTexts | getStaticText : 'repeatPasswordText' : languageService.getLanguage()}}"
+           #inputRepRegPassword
+           (keyup)="repeatPasswordRegisterChange(inputRepRegPassword.value)">
+    <div style="color:white" role="alert">
+      <div [style.visibility]="registerRepeatPasswordValid ? 'hidden' : 'visible'">
+        {{globals.staticTexts | getStaticText : 'validRepeatPasswordText' : languageService.getLanguage()}}
+      </div>
+    </div>
+    <input id="AGBCheckbox" type="checkbox" #inputCheck (click)="checkedAGBRegisterChange(inputCheck.checked)">
+    <label for="AGBCheckbox">
+      {{globals.staticTexts | getStaticText : 'acceptAGBText' : languageService.getLanguage()}}
+    </label>
+    <div style="color:white" role="alert">
+      <div [style.visibility]="registerAgbValid ? 'hidden' : 'visible'">
+        {{globals.staticTexts | getStaticText : 'validAGBText' : languageService.getLanguage()}}
+      </div>
+    </div>
+    <app-basic-button id="sendButton"
+                      [disabled]="!registerButtonClickable()"
+                      (click)="onRegister()"
+                      text="{{globals.staticTexts | getStaticText : 'registerText' : languageService.getLanguage()}}">
+    </app-basic-button>
+  </div>
+</div>

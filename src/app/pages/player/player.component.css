@@ -2,3 +2,81 @@ app-basic-button {
   position: absolute;
   z-index: 3;
 }
+
+.videoControl {
+  /*position: absolute;
+  z-index: 3;*/
+  display: inline-block;
+  border: 2px solid #ffa31a;
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  margin: 1rem;
+  bottom: 0%;
+  background-position: 0px 0px;
+  background-repeat: no-repeat;
+  background-size: 25px auto;
+  background-color: #ffa31a !important;
+}
+
+.controlPanel {
+  position: absolute;
+  bottom: 5%;
+  left: 0%;
+  z-index: 3;
+  width: 100%;
+  height: auto;
+  padding: 0.5rem;
+  background-color: transparent;
+}
+
+.timeline {
+  height: 1rem;
+  background-color: #ffa31a;
+}
+
+.range {
+  -webkit-appearance: none;
+  width: 75%;
+  height: 1rem;
+  border-radius: 5px;
+}
+
+.range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: #ffa31a;
+  cursor: pointer;
+}
+
+.range::-moz-range-thumb {
+  width: 0.5rem;
+  height: 0.5rem;
+  background: #ffa31a;
+  cursor: pointer;
+}
+
+#volumeRange {
+  width: 1rem;
+  height: 5rem;
+  z-index: 1;
+  padding: 0rem;
+  margin: 0rem;
+}
+
+#mute {
+  z-index: 3;
+}
+
+.volumeControl {
+  width: 15%;
+  background-color: transparent;
+}
+
+#myRange {
+  padding: 1px;
+  margin: 1.3rem;
+}

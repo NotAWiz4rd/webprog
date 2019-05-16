@@ -30,6 +30,9 @@ import {MovieDescriptionComponent} from './components/movie-description/movie-de
 import {ImpressumPageComponent} from './pages/impressum-page/impressum-page.component';
 import {LogoComponent} from "./components/logo/logo.component";
 import {MovieSuggestionsComponent} from "./components/movie-suggestions/movie-suggestions.component";
+import {RegisterPageComponent} from './pages/register-page/register-page.component';
+import {ContactPageComponent} from './pages/contact-page/contact-page.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -52,7 +55,9 @@ import {MovieSuggestionsComponent} from "./components/movie-suggestions/movie-su
     MovieDescriptionComponent,
     ImpressumPageComponent,
     MovieSuggestionsComponent,
-    LogoComponent
+    LogoComponent,
+    RegisterPageComponent,
+    ContactPageComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +65,8 @@ import {MovieSuggestionsComponent} from "./components/movie-suggestions/movie-su
     RouterModule.forRoot(APP_ROUTES, {
       scrollPositionRestoration: 'disabled',
       onSameUrlNavigation: 'reload'
-    })
+    }),
+    FormsModule
   ],
   providers: [
     AuthService,
