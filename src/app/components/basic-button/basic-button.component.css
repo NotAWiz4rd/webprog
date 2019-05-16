@@ -13,6 +13,17 @@ div {
   transition-duration: 0.2s;
 }
 
+.disabled {
+  margin: 10px;
+  background-color: grey;
+}
+
+.disabled:hover {
+  margin: 10px;
+  border: 1px solid black;
+  background-color: dimgrey;
+}
+
 div:hover {
   background-color: #db9327;
   color: white;
