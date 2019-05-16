@@ -280,5 +280,17 @@
     "english": "What's on your mind?",
     "german": "Worum geht es?",
     "spanish": "¿Qué tienes en mente?"
+  },
+  {
+    "logicalName": "agbText",
+    "english": "AGB",
+    "german": "AGB",
+    "spanish": "AGB"
+  },
+  {
+    "logicalName": "viewAGBText",
+    "english": "View AGBs",
+    "german": "AGBs anzeigen",
+    "spanish": "Ver AGBs"
   }
 ]

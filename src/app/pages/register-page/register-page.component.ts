@@ -101,4 +101,8 @@ export class RegisterPageComponent implements OnInit {
   private encryptPw(password: string): string {
     return window.btoa(password);
   }
+
+  goToAGBs() {
+    window.open("agb", "_blank")
+  }
 }

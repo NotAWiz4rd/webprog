@@ -56,3 +56,12 @@ label {
   margin-top: 15px;
   margin-bottom: 7px;
 }
+
+a {
+  cursor: pointer;
+  color: #ffa31a;
+}
+
+a:hover {
+  text-decoration: underline;
+}

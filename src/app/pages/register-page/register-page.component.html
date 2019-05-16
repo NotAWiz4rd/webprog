@@ -30,6 +30,7 @@
     <input id="AGBCheckbox" type="checkbox" #inputCheck (click)="checkedAGBRegisterChange(inputCheck.checked)">
     <label for="AGBCheckbox">
       {{globals.staticTexts | getStaticText : 'acceptAGBText' : languageService.getLanguage()}}
+      <a (click)="goToAGBs()">{{globals.staticTexts | getStaticText : 'viewAGBText' : languageService.getLanguage()}}</a>
     </label>
     <div style="color:white" role="alert">
       <div [style.visibility]="registerAgbValid ? 'hidden' : 'visible'">
