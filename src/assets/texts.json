@@ -14,19 +14,19 @@
   {
     "logicalName": "englishLanguageText",
     "english": "English",
-    "german": "Englisch",
-    "spanish": "Inglés"
+    "german": "English",
+    "spanish": "English"
   },
   {
     "logicalName": "germanLanguageText",
-    "english": "German",
+    "english": "Deutsch",
     "german": "Deutsch",
-    "spanish": "Alemán"
+    "spanish": "Deutsch"
   },
   {
     "logicalName": "spanishLanguageText",
-    "english": "Spanish",
-    "german": "Spanisch",
+    "english": "Español",
+    "german": "Español",
     "spanish": "Español"
   },
   {
