@@ -59,7 +59,7 @@ export class LoginPageComponent implements OnInit {
   private lookForMatch(): boolean {
     let foundUser = false;
     this.globals.userData.forEach(user => {
-      if (user.email === this.email && this.encryptPw(user.password) === this.loginPassword) {
+      if (user.email === this.email && user.password === this.encryptPw(this.loginPassword)) {
         console.log('Correct login for user ' + this.email + ' received.');
         this.globals.currentUser = user;
         this.authService.setLoggedIn(true);
