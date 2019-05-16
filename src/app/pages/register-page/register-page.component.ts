@@ -41,7 +41,7 @@ export class RegisterPageComponent implements OnInit {
       }
       if (this.registerPassword === this.registerRepeatPassword) {
         let user = new User();
-        user.password = this.registerPassword;
+        user.password = this.encryptPw(this.registerPassword);
         user.email = this.registerEmail;
         this.usersService.addUser(user);
         this.globals.currentUser = user;
@@ -96,5 +96,9 @@ export class RegisterPageComponent implements OnInit {
       this.registerEmailValid = false;
     }
     this.registerEmail = mail;
+  }
+
+  private encryptPw(password: string): string {
+    return window.btoa(password);
   }
 }

@@ -59,9 +59,7 @@ export class LoginPageComponent implements OnInit {
   private lookForMatch(): boolean {
     let foundUser = false;
     this.globals.userData.forEach(user => {
-      if (user.name === this.loginName && window.atob(user.password) === this.loginPassword) {
-        console.log('Correct login for user ' + this.loginName + ' received.');
-      if (user.email === this.email && user.password === this.loginPassword) {
+      if (user.email === this.email && this.encryptPw(user.password) === this.loginPassword) {
         console.log('Correct login for user ' + this.email + ' received.');
         this.globals.currentUser = user;
         this.authService.setLoggedIn(true);
@@ -82,7 +80,7 @@ export class LoginPageComponent implements OnInit {
     this.navigationService.navigateToView('register');
   }
 
-  static encryptPw(password: string): string {
+  private encryptPw(password: string): string {
     return window.btoa(password);
   }
 }

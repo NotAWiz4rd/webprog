@@ -30,6 +30,9 @@ export class UsersService {
 
   addUser(newUser: User): boolean {
     let success = true;
+    if (newUser.email === '' || newUser.password === '') {
+      return false;
+    }
 
     this.globals.userData.forEach(user => {
       if (user.email === newUser.email) {
