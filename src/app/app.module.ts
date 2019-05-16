@@ -28,6 +28,7 @@ import {MovieSuggestionsComponent} from './components/movie-suggestions/movie-su
 import {MovieDescriptionComponent} from './components/movie-description/movie-description.component';
 import {ImpressumPageComponent} from './pages/impressum-page/impressum-page.component';
 import {LogoComponent} from "./components/logo/logo.component";
+import {RegisterPageComponent} from './pages/register-page/register-page.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import {LogoComponent} from "./components/logo/logo.component";
     MovieDescriptionComponent,
     ImpressumPageComponent,
     MovieSuggestionsComponent,
-    LogoComponent
+    LogoComponent,
+    RegisterPageComponent
   ],
   imports: [
     BrowserModule,
