@@ -3,7 +3,7 @@ app-basic-button {
   z-index: 3;
 }
 
-.videoControl{
+.videoControl {
   /*position: absolute;
   z-index: 3;*/
   display: inline-block;
@@ -12,36 +12,37 @@ app-basic-button {
   height: 24px;
   border-radius: 4px;
   margin: 1rem;
+  bottom: 0%;
   background-position: 0px 0px;
   background-repeat: no-repeat;
   background-size: 25px auto;
   background-color: #ffa31a !important;
 }
 
-.controlPanel{
+.controlPanel {
   position: absolute;
   bottom: 5%;
-  left: 25%;
+  left: 0%;
   z-index: 3;
-  width: 50%;
+  width: 100%;
   height: auto;
   padding: 0.5rem;
   background-color: transparent;
 }
 
-.timeline{
+.timeline {
   height: 1rem;
   background-color: #ffa31a;
 }
 
-.range{
+.range {
   -webkit-appearance: none;
-  width: 100%;
+  width: 75%;
   height: 1rem;
   border-radius: 5px;
 }
 
-.range::-webkit-slider-thumb{
+.range::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 0.5rem;
@@ -58,23 +59,24 @@ app-basic-button {
   cursor: pointer;
 }
 
-#fullScreenBtn{
-  position: absolute;
-  right: 0%
+#volumeRange {
+  width: 1rem;
+  height: 5rem;
+  z-index: 1;
+  padding: 0rem;
+  margin: 0rem;
 }
 
-#volumeRange{
-  width: 20%;
-  position: absolute;
-  bottom: 30%;
+#mute {
+  z-index: 3;
 }
 
-#forwardBtn{
-  position: absolute;
-  left: 45%;
+.volumeControl {
+  width: 15%;
+  background-color: transparent;
 }
 
-#backwardsBtn{
-  position: absolute;
-  left: 40%;
+#myRange {
+  padding: 1px;
+  margin: 1.3rem;
 }

@@ -30,9 +30,12 @@ export class UsersService {
 
   addUser(newUser: User): boolean {
     let success = true;
+    if (newUser.email === '' || newUser.password === '') {
+      return false;
+    }
 
     this.globals.userData.forEach(user => {
-      if (user.name === newUser.name) {
+      if (user.email === newUser.email) {
         success = false;
         console.log('User already exists - aborted creation.')
       }
@@ -81,7 +84,7 @@ export class UsersService {
   getUser(username: string): User {
     let userFound = new User();
     this.globals.userData.forEach(user => {
-      if (user.name === username) {
+      if (user.email === username) {
         userFound = user;
       }
     });
