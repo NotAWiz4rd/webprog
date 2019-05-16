@@ -190,7 +190,8 @@
     "english": "Password",
     "german": "Passwort",
     "spanish": "contraseña"
-  },{
+  },
+  {
     "logicalName": "repeatPasswordText",
     "english": "Repeat password",
     "german": "Passwort wiederholen",
@@ -216,8 +217,38 @@
   },
   {
     "logicalName": "randomText",
-    "english": "Im bored!",
-    "german": "Such du aus...",
+    "english": "Random Movie",
+    "german": "Zufälliger Film",
     "spanish": "casualidad"
+  },
+  {
+    "logicalName": "validMailText",
+    "english": "Please enter a valid mail address.",
+    "german": "Bitte geben Sie eine richtige E-Mail-Addresse an.",
+    "spanish": "Por favor, introduzca una Correo Electronico válida."
+  },
+  {
+    "logicalName": "validPasswordText",
+    "english": "Please enter a secure password with a minimum length of 4.",
+    "german": "Ihr Passwort ist nicht sicher genug. Bitte geben Sie ein Passwort mit mindestens 4 Zeichen ein.",
+    "spanish": "Introduzca una contraseña segura con una longitud mínima de 4."
+  },
+  {
+    "logicalName": "validRepeatPasswordText",
+    "english": "Please re-enter the same password as above.",
+    "german": "Das Passwort muss mit dem zuvor eingegebenen Passwort übereinstimmen und mehr als vier Zeichen haben.",
+    "spanish": "Por favor vuelva a ingresar la misma contraseña que arriba."
+  },
+  {
+    "logicalName": "acceptAGBText",
+    "english": "I have read and accept the AGBs.",
+    "german": "Ich habe die AGBs gelesen und akzeptiert.",
+    "spanish": "He leído y acepto los términos y condiciones."
+  },
+  {
+    "logicalName": "validAGBText",
+    "english": "You must read and accept the AGBs to register.",
+    "german": "Sie muessen die AGB akzeptieren um sich registrieren zu können.",
+    "spanish": "Tienes que aceptar los términos y condiciones para poder registrarte."
   }
 ]
