@@ -10,5 +10,5 @@ export class Globals {
   genreFilter: string = '';
   filter: string = '';
   currentUser: User = new User();
-  version: string = '1.5.5'
+  version: string = '1.5.6'
 }
