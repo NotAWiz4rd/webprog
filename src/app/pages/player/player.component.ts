@@ -47,8 +47,6 @@ export class PlayerComponent implements OnInit, AfterViewInit {
               private moviesService: MoviesService) {
     this.activatedRoute.data.subscribe((res) => {
       const movie = res.movie as MovieData;
-      this.movieSource = MOVIES_PATH + movie.filename + '.mp4';
-      let movie = res.movie as MovieData;
       this.source = MOVIES_PATH + movie.filename + '.mp4';
       this.thumbnail = THUMBNAILS_PATH + movie.filename + '.jpg';
       this.moviename = movie.filename;
@@ -105,8 +103,7 @@ export class PlayerComponent implements OnInit, AfterViewInit {
   goBack() {
     const watchedMovie = new WatchedMovie();
     const vid = document.getElementById('myVideo') as HTMLVideoElement;
-    let watchedMovie = new WatchedMovie();
-    let vid = document.getElementById('myVideo');
+
     if (this.isSeries) {
       watchedMovie.info = this.season + ';' + this.episode.filename;
     }

@@ -29,7 +29,6 @@ import {MovieSuggestionsComponent} from './components/movie-suggestions/movie-su
 import {MovieDescriptionComponent} from './components/movie-description/movie-description.component';
 import {ImpressumPageComponent} from './pages/impressum-page/impressum-page.component';
 import {LogoComponent} from "./components/logo/logo.component";
-import {MovieSuggestionsComponent} from "./components/movie-suggestions/movie-suggestions.component";
 import {RegisterPageComponent} from './pages/register-page/register-page.component';
 import {ContactPageComponent} from './pages/contact-page/contact-page.component';
 import {FormsModule} from "@angular/forms";
