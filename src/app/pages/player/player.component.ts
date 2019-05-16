@@ -6,8 +6,6 @@ import {ActivatedRoute} from "@angular/router";
 import {MovieData} from "../../util/MovieData";
 import {UsersService} from "../../services/users.service";
 import {WatchedMovie} from "../../util/WatchedMovie";
-import {falseIfMissing} from "protractor/built/util";
-import {timer} from "rxjs";
 
 const MOVIES_PATH = '../../../assets/movies/';
 const THUMBNAILS_PATH = '../../../assets/thumbnails/';
