@@ -3,6 +3,7 @@ import {StaticText} from "./util/StaticText";
 import {HttpClient} from "@angular/common/http";
 import {Globals} from "./util/Globals";
 import {UsersService} from "./services/users.service";
+import {AuthService} from "./services/auth.service";
 
 const TEXTFILE_PATH = '../../../assets/texts.json';
 
@@ -14,11 +15,13 @@ const TEXTFILE_PATH = '../../../assets/texts.json';
 export class AppComponent implements OnInit {
   constructor(public globals: Globals,
               private http: HttpClient,
-              private usersService: UsersService) {
+              private usersService: UsersService,
+              private authService: AuthService) {
   }
 
   ngOnInit() {
     this.usersService.loadUsersFromServer();
+    this.authService.isLoggedIn();
     this.loadTexts();
   }
 
