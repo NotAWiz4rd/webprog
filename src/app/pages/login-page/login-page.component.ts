@@ -11,7 +11,7 @@ import {Globals} from '../../util/Globals';
   styleUrls: ['./login-page.component.css']
 })
 export class LoginPageComponent implements OnInit {
-  loginName: string = '';
+  email: string = '';
   loginPassword: string = '';
 
   constructor(public globals: Globals,
@@ -39,7 +39,7 @@ export class LoginPageComponent implements OnInit {
   }
 
   mailInputChange(mail: string) {
-    this.loginName = mail;
+    this.email = mail;
   }
 
   passwordInputChange(password: string) {
@@ -48,7 +48,7 @@ export class LoginPageComponent implements OnInit {
 
   // ToDo: Is this working???
   loginButtonClickable(): boolean {
-    if (this.loginPassword.length >= 4 && this.loginName.length >= 4) {
+    if (this.loginPassword.length >= 4 && this.email.length >= 4) {
       return true;
     } else {
       return false;
@@ -58,8 +58,8 @@ export class LoginPageComponent implements OnInit {
   private lookForMatch(): boolean {
     let foundUser = false;
     this.globals.userData.forEach(user => {
-      if (user.name === this.loginName && user.password === this.loginPassword) {
-        console.log('Correct login for user ' + this.loginName + ' received.');
+      if (user.email === this.email && user.password === this.loginPassword) {
+        console.log('Correct login for user ' + this.email + ' received.');
         this.globals.currentUser = user;
         this.authService.setLoggedIn(true);
         foundUser = true;

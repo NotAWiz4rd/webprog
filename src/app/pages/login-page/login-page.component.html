@@ -3,7 +3,7 @@
 
     <div>
       <input class="text-input" type="text"
-             placeholder="{{globals.staticTexts | getStaticText : 'usernameText' : languageService.getLanguage()}}"
+             placeholder="{{globals.staticTexts | getStaticText : 'mailText' : languageService.getLanguage()}}"
              #inputMail (keyup)="mailInputChange(inputMail.value)">
       <br>
       <input class="text-input" type="password"

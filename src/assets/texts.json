@@ -180,16 +180,21 @@
     "spanish": "Sugerencias para Ti:"
   },
   {
-    "logicalName": "usernameText",
-    "english": "Username",
-    "german": "Nutzername",
-    "spanish": "nombre_usuario"
+    "logicalName": "mailText",
+    "english": "Mail",
+    "german": "E-Mail",
+    "spanish": "mail"
   },
   {
     "logicalName": "passwordText",
     "english": "Password",
     "german": "Passwort",
     "spanish": "contraseña"
+  },{
+    "logicalName": "repeatPasswordText",
+    "english": "Repeat password",
+    "german": "Passwort wiederholen",
+    "spanish": "contraseña again"
   },
   {
     "logicalName": "genreTextDramas",

@@ -4,6 +4,7 @@ import {Globals} from "../../util/Globals";
 import {UsersService} from "../../services/users.service";
 import {NavigationService} from "../../services/navigation.service";
 import {AuthService} from "../../services/auth.service";
+import {LanguageService} from "../../services/language.service";
 
 @Component({
   selector: 'app-register-page',
@@ -21,6 +22,7 @@ export class RegisterPageComponent implements OnInit {
   registerAgbValid: boolean = false;
 
   constructor(public globals: Globals,
+              public languageService: LanguageService,
               private usersService: UsersService,
               private navigationService: NavigationService,
               private authService: AuthService) {

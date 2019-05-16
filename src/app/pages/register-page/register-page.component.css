@@ -51,12 +51,3 @@ button[disabled=disabled] {
 label {
   color: lightgrey;
 }
-
-.other {
-  color: white;
-}
-
-.message {
-  color: #ffa31a;
-  margin: 1rem;
-}

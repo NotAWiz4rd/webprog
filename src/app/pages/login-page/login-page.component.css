@@ -47,16 +47,3 @@ button[disabled=disabled] {
   background-color: darkred;
   color: darkred;
 }
-
-label {
-  color: lightgrey;
-}
-
-.other {
-  color: white;
-}
-
-.message {
-  color: #ffa31a;
-  margin: 1rem;
-}

@@ -3,7 +3,6 @@ import {WatchedMovie} from "./WatchedMovie";
 
 export class User {
   _id: number = 0;
-  name: string = '';
   password: string = '';
   email: string = '';
   movieList: string[] = [];
