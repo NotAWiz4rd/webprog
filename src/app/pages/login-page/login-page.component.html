@@ -18,6 +18,7 @@
     </div>
     <app-basic-button [disabled]="!loginButtonClickable()" (click)="onLogin()"
                       [text]=" globals?.staticTexts | getStaticText : 'loginText': languageService.getLanguage()">
+      [style.visibility]="registerRepeatPasswordValid ? 'hidden' : 'visible'"
     </app-basic-button>
     <app-basic-button (click)="showRegistertoUser()"
                       [text]="globals?.staticTexts | getStaticText : 'registerText': languageService.getLanguage()">
