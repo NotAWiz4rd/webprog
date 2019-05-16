@@ -19,3 +19,11 @@ div:hover {
 .active {
   text-decoration: underline;
 }
+
+p {
+  display: inline-block;
+  position: relative;
+  float: right;
+  color: white;
+  margin-right: 10px;
+}
