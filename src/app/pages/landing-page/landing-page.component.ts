@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NavigationService} from '../../services/navigation.service';
+import {LanguageService} from '../../services/language.service';
+import {Globals} from "../../util/Globals";
 
 
 @Component({
@@ -10,7 +12,9 @@ import {NavigationService} from '../../services/navigation.service';
 export class LandingPageComponent implements OnInit {
   join: string = 'JOIN NOW';
 
-  constructor(private navigationService: NavigationService) {
+  constructor(private navigationService: NavigationService,
+              public languageService: LanguageService,
+              public globals: Globals) {
   }
 
   ngOnInit() {
