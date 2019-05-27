@@ -292,5 +292,35 @@
     "english": "View AGBs",
     "german": "AGBs anzeigen",
     "spanish": "Ver AGBs"
+  },
+  {
+    "logicalName": "joinText",
+    "english": "Join!",
+    "german": "Beitreten!",
+    "spanish": "Hacerse socio!"
+  },
+  {
+    "logicalName": "welcomeText",
+    "english": "WELCOME TO MOVIEHUB!",
+    "german": "WILLKOMMEN BEI MOVIEHUB!",
+    "spanish": "BIENVENIDO A MOVIEHUB!"
+  },
+  {
+    "logicalName": "catchText3",
+    "english": "Curious? \n Come in and find out!",
+    "german": "Neugierig? \n Tritt bei und erfahre mehr!",
+    "spanish": "¿Curioso? \n Entra y averígualo!"
+  },
+  {
+    "logicalName": "catchText1",
+    "english": "Join the biggest movie community on this planet!",
+    "german": "Tritt der größten Film Community der Welt bei!",
+    "spanish": "Únete a la comunidad cinematográfica más grande del planeta!"
+  },
+  {
+    "logicalName": "catchText2",
+    "english": "Join today, watch forever!",
+    "german": "Heute registrieren, endlos gucken! ",
+    "spanish": "Únete hoy, mira para siempre!"
   }
 ]

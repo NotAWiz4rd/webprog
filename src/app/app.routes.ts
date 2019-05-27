@@ -9,11 +9,12 @@ import {ImpressumPageComponent} from './pages/impressum-page/impressum-page.comp
 import {RegisterPageComponent} from "./pages/register-page/register-page.component";
 import {ContactPageComponent} from "./pages/contact-page/contact-page.component";
 import {AgbPageComponent} from "./pages/agb-page/agb-page.component";
+import {LandingPageComponent} from "./pages/landing-page/landing-page.component";
 
 export const APP_ROUTES = [
   {
     path: '',
-    component: LoginPageComponent,
+    component: LandingPageComponent,
     pathMatch: 'full'
   },
   {
