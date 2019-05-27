@@ -18,6 +18,10 @@ export const APP_ROUTES = [
     pathMatch: 'full'
   },
   {
+    path: 'land',
+    component: LandingPageComponent
+  },
+  {
     path: 'login',
     component: LoginPageComponent
   },

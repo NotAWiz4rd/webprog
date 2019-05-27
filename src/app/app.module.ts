@@ -57,7 +57,7 @@ import { LandingPageComponent } from './pages/landing-page/landing-page.componen
     LogoComponent,
     RegisterPageComponent,
     ContactPageComponent,
-    AgbPageComponent
+    AgbPageComponent,
     ContactPageComponent,
     LandingPageComponent
   ],
