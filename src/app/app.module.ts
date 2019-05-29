@@ -56,7 +56,7 @@ import {RowElementComponent} from "./components/row-element/row-element.componen
     MovieSuggestionsComponent,
     LogoComponent,
     RegisterPageComponent,
-    ContactPageComponent
+    ContactPageComponent,
     LogoComponent,
     RowComponent,
     RowElementComponent
