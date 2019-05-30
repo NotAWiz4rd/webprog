@@ -3,6 +3,7 @@ import {MovieData} from "../../util/MovieData";
 import {NavigationService} from "../../services/navigation.service";
 import {Globals} from "../../util/Globals";
 import {UsersService} from "../../services/users.service";
+import {LanguageService} from "../../services/language.service";
 
 @Component({
   selector: 'app-row-element',
@@ -12,13 +13,16 @@ import {UsersService} from "../../services/users.service";
 export class RowElementComponent implements OnInit {
   // this can't be a const as it has to be accessed from the template
   THUMBNAILS_PATH = '../../../assets/thumbnails/';
-  hover: boolean = true;
+  hover: boolean = false;
+  details: boolean = false;
+  timer: any;
   @Input()
   movie: MovieData = new MovieData();
 
   constructor(private navigationService: NavigationService,
               public globals: Globals,
-              private usersService: UsersService) {
+              private usersService: UsersService,
+              public languageService: LanguageService) {
   }
 
   ngOnInit() {
@@ -28,13 +32,14 @@ export class RowElementComponent implements OnInit {
     this.navigationService.navigateToMovie(this.movie.filename);
   }
 
-  hoverShowDescription() {
-    let timerId = setTimeout(() => {
+  hoverShowDescription(i: number) {
+    this.timer = setTimeout(() => {
       this.hover = true;
-    }, 3000);
+    }, i);
   }
 
   hoverLeave() {
+    clearTimeout(this.timer);
     // this.hover = false;
   }
 
@@ -44,5 +49,9 @@ export class RowElementComponent implements OnInit {
 
   removeMovieFromList() {
     this.usersService.removeMovieFromList(this.movie);
+  }
+
+  showInfo() {
+    this.details = !this.details;
   }
 }
