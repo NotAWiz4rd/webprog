@@ -39,8 +39,10 @@ export class RowElementComponent implements OnInit {
   }
 
   hoverLeave() {
-    clearTimeout(this.timer);
-    // this.hover = false;
+    if (!this.details) {
+      clearTimeout(this.timer);
+      this.hover = false;
+    }
   }
 
   movieIsInList(): boolean {
@@ -52,6 +54,7 @@ export class RowElementComponent implements OnInit {
   }
 
   showInfo() {
+    this.hover = true;
     this.details = !this.details;
   }
 }
