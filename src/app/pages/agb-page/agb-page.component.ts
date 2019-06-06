@@ -14,5 +14,4 @@ export class AgbPageComponent implements OnInit {
   ngOnInit() {
     this.globals.view = 'agb';
   }
-
 }

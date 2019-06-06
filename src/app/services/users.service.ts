@@ -76,10 +76,7 @@ export class UsersService {
 
   private pushUserUpdate() {
     if (this.globals.currentUser.email != '') {
-      this.http.post(DATABASE_PATH, JSON.stringify(this.globals.currentUser), httpOptions).subscribe(data => {
-        console.log('Userdata has been updated: ');
-        console.log(data);
-      });
+      this.http.post(DATABASE_PATH, JSON.stringify(this.globals.currentUser), httpOptions).subscribe(() => console.log('Userdata has been updated: '));
     }
   }
 

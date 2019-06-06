@@ -10,6 +10,10 @@ export class MoviesService {
   constructor(private globals: Globals) {
   }
 
+  /**
+   * Gets a movie by its filename.
+   * @param movieKey The filename/key of the movie.
+   */
   getMovie(movieKey: string): MovieData {
     let selectedMovie: MovieData = new MovieData();
     this.globals.movieData.forEach(movie => {
@@ -20,6 +24,10 @@ export class MoviesService {
     return selectedMovie;
   }
 
+  /**
+   * Analyses watched movies and returns a list of movies with similar attributes.
+   * @param watchedMovies The list of watched movies of the user.
+   */
   compileMovieSuggestions(watchedMovies: WatchedMovie[]): MovieData[] {
     let moviesToAnalyze = this.getMovies(watchedMovies);
 

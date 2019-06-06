@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {NavigationService} from '../../services/navigation.service';
 import {LanguageService} from '../../services/language.service';
 import {Globals} from "../../util/Globals";
@@ -10,7 +10,6 @@ import {Globals} from "../../util/Globals";
   styleUrls: ['./landing-page.component.css']
 })
 export class LandingPageComponent implements OnInit {
-  join: string = 'JOIN NOW';
 
   constructor(private navigationService: NavigationService,
               public languageService: LanguageService,
@@ -21,7 +20,7 @@ export class LandingPageComponent implements OnInit {
   }
 
   clickJoin() {
-      this.navigationService.navigateToView('login');
+    this.navigationService.navigateToView('login');
   }
 
 }

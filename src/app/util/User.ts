@@ -1,4 +1,3 @@
-// most basic user data, corresponds to the structure in the users.json
 import {WatchedMovie} from "./WatchedMovie";
 
 export class User {

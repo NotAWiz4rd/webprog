@@ -14,12 +14,19 @@ export class AuthService implements CanActivate {
     return this.canActivate();
   }
 
+  /**
+   * Sets loggedIn and user cookies.
+   * @param isLoggedIn whether the user is logged in.
+   */
   setLoggedIn(isLoggedIn: boolean) {
     localStorage.setItem('loggedIn', String(isLoggedIn));
     localStorage.setItem('user', this.globals.currentUser.email);
   }
 
-  logoutUser() {
+  /**
+   * Removes loggedIn and user cookies.
+   */
+  static logoutUser() {
     localStorage.removeItem('loggedIn');
     localStorage.removeItem('user');
   }

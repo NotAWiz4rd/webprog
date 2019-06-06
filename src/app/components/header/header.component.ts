@@ -24,7 +24,7 @@ export class HeaderComponent implements OnInit {
   }
 
   logoutUser() {
-    this.authService.logoutUser();
+    AuthService.logoutUser();
     this.globals.currentUser = new User();
     this.navigateToLogin()
   }
