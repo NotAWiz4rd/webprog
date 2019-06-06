@@ -12,7 +12,8 @@ export class BasicButtonComponent implements OnInit {
   @Input()
   disabled: boolean = false;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }

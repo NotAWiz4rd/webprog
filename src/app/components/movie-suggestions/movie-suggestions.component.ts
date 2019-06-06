@@ -20,5 +20,4 @@ export class MovieSuggestionsComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

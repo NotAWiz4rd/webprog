@@ -18,5 +18,4 @@ export class MyListComponent implements OnInit {
   ngOnInit() {
     this.globals.view = 'my-list';
   }
-
 }
