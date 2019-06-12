@@ -49,7 +49,6 @@ export class UsersService {
 
     this.http.post(DATABASE_PATH, JSON.stringify(newUser), httpOptions).subscribe(data => {
       console.log('New user has been created:');
-      console.log(data);
       success = true;
       this.loadUsersFromServer();
     });

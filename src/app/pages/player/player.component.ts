@@ -164,8 +164,6 @@ export class PlayerComponent implements OnInit, AfterViewInit {
 
   keyDownFunction(event: Event) {
     // @ts-ignore
-    console.log(event.keyCode);
-    // @ts-ignore
     switch (event.keyCode) {
       case 75 || 107:
         // K

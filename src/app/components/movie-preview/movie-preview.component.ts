@@ -44,12 +44,10 @@ export class MoviePreviewComponent implements OnInit {
   }
 
   mouseEnter(div: string) {
-    console.log("mouse enter : " + div);
     this.hover = true;
   }
 
   mouseLeave(div: string) {
-    console.log('mouse leave : ' + div);
     this.hover = false;
   }
 
