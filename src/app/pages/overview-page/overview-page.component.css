@@ -2,6 +2,10 @@ app-movie-preview {
   display: block;
 }
 
+app-movie-suggestions {
+  display: block;
+}
+
 .reset-genre {
   color: white;
   cursor: pointer;
@@ -42,4 +46,18 @@ h2 {
   margin-top: 15px;
   margin-bottom: 15px;
   padding: 10px;
+}
+
+h1 {
+  color: white;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 10px;
+}
+
+.line {
+  padding: 0;
+  cursor: default;
+  display: block;
+  border-top: 1px solid #ffa31a;
 }

@@ -3,7 +3,7 @@ app-basic-button {
   z-index: 3;
 }
 
-.videoControl {
+.btn {
   /*position: absolute;
   z-index: 3;*/
   display: inline-block;

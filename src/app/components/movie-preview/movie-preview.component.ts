@@ -14,6 +14,7 @@ export class MoviePreviewComponent implements OnInit {
   // this can't be a const as it has to be accessed from the template
   THUMBNAILS_PATH = '../../../assets/thumbnails/';
   hover: boolean = false;
+  info: boolean = false;
 
   @Input()
   movie: MovieData = new MovieData();
@@ -49,6 +50,10 @@ export class MoviePreviewComponent implements OnInit {
 
   mouseLeave(div: string) {
     this.hover = false;
+    this.info = false;
   }
 
+  toggleInfo() {
+    this.info = !(this.info);
+  }
 }

@@ -10,18 +10,19 @@
          #inputSearch (keyup)="filterInputChange(inputSearch.value)" value="{{globals.filter}}">
 </div>
 
-<h2>
-  {{globals.genreFilter != '' ? (globals.staticTexts | getStaticText : 'genreText' + globals.genreFilter : languageService.getLanguage())
-  : (globals.staticTexts | getStaticText : 'allMoviesText' : languageService.getLanguage())}}
-</h2>
-
+<div class="line"></div>
 <app-movie-suggestions *ngIf="globals.genreFilter === '' && globals.filter === ''"></app-movie-suggestions>
-
 <ng-container *ngIf="globals.genreFilter === '' && globals.filter === ''">
   <h2>{{globals.staticTexts | getStaticText : 'continueWatchingText' : languageService.getLanguage()}}</h2>
+  <div class="line"></div>
   <app-movie-preview *ngFor="let movie of getRecentlyWatched()" [movie]="movie"></app-movie-preview>
 </ng-container>
-
+<div class="line"></div>
+<h1>
+  {{globals.genreFilter != '' ? (globals.staticTexts | getStaticText : 'genreText' + globals.genreFilter : languageService.getLanguage())
+  : (globals.staticTexts | getStaticText : 'allMoviesText' : languageService.getLanguage())}}
+</h1>
+<div class="line"></div>
 <ng-container *ngFor="let movie of globals.movieData | getFilteredMovies : globals.filter">
   <app-movie-preview *ngIf="globals.genreFilter === '' || movie.genres.includes(globals.genreFilter)"
                      [movie]="movie"></app-movie-preview>
