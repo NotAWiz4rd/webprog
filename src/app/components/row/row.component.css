@@ -4,8 +4,38 @@ p {
 
 app-row-element {
   padding: 2px;
+  position: center;
 }
 
 .linked {
   cursor: pointer;
+}
+
+/*div{
+  overflow-x: scroll;
+  overflow-y: visible;
+  /*overflow-scrolling: touch;
+  white-space: nowrap;
+  height: 230px !important;
+}
+
+div:hover {
+  transform: translate3d(-45 , 0, 0)
+
+}*/
+
+.row_outer {
+  overflow: scroll;
+  width: 100%;
+}
+
+.row_inner {
+  transition: 200ms transform;
+  white-space: nowrap;
+  margin: 85px 0;
+  padding-bottom: 10px;
+}
+
+.row_inner:hover {
+  transform: translate3d(-45,0,0);
 }

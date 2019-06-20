@@ -1,12 +1,3 @@
-<div class="thumb" (mouseenter)="hoverShowDescription(100)"
-     (mouseleave)="hoverLeave()">
-  <img src="{{THUMBNAILS_PATH}}{{movie.filename}}.jpg"
-       alt=""
-       (click)="navigateToMovie()"
-
-  />
-  <app-basic-button *ngIf="hover" [text]="'Info'" (click)="showInfo()"></app-basic-button>
-</div>
 <div class="desriptio" *ngIf="details">
   <h2 (click)="navigateToMovie(movie.filename)">{{movie.name}}</h2>
   <app-movie-description [movie]="movie"></app-movie-description>
@@ -16,4 +7,15 @@
   <app-basic-button *ngIf="movieIsInList()" (click)="removeMovieFromList()"
                     [text]="globals.staticTexts | getStaticText : 'removeFromListText' : languageService.getLanguage()">
   </app-basic-button>
+</div >
+<div class="title">
+<div class="media" (mouseenter)="hoverShowDescription(100)"
+     (mouseleave)="hoverLeave()">
+  <img src="{{THUMBNAILS_PATH}}{{movie.filename}}.jpg"
+       alt=""
+       (click)="navigateToMovie()"
+
+  />
+  <app-basic-button *ngIf="hover" [text]="'Info'" (click)="showInfo()"></app-basic-button>
+</div>
 </div>
