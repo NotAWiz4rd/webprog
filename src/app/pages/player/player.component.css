@@ -4,8 +4,6 @@ app-basic-button {
 }
 
 .btn {
-  /*position: absolute;
-  z-index: 3;*/
   display: inline-block;
   border: 2px solid #ffa31a;
   width: 24px;
