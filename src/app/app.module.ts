@@ -32,6 +32,8 @@ import {LogoComponent} from "./components/logo/logo.component";
 import {RegisterPageComponent} from './pages/register-page/register-page.component';
 import {ContactPageComponent} from './pages/contact-page/contact-page.component';
 import {FormsModule} from "@angular/forms";
+import {AgbPageComponent} from "./pages/agb-page/agb-page.component";
+import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +58,10 @@ import {FormsModule} from "@angular/forms";
     MovieSuggestionsComponent,
     LogoComponent,
     RegisterPageComponent,
-    ContactPageComponent
+    ContactPageComponent,
+    AgbPageComponent,
+    ContactPageComponent,
+    LandingPageComponent
   ],
   imports: [
     BrowserModule,

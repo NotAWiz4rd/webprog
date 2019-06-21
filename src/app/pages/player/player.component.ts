@@ -22,7 +22,6 @@ export class PlayerComponent implements OnInit, AfterViewInit {
   thumbnail: string = '';
   moviename: string = '';
   hover: boolean = true;
-  isFullscreen: boolean = false;
   showVolume: boolean = false;
 
   season: string = '';
@@ -68,6 +67,9 @@ export class PlayerComponent implements OnInit, AfterViewInit {
     this.globals.view = 'watch';
   }
 
+  /**
+   * Properly sets up the custom controls.
+   */
   ngAfterViewInit() {
     const vid = document.getElementById('myVideo') as HTMLVideoElement;
     vid.currentTime = this.getMovieTimestamp();
@@ -154,8 +156,8 @@ export class PlayerComponent implements OnInit, AfterViewInit {
   }
 
   toggleMute() {
-
     const video = document.getElementById('myVideo') as HTMLVideoElement;
+
     if (video.muted) {
       video.muted = false;
       const myRange = document.getElementById('volumeRange') as HTMLInputElement;
@@ -175,16 +177,6 @@ export class PlayerComponent implements OnInit, AfterViewInit {
     video.volume = parseInt(range.value, 10) / 100;
   }
 
-  /*increaseVolume() {
-    const video = document.getElementById('myVideo') as HTMLVideoElement;
-    video.volume += video.volume == 1 ? 0 : 0.1;
-  }
-
-  decreaseVolume() {
-    const video = document.getElementById('myVideo') as HTMLVideoElement;
-    video.volume -= (video.volume == 0 ? 0 : 0.1);
-  }*/
-
   skipSeconds(time: number) {
     const video = document.getElementById('myVideo') as HTMLVideoElement;
     video.currentTime += video.currentTime == 0 ? 0 : time;
@@ -192,40 +184,31 @@ export class PlayerComponent implements OnInit, AfterViewInit {
 
   keyDownFunction(event: Event) {
     // @ts-ignore
-    console.log(event.keyCode);
-    // @ts-ignore
     switch (event.keyCode) {
       case 75 || 107:
         // K
         this.playpause();
         break;
-
       case 107:
         // K
         this.playpause();
         break;
-
       case 74 || 106:
         // J
         this.skipSeconds(-10);
         break;
-
       case 106:
         // J
         this.skipSeconds(-10);
         break;
-
       case 76 || 108:
         // L
         this.skipSeconds(10);
         break;
-
       case 108:
         // L
         this.skipSeconds(10);
         break;
-
-
       case 77:
         // M
         this.toggleMute();

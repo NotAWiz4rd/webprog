@@ -13,4 +13,5 @@ export class Globals {
   filter: string = '';
   currentUser: User = new User();
   THUMBNAILS_PATH: string = '../../../assets/thumbnails/';
+  version: string = '1.6.7'
 }

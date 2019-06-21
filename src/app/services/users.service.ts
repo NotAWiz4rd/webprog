@@ -49,7 +49,6 @@ export class UsersService {
 
     this.http.post(DATABASE_PATH, JSON.stringify(newUser), httpOptions).subscribe(data => {
       console.log('New user has been created:');
-      console.log(data);
       success = true;
       this.loadUsersFromServer();
     });
@@ -75,10 +74,9 @@ export class UsersService {
   }
 
   private pushUserUpdate() {
-    this.http.post(DATABASE_PATH, JSON.stringify(this.globals.currentUser), httpOptions).subscribe(data => {
-      console.log('Userdata has been updated: ');
-      console.log(data);
-    });
+    if (this.globals.currentUser.email != '') {
+      this.http.post(DATABASE_PATH, JSON.stringify(this.globals.currentUser), httpOptions).subscribe(() => console.log('Userdata has been updated: '));
+    }
   }
 
   getUser(username: string): User {

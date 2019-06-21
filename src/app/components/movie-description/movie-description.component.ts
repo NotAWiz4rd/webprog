@@ -15,7 +15,8 @@ export class MovieDescriptionComponent implements OnInit {
   movie: MovieData = new MovieData();
 
   constructor(public languageService: LanguageService,
-              public globals: Globals){}
+              public globals: Globals) {
+  }
 
   ngOnInit() {
   }

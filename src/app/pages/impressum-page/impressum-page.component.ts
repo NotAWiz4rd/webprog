@@ -16,5 +16,4 @@ export class ImpressumPageComponent implements OnInit {
   ngOnInit() {
     this.globals.view = 'impressum';
   }
-
 }

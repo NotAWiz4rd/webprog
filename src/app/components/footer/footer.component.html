@@ -16,7 +16,14 @@
   {{globals?.staticTexts | getStaticText : 'impressumText' : languageService.getLanguage()}}
 </div>
 
+<div *ngIf="globals.view != 'agb'" (click)="navigationService.navigateToView('agb')">
+  {{globals?.staticTexts | getStaticText : 'agbText' : languageService.getLanguage()}}
+</div>
+
 <div *ngIf="globals.view != 'contact'" (click)="navigationService.navigateToView('contact')">
   {{globals?.staticTexts | getStaticText : 'contactText' : languageService.getLanguage()}}
 </div>
 
+<p>
+  v{{globals.version}}
+</p>

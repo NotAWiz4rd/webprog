@@ -41,7 +41,7 @@ export class RegisterPageComponent implements OnInit {
       }
       if (this.registerPassword === this.registerRepeatPassword) {
         let user = new User();
-        user.password = this.encryptPw(this.registerPassword);
+        user.password = RegisterPageComponent.encryptPw(this.registerPassword);
         user.email = this.registerEmail;
         this.usersService.addUser(user);
         this.globals.currentUser = user;
@@ -57,13 +57,8 @@ export class RegisterPageComponent implements OnInit {
     }
   }
 
-  // ToDo: Is this working???
   registerButtonClickable(): boolean {
-    if (this.registerPasswordValid && this.registerRepeatPasswordValid && this.registerAgbValid && this.registerEmailValid) {
-      return true;
-    } else {
-      return false;
-    }
+    return !!(this.registerPasswordValid && this.registerRepeatPasswordValid && this.registerAgbValid && this.registerEmailValid);
   }
 
   passwordRegisterChange(pass: string) {
@@ -78,11 +73,7 @@ export class RegisterPageComponent implements OnInit {
 
   repeatPasswordRegisterChange(regPass: string) {
     this.registerRepeatPassword = regPass;
-    if (regPass === this.registerPassword && this.registerRepeatPassword.length >= 4) {
-      this.registerRepeatPasswordValid = true;
-    } else {
-      this.registerRepeatPasswordValid = false;
-    }
+    this.registerRepeatPasswordValid = !!(regPass === this.registerPassword && this.registerRepeatPassword.length >= 4);
   }
 
   checkedAGBRegisterChange(checked: boolean) {
@@ -90,15 +81,15 @@ export class RegisterPageComponent implements OnInit {
   }
 
   emailRegisterChange(mail: string) {
-    if (mail.length >= 4) {
-      this.registerEmailValid = true;
-    } else {
-      this.registerEmailValid = false;
-    }
+    this.registerEmailValid = mail.length >= 4;
     this.registerEmail = mail;
   }
 
-  private encryptPw(password: string): string {
+  private static encryptPw(password: string): string {
     return window.btoa(password);
+  }
+
+  goToAGBs() {
+    window.open("agb", "_blank")
   }
 }

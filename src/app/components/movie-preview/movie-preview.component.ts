@@ -43,13 +43,11 @@ export class MoviePreviewComponent implements OnInit {
     this.usersService.removeMovieFromList(this.movie);
   }
 
-  mouseEnter(div : string){
-    console.log("mouse enter : " + div);
+  mouseEnter(div: string) {
     this.hover = true;
   }
 
-  mouseLeave(div : string){
-    console.log('mouse leave : ' + div);
+  mouseLeave(div: string) {
     this.hover = false;
   }
 

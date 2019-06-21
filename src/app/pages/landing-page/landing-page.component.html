@@ -1,0 +1,8 @@
+<div class="borderedDiv">
+  <h1> {{globals.staticTexts | getStaticText : 'welcomeText' : languageService.getLanguage()}}</h1>
+  <h2> {{globals.staticTexts | getStaticText : 'catchText1' : languageService.getLanguage()}}</h2>
+  <h2> {{globals.staticTexts | getStaticText : 'catchText2' : languageService.getLanguage()}}</h2>
+  <h2> {{globals.staticTexts | getStaticText : 'catchText3' : languageService.getLanguage()}}</h2>
+  <app-basic-button (click)="clickJoin()"
+                    [text]="globals?.staticTexts | getStaticText : 'joinText' : languageService.getLanguage()"></app-basic-button>
+</div>

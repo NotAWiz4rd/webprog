@@ -21,6 +21,9 @@ export class LoginPageComponent implements OnInit {
               private navigationService: NavigationService) {
   }
 
+  /**
+   * Redirects to overview if user is already logged in, otherwise sets view to login.
+   */
   ngOnInit() {
     if (this.authService.isLoggedIn()) {
       this.navigationService.navigateToView('overview');
@@ -47,19 +50,17 @@ export class LoginPageComponent implements OnInit {
     this.loginPassword = password;
   }
 
-  // ToDo: Is this working???
   loginButtonClickable(): boolean {
-    if (this.loginPassword.length >= 4 && this.email.length >= 4) {
-      return true;
-    } else {
-      return false;
-    }
+    return !!(this.loginPassword.length >= 4 && this.email.length >= 4);
   }
 
+  /**
+   * Tries to match the login data to an existing user.
+   */
   private lookForMatch(): boolean {
     let foundUser = false;
     this.globals.userData.forEach(user => {
-      if (user.email === this.email && this.encryptPw(user.password) === this.loginPassword) {
+      if (user.email === this.email && user.password === LoginPageComponent.encryptPw(this.loginPassword)) {
         console.log('Correct login for user ' + this.email + ' received.');
         this.globals.currentUser = user;
         this.authService.setLoggedIn(true);
@@ -80,7 +81,7 @@ export class LoginPageComponent implements OnInit {
     this.navigationService.navigateToView('register');
   }
 
-  private encryptPw(password: string): string {
+  private static encryptPw(password: string): string {
     return window.btoa(password);
   }
 }
