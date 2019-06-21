@@ -322,5 +322,17 @@
     "english": "Join today, watch forever!",
     "german": "Heute registrieren, endlos gucken! ",
     "spanish": "Únete hoy, mira para siempre!"
+  },
+  {
+    "logicalName": "allSeriesText",
+    "english": "All series",
+    "german": "Alle Serien",
+    "spanish": "Toutes les séries"
+  },
+  {
+    "logicalName": "genreTextSeries",
+    "english": "Series",
+    "german": "Serien",
+    "spanish": "Séries"
   }
 ]

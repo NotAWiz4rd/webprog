@@ -140,9 +140,7 @@ export class MoviesService {
     let movies: MovieData[] = [];
     watchedMovies.forEach(watchedMovie => {
       let movie: MovieData = this.getMovie(watchedMovie.movieName);
-      if (!movie.isSeries) {
-        movies.push(movie);
-      }
+      movies.push(movie);
     });
 
     return movies;

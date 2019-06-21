@@ -10,17 +10,17 @@ app-basic-button {
   height: 24px;
   border-radius: 4px;
   margin: 1rem;
-  bottom: 0%;
-  background-position: 0px 0px;
+  bottom: 0;
+  background-position: 0 0;
   background-repeat: no-repeat;
   background-size: 25px auto;
   background-color: #ffa31a !important;
 }
 
-.controlPanel {
+.control-panel {
   position: absolute;
   bottom: 5%;
-  left: 0%;
+  left: 0;
   z-index: 3;
   width: 100%;
   height: auto;
@@ -61,8 +61,8 @@ app-basic-button {
   width: 1rem;
   height: 5rem;
   z-index: 1;
-  padding: 0rem;
-  margin: 0rem;
+  padding: 0;
+  margin: 0;
 }
 
 #mute {
@@ -71,10 +71,14 @@ app-basic-button {
 
 .volumeControl {
   width: 15%;
-  background-color: transparent;
+  background-color: #3C3F41;
 }
 
 #myRange {
   padding: 1px;
   margin: 1.3rem;
+}
+
+#video-container, #smallerContainer, video{
+  background-color: black;
 }

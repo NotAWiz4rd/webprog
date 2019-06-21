@@ -56,4 +56,9 @@ export class OverviewPageComponent implements OnInit {
         console.log('Loaded movies and series data.');
       });
   }
+
+  resetFilters() {
+    this.genreFilterChange('');
+    this.filterInputChange('');
+  }
 }

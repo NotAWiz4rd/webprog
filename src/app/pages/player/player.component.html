@@ -1,4 +1,4 @@
-<div (keypress)="keyDownFunction($event)" ID="videoContainer" (mouseenter)="mouseEnter() " (mouseleave)="mouseLeave()">
+<div (keypress)="keyDownFunction($event)" ID="video-container" (mouseenter)="mouseEnter() " (mouseleave)="mouseLeave()">
 
   <app-basic-button (click)="goBack()" *ngIf="hover"
                     [text]="globals.staticTexts | getStaticText : 'goBackText' : languageService.getLanguage()"></app-basic-button>
@@ -17,7 +17,7 @@
         {{globals.staticTexts | getStaticText : 'noVideoSupportText' : languageService.getLanguage()}}
       </p>
     </video>
-    <div class="controlPanel" *ngIf="hover" (mouseleave)="volumeLeave()">
+    <div class="control-panel" *ngIf="hover" (mouseleave)="volumeLeave()">
       <div class="btn" (click)="playpause()" id="play"
            [ngStyle]="{background: 'url(../../../assets/icons/' + playIc + ')'}"></div>
       <div *ngIf="isSeries" class="btn" (click)="goToNextEpisode()" id="next"
