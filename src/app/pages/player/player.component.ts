@@ -33,6 +33,7 @@ export class PlayerComponent implements OnInit, AfterViewInit {
 
   playIc: string = 'pause.png';
   muteIc: string = 'volumeUp.png';
+  foreIc: string = 'forward.png';
 
   vidTime: number = 0;
   vidVolume: number = 100;

@@ -20,6 +20,8 @@
     <div class="controlPanel" *ngIf="hover" (mouseleave)="volumeLeave()">
       <div class="videoControl" (click)="playpause()" id="play"
            [ngStyle]="{background: 'url(../../../assets/icons/' + playIc + ')'}"></div>
+      <div class="videoControl" (click)="goToNextEpisode()" id="next"
+           [ngStyle]="{background: 'url(../../../assets/icons/' + foreIc + ')'}"></div>
       <div class="videoControl" (click)="toggleMute()" (mouseenter)="volumeEnter()" id="mute"
            [ngStyle]="{background: 'url(../../../assets/icons/' + muteIc + ')'}"></div>
       <input *ngIf="showVolume" orient="vertical" type="range" min="0" max="100" [valueAsNumber]="vidVolume"
