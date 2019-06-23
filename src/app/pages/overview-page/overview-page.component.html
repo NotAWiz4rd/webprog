@@ -1,7 +1,3 @@
-<div class="reset-genre" *ngIf="globals.genreFilter != ''" (click)="genreFilterChange('')">
-  {{globals.staticTexts | getStaticText : 'allMoviesText' : languageService.getLanguage()}}
-</div>
-
 <app-genre-chooser (genreChange)="genreFilterChange($event)"></app-genre-chooser>
 
 <div class="search-container">
