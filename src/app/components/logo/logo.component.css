@@ -8,7 +8,7 @@
   float: left;
   cursor: pointer;
   margin: 10px 0 0 20px;
-  flex-wrap: nowrap;
+  white-space: nowrap;
 }
 
 .hub span:nth-child(2) {
@@ -18,5 +18,4 @@
   padding: 0 0.5rem 0.5rem 0.5rem;
   display: inline-block;
   margin-left: 5px;
-  flex-wrap: nowrap;
 }
