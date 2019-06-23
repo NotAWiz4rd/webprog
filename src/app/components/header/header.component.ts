@@ -46,4 +46,9 @@ export class HeaderComponent implements OnInit {
     let movie = this.globals.movieData[random].filename;
     this.navigationService.navigateToMovie(movie);
   }
+
+  showAll(){
+    this.globals.genreFilter = '';
+    this.globals.filter = '';
+  }
 }

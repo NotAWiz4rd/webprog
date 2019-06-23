@@ -322,5 +322,9 @@
     "english": "Join today, watch forever!",
     "german": "Heute registrieren, endlos gucken! ",
     "spanish": "Únete hoy, mira para siempre!"
-  }
+  },
+  {"logicalName": "showAllText",
+  "english": "Show all",
+  "german":  "Alle Filme",
+  "spanish": "mostrar todo"}
 ]

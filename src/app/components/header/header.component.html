@@ -14,6 +14,10 @@
                     [text]="(globals?.staticTexts | getStaticText : 'randomText' : languageService.getLanguage())">
   </app-basic-button>
 
+  <app-basic-button (click)="showAll()"
+                    [text]="globals.staticTexts | getStaticText :'showAllText' : languageService.getLanguage()">
+  </app-basic-button>
+
   <div align="right" style="margin: 1rem">
   <app-basic-button (click)="logoutUser()"
                     [text]="globals?.staticTexts | getStaticText : 'logoutText' : languageService.getLanguage()">
