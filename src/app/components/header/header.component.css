@@ -1,19 +1,31 @@
 :host {
-  height: 100px;
   align-items: center;
 }
 
-.logout {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-app-basic-button {
-  margin: 10px;
-}
 
 .text {
   display: inline-block;
   color: white;
 }
+
+app-basic-button{
+  margin: 1rem;
+}
+
+
+.flex-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+div{
+  flex-grow: 2;
+}
+app-logo{
+  position: sticky;
+  top: 0px;
+  left: 0px;
+}
+
