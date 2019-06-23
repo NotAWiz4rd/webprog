@@ -1,5 +1,4 @@
 :host {
-  height: 100px;
   align-items: center;
 }
 
@@ -13,14 +12,11 @@ app-basic-button{
   margin: 1rem;
 }
 
-app-logo{
-  flex-wrap: nowrap;
-}
 
 .flex-container{
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: flex-start;
 }
 
