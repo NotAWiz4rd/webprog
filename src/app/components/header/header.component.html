@@ -1,8 +1,7 @@
+<div class="flex-container">
 <app-logo (click)="navigateToLogin()"></app-logo>
 <ng-container *ngIf="authService.isLoggedIn()">
-  <app-basic-button class="logout" (click)="logoutUser()"
-                    [text]="globals?.staticTexts | getStaticText : 'logoutText' : languageService.getLanguage()">
-  </app-basic-button>
+
 
   <app-basic-button *ngIf="authService.isLoggedIn()" (click)="navigateToOverview()"
                     [text]="globals?.staticTexts | getStaticText : 'homeText' : languageService.getLanguage()">
@@ -15,13 +14,20 @@
                     [text]="(globals?.staticTexts | getStaticText : 'randomText' : languageService.getLanguage())">
   </app-basic-button>
 
+  <div align="right" style="margin: 1rem">
+  <app-basic-button (click)="logoutUser()"
+                    [text]="globals?.staticTexts | getStaticText : 'logoutText' : languageService.getLanguage()">
+  </app-basic-button>
+  </div>
+
 </ng-container>
 
-<app-basic-button *ngIf="!authService.isLoggedIn() && globals.view != 'login'" (click)="navigateToLogin()"
+<!--<app-basic-button *ngIf="!authService.isLoggedIn() && globals.view != 'login'" (click)="navigateToLogin()"
                   [text]="globals?.staticTexts | getStaticText : 'loginText' : languageService.getLanguage()">
 </app-basic-button>
 
 <div class="text" *ngIf="authService.isLoggedIn()">
   {{globals.staticTexts | getStaticText : 'currentUserText' : languageService.getLanguage()}} {{globals.currentUser.email}}
   <ng-container *ngIf="globals.currentUser.isAdmin">isAdmin</ng-container>
+</div>-->
 </div>
