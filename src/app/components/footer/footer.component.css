@@ -25,5 +25,6 @@ p {
   position: relative;
   float: right;
   color: white;
+  margin: 0.5rem;
   margin-right: 10px;
 }
