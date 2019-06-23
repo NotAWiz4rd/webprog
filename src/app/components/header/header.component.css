@@ -23,4 +23,9 @@ app-basic-button{
 div{
   flex-grow: 2;
 }
+app-logo{
+  position: sticky;
+  top: 0px;
+  left: 0px;
+}
 
