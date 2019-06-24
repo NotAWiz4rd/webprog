@@ -2,16 +2,18 @@
 
   <app-basic-button (click)="goBack()" *ngIf="hover"
                     [text]="globals.staticTexts | getStaticText : 'goBackText' : languageService.getLanguage()"></app-basic-button>
+  <h1 *ngIf="hover">{{moviedata.name}}</h1>
   <div id="smallerContainer"
        (keypress)="keyDownFunction($event)">
+
     <video id="myVideo" controls
            autoplay
            disablePictureInPicture
            controlsList="nodownload"
            oncontextmenu="return false;"
            poster="{{thumbnail}}"
-           height="{{innerHeight-4}}"
-           width="{{innerWidth}}">
+           height="{{innerHeight-5}}"
+           width="{{innerWidth-5}}">
       <source src="{{movieSource}}" type="video/mp4">
       <p>
         {{globals.staticTexts | getStaticText : 'noVideoSupportText' : languageService.getLanguage()}}

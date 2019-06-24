@@ -23,13 +23,13 @@ export class PlayerComponent implements OnInit, AfterViewInit {
   showVolume: boolean = false;
   innerWidth: number = 0;
   innerHeight: number = 0;
-
+  timerId: any;
   playIc: string = 'pause.png';
   muteIc: string = 'volumeUp.png';
 
   vidTime: number = 0;
   vidVolume: number = 100;
-
+  moviedata: MovieData = new MovieData();
 
   constructor(public languageService: LanguageService,
               public globals: Globals,
@@ -37,6 +37,7 @@ export class PlayerComponent implements OnInit, AfterViewInit {
               private activatedRoute: ActivatedRoute,
               private usersService: UsersService) {
     this.activatedRoute.data.subscribe((res) => {
+      this.moviedata = res.movie as MovieData;
       const movie = res.movie as MovieData;
       this.movieSource = MOVIES_PATH + movie.filename + '.mp4';
       this.thumbnail = THUMBNAILS_PATH + movie.filename + '.jpg';
@@ -65,14 +66,14 @@ export class PlayerComponent implements OnInit, AfterViewInit {
 
       this.vidVolume = vid.volume * 100;
     });
-    let timerId = setTimeout(() => {
+    this.timerId = setTimeout(() => {
       this.hover = false;
     }, 5000);
     const vidContainer = document.getElementById('videoContainer') as HTMLDivElement;
     vidContainer.addEventListener('mousemove', () => {
-      clearTimeout(timerId);
+      clearTimeout(this.timerId);
       this.hover = true;
-      timerId = setTimeout(() => {
+      this.timerId = setTimeout(() => {
         this.hover = false;
       }, 5000);
     });

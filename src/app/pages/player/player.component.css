@@ -22,9 +22,9 @@ app-basic-button {
 .controlPanel {
   position: absolute;
   bottom: 5%;
-  left: 0%;
+  left: 5%;
   z-index: 3;
-  width: 100%;
+  width: 90%;
   height: auto;
   padding: 0.5rem;
   background-color: transparent;
@@ -79,4 +79,12 @@ app-basic-button {
 #myRange {
   padding: 1px;
   margin: 1.3rem;
+}
+
+h1 {
+  color : white;
+  background-color: transparent;
+  position: absolute;
+  z-index: 3;
+  right: 10%;
 }
