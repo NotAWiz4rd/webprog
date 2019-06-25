@@ -6,6 +6,8 @@ import {Globals} from "../../util/Globals";
   templateUrl: './agb-page.component.html',
   styleUrls: ['./agb-page.component.css']
 })
+
+//Shows site of our allgemeine geschaeftsbedingungen.
 export class AgbPageComponent implements OnInit {
 
   constructor(public globals: Globals) {
