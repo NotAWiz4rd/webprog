@@ -34,6 +34,7 @@ export class RegisterPageComponent implements OnInit {
     this.globals.view = 'register';
   }
 
+  // stuff that is supposed to happen on register
   onRegister(): boolean {
     if (this.registerAgbValid) {
       console.log('AGB checked');
@@ -59,10 +60,15 @@ export class RegisterPageComponent implements OnInit {
     }
   }
 
+  // the register button is not supposed to be clickable all the time,
+  // only when the passwords match, are long enough, the agb read checkbox is checked,
+  // and the email is valid
   registerButtonClickable(): boolean {
     return !!(this.registerPasswordValid && this.registerRepeatPasswordValid && this.registerAgbValid && this.registerEmailValid);
   }
 
+  // this is called on any change in the password field
+  // it checks if the password is of valid length and if the repeated password matches it
   passwordRegisterChange(pass: string) {
     this.registerPassword = pass;
     this.registerPasswordValid = pass.length >= 4;
@@ -73,6 +79,8 @@ export class RegisterPageComponent implements OnInit {
     }
   }
 
+  // this is called on any change in the repeat password field. it checks if the
+  // repeated password matches the password
   repeatPasswordRegisterChange(regPass: string) {
     this.registerRepeatPassword = regPass;
     this.registerRepeatPasswordValid = !!(regPass === this.registerPassword && this.registerRepeatPassword.length >= 4);
@@ -87,6 +95,7 @@ export class RegisterPageComponent implements OnInit {
     this.registerEmail = mail;
   }
 
+  // just to encrypt the password because our users data is important to us
   private static encryptPw(password: string): string {
     return window.btoa(password);
   }
