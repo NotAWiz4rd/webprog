@@ -8,6 +8,9 @@ import {Globals} from "../../util/Globals";
   templateUrl: './genre-chooser.component.html',
   styleUrls: ['./genre-chooser.component.css']
 })
+
+// this component has an array of genres and makes it possible to search by genres
+// by switching to the chosen one
 export class GenreChooserComponent implements OnInit {
   @Output()
   genreChange: EventEmitter<string> = new EventEmitter();

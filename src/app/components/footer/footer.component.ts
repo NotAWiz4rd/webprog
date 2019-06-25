@@ -9,6 +9,9 @@ import {UsersService} from "../../services/users.service";
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.css']
 })
+
+// The footer contains a few elements of which the language links are clickable
+// they will change the language of the application
 export class FooterComponent implements OnInit {
 
   constructor(public globals: Globals, public languageService: LanguageService, public navigationService: NavigationService, public usersService: UsersService) {

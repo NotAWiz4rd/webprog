@@ -5,6 +5,8 @@ import {Component, Input, OnInit} from '@angular/core';
   templateUrl: './basic-button.component.html',
   styleUrls: ['./basic-button.component.css']
 })
+
+// We use basic buttons as clickable components
 export class BasicButtonComponent implements OnInit {
   @Input()
   text: string = '';
