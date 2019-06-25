@@ -11,6 +11,8 @@ import {LanguageService} from "../../services/language.service";
   templateUrl: './register-page.component.html',
   styleUrls: ['./register-page.component.css']
 })
+
+// this class contains the implementation for the functions of the register page
 export class RegisterPageComponent implements OnInit {
   registerEmail: string = '';
   registerPassword: string = '';

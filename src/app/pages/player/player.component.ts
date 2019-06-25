@@ -15,6 +15,9 @@ const THUMBNAILS_PATH = '../../../assets/thumbnails/';
   templateUrl: './player.component.html',
   styleUrls: ['./player.component.css']
 })
+
+// A custom video player for custom controls
+
 export class PlayerComponent implements OnInit, AfterViewInit {
   movieSource: string = '';
   thumbnail: string = '';
@@ -79,6 +82,7 @@ export class PlayerComponent implements OnInit, AfterViewInit {
     });
   }
 
+  // the timestamp of watched movie
   private getMovieTimestamp(): number {
     const watchedMovie = this.usersService.getWatchedMovie(this.moviename);
     if (watchedMovie.timestamp > 10) {
@@ -87,6 +91,7 @@ export class PlayerComponent implements OnInit, AfterViewInit {
     return watchedMovie.timestamp;
   }
 
+  // when going back, set timestamp of that movie and set it to watched
   goBack() {
     const watchedMovie = new WatchedMovie();
     const vid = document.getElementById('myVideo') as HTMLVideoElement;
@@ -125,6 +130,7 @@ export class PlayerComponent implements OnInit, AfterViewInit {
     this.innerHeight = window.innerHeight;
   }
 
+  // set icons shown on play and pause
   playpause() {
     const video = document.getElementById('myVideo') as HTMLVideoElement;
     if (video.ended || video.paused) {
@@ -163,6 +169,7 @@ export class PlayerComponent implements OnInit, AfterViewInit {
     video.currentTime += video.currentTime == 0 ? 0 : time;
   }
 
+  // operating player with keys
   keyDownFunction(event: Event) {
     // @ts-ignore
     switch (event.keyCode) {

@@ -12,6 +12,10 @@ const MOVIEDATA_PATH = '../../../assets/movieData.json';
   templateUrl: './overview-page.component.html',
   styleUrls: ['./overview-page.component.css']
 })
+
+// the overview pages shows the user their personalized overview.
+// on filter change the overview page will adapt to only show the corresponding movies.
+// default is to show the recently watched movies first.
 export class OverviewPageComponent implements OnInit {
 
   constructor(public globals: Globals,
