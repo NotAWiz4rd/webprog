@@ -59,7 +59,14 @@ export const APP_ROUTES = [
     canActivate: [AuthService],
     resolve: {
       movie: MoviesResolver
-    }
+    },
+    children: [
+      {
+        path: 'series/:seasonKey/:episodeKey',
+        component: PlayerComponent,
+        canActivate: [AuthService]
+      }
+    ]
   },
   {
     path: '**',

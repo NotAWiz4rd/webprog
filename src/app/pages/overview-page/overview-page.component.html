@@ -1,3 +1,7 @@
+<div class="reset-genre" *ngIf="globals.genreFilter != '' || globals.filter != ''" (click)="resetFilters()">
+  {{globals.staticTexts | getStaticText : 'allMoviesText' : languageService.getLanguage()}}
+</div>
+
 <app-genre-chooser (genreChange)="genreFilterChange($event)"></app-genre-chooser>
 
 <div class="search-container">
@@ -14,12 +18,35 @@
   <app-movie-preview *ngFor="let movie of getRecentlyWatched()" [movie]="movie"></app-movie-preview>
 </ng-container>
 <div class="line"></div>
-<h1>
-  {{globals.genreFilter != '' ? (globals.staticTexts | getStaticText : 'genreText' + globals.genreFilter : languageService.getLanguage())
-  : (globals.staticTexts | getStaticText : 'allMoviesText' : languageService.getLanguage())}}
+
+<h1 *ngIf="globals.genreFilter != ''">
+  {{(globals.staticTexts | getStaticText : 'genreText' + globals.genreFilter : languageService.getLanguage())}}
+</h1>
+
+
+<h1 *ngIf="globals.genreFilter === ''">
+  {{(globals.staticTexts | getStaticText : 'allMoviesText' : languageService.getLanguage())}}
 </h1>
 <div class="line"></div>
 <ng-container *ngFor="let movie of globals.movieData | getFilteredMovies : globals.filter">
-  <app-movie-preview *ngIf="globals.genreFilter === '' || movie.genres.includes(globals.genreFilter)"
-                     [movie]="movie"></app-movie-preview>
+  <app-movie-preview
+    *ngIf="(globals.genreFilter === '' || movie.genres.includes(globals.genreFilter)) && !movie.isSeries"
+    [movie]="movie"></app-movie-preview>
+</ng-container>
+
+<ng-container *ngFor="let series of globals.seriesData | getFilteredMovies : globals.filter">
+  <app-movie-preview
+    *ngIf="(globals.genreFilter === '' || series.genres.includes(globals.genreFilter)) && !series.isSeries"
+    [movie]="series"></app-movie-preview>
+</ng-container>
+<div class="line"></div>
+
+<h1 *ngIf="globals.genreFilter === ''">
+  {{(globals.staticTexts | getStaticText : 'allSeriesText' : languageService.getLanguage())}}
+</h1>
+<div class="line"></div>
+<ng-container *ngFor="let series of globals.seriesData | getFilteredMovies : globals.filter">
+  <app-movie-preview
+    *ngIf="(globals.genreFilter === '' || series.genres.includes(globals.genreFilter)) && series.isSeries"
+    [movie]="series"></app-movie-preview>
 </ng-container>
