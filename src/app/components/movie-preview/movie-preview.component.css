@@ -16,18 +16,19 @@ img {
 
 h2 {
   cursor: pointer;
+  margin-top: 0;
 }
 
 #add {
-  transform: translate3d(-250%, -775%,0);
+  transform: translate3d(-320%, -850%, 0);
 }
 
 #remove {
-  transform: translate3d(-250%,-775%,0);
+  transform: translate3d(-320%, -850%, 0);
 }
 
 #information {
-  transform: translate3d(-600%,-775%,0);
+  transform: translate3d(-300%, -850%, 0);
 }
 
 .btn {
@@ -37,11 +38,16 @@ h2 {
   width: 35px;
   height: 35px;
   border-radius: 4px;
-  margin: 1rem;
-  bottom: 0%;
+  bottom: 0;
   background-position: 5px 5px !important;
   background-repeat: no-repeat !important;
   background-size: 25px auto;
   background-color: #ffa31a !important;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 1089px) {
+  #add, #remove, #information {
+    transform: translate3d(1450%, -965%, 0);
+  }
 }
