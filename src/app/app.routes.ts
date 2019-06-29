@@ -10,6 +10,7 @@ import {RegisterPageComponent} from "./pages/register-page/register-page.compone
 import {ContactPageComponent} from "./pages/contact-page/contact-page.component";
 import {AgbPageComponent} from "./pages/agb-page/agb-page.component";
 import {LandingPageComponent} from "./pages/landing-page/landing-page.component";
+import {RedirectComponent} from "./pages/redirect/redirect.component";
 
 export const APP_ROUTES = [
   {
@@ -42,10 +43,19 @@ export const APP_ROUTES = [
     component: ContactPageComponent
   },
   {
+    path: 'redirect',
+    component: RedirectComponent,
+    canActivate: [AuthService],
+    children: [
+      {path: '**',
+        component: RedirectComponent
+      }
+    ]
+  },
+  {
     path: 'overview',
     component: OverviewPageComponent,
     canActivate: [AuthService]
-
   },
   {
     path: 'my-list',

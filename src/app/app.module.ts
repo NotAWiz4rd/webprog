@@ -33,6 +33,7 @@ import {ContactPageComponent} from './pages/contact-page/contact-page.component'
 import {FormsModule} from "@angular/forms";
 import {AgbPageComponent} from "./pages/agb-page/agb-page.component";
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
+import { RedirectComponent } from './pages/redirect/redirect.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { LandingPageComponent } from './pages/landing-page/landing-page.componen
     ContactPageComponent,
     AgbPageComponent,
     ContactPageComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    RedirectComponent
   ],
   imports: [
     BrowserModule,

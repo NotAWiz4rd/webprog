@@ -89,7 +89,8 @@ export class PlayerComponent implements OnInit, AfterViewInit {
     this.timerId = setTimeout(() => {
       this.hover = false;
     }, 5000);
-    const vidContainer = document.getElementById('videoContainer') as HTMLDivElement;
+    console.log(this.source);
+    const vidContainer = document.getElementById('video-container') as HTMLDivElement;
     vidContainer.addEventListener('mousemove', () => {
       clearTimeout(this.timerId);
       this.hover = true;
@@ -97,6 +98,7 @@ export class PlayerComponent implements OnInit, AfterViewInit {
         this.hover = false;
       }, 5000);
     });
+
   }
 
   // the timestamp of watched movie
@@ -120,7 +122,11 @@ export class PlayerComponent implements OnInit, AfterViewInit {
     watchedMovie.timestamp = vid.currentTime;
     console.log(vid.currentTime);
     this.usersService.addMovieToWatched(watchedMovie);
-    this.navigationService.navigateBack();
+    if (!this.isSeries) {
+      this.navigationService.navigateBack();
+    } else {
+      this.navigationService.navigateToView('overview');
+    }
     // @ts-ignore
     if (!(!document.fullscreenElement && !document.mozFullScreenElement &&
       // @ts-ignore
@@ -293,9 +299,13 @@ export class PlayerComponent implements OnInit, AfterViewInit {
   goToNextEpisode() {
     let episodeDate = this.episode.nextEpisode.split('/');
     if (episodeDate.length < 2) {
-      console.error('EpisdoData for next episode was faulty: ' + this.episode.nextEpisode);
+      console.error('EpisodeData for next episode was faulty: ' + this.episode.nextEpisode);
+      this.navigationService.navigateToView('overview');
+    } else {
+      this.navigationService.navigateToView('redirect/watch/' + this.moviename + '/' + 'series/' + this.episode.nextEpisode);
     }
-    this.navigationService.navigateToEpisode(this.moviename, episodeDate[0], episodeDate[1]);
+
+
   }
 
 }
