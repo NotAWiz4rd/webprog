@@ -94,6 +94,7 @@ export class UsersService {
     this.globals.currentUser.watchedList.forEach(watchedMovie => {
       if (watchedMovie.movieName === movie.movieName) {
         watchedMovie.timestamp = movie.timestamp;
+        watchedMovie.info = movie.info;
         movieExisted = true;
       }
     });

@@ -6,6 +6,8 @@ import {ActivatedRoute} from "@angular/router";
 import {MovieData} from "../../util/MovieData";
 import {UsersService} from "../../services/users.service";
 import {WatchedMovie} from "../../util/WatchedMovie";
+import {MoviesService} from "../../services/movies.service";
+import {EpisodeData} from "../../util/EpisodeData";
 
 const MOVIES_PATH = '../../../assets/movies/';
 const THUMBNAILS_PATH = '../../../assets/thumbnails/';
@@ -15,17 +17,26 @@ const THUMBNAILS_PATH = '../../../assets/thumbnails/';
   templateUrl: './player.component.html',
   styleUrls: ['./player.component.css']
 })
+
+// A custom video player for custom controls
+
 export class PlayerComponent implements OnInit, AfterViewInit {
-  movieSource: string = '';
+  source: string = '';
   thumbnail: string = '';
   moviename: string = '';
   hover: boolean = true;
   showVolume: boolean = false;
+
+  season: string = '';
+  episode: EpisodeData = new EpisodeData();
+  isSeries: boolean = false;
+
   innerWidth: number = 0;
   innerHeight: number = 0;
   timerId: any;
   playIc: string = 'pause.png';
   muteIc: string = 'volumeUp.png';
+  foreIc: string = 'forward.png';
 
   vidTime: number = 0;
   vidVolume: number = 100;
@@ -35,13 +46,22 @@ export class PlayerComponent implements OnInit, AfterViewInit {
               public globals: Globals,
               private navigationService: NavigationService,
               private activatedRoute: ActivatedRoute,
-              private usersService: UsersService) {
+              private usersService: UsersService,
+              private moviesService: MoviesService) {
     this.activatedRoute.data.subscribe((res) => {
       this.moviedata = res.movie as MovieData;
       const movie = res.movie as MovieData;
-      this.movieSource = MOVIES_PATH + movie.filename + '.mp4';
+      this.source = MOVIES_PATH + movie.filename + '.mp4';
       this.thumbnail = THUMBNAILS_PATH + movie.filename + '.jpg';
       this.moviename = movie.filename;
+
+      if (window.location.pathname.includes('series')) {
+        this.isSeries = true;
+        this.season = window.location.pathname.split('/')[4];
+        let episodeKey = window.location.pathname.split('/')[5];
+        this.episode = this.moviesService.getEpisode(this.moviename, this.season, episodeKey);
+        this.source = MOVIES_PATH + movie.filename + '/' + this.season + '/' + this.episode.filename + '.mp4';
+      }
     });
   }
 
@@ -79,6 +99,7 @@ export class PlayerComponent implements OnInit, AfterViewInit {
     });
   }
 
+  // the timestamp of watched movie
   private getMovieTimestamp(): number {
     const watchedMovie = this.usersService.getWatchedMovie(this.moviename);
     if (watchedMovie.timestamp > 10) {
@@ -87,9 +108,14 @@ export class PlayerComponent implements OnInit, AfterViewInit {
     return watchedMovie.timestamp;
   }
 
+  // when going back, set timestamp of that movie and set it to watched
   goBack() {
     const watchedMovie = new WatchedMovie();
     const vid = document.getElementById('myVideo') as HTMLVideoElement;
+
+    if (this.isSeries) {
+      watchedMovie.info = this.season + ';' + this.episode.filename;
+    }
     watchedMovie.movieName = this.moviename;
     watchedMovie.timestamp = vid.currentTime;
     console.log(vid.currentTime);
@@ -125,6 +151,7 @@ export class PlayerComponent implements OnInit, AfterViewInit {
     this.innerHeight = window.innerHeight;
   }
 
+  // set icons shown on play and pause
   playpause() {
     const video = document.getElementById('myVideo') as HTMLVideoElement;
     if (video.ended || video.paused) {
@@ -163,6 +190,7 @@ export class PlayerComponent implements OnInit, AfterViewInit {
     video.currentTime += video.currentTime == 0 ? 0 : time;
   }
 
+  // operating player with keys
   keyDownFunction(event: Event) {
     // @ts-ignore
     switch (event.keyCode) {
@@ -260,6 +288,14 @@ export class PlayerComponent implements OnInit, AfterViewInit {
 
   volumeLeave() {
     this.showVolume = false;
+  }
+
+  goToNextEpisode() {
+    let episodeDate = this.episode.nextEpisode.split('/');
+    if (episodeDate.length < 2) {
+      console.error('EpisdoData for next episode was faulty: ' + this.episode.nextEpisode);
+    }
+    this.navigationService.navigateToEpisode(this.moviename, episodeDate[0], episodeDate[1]);
   }
 
 }

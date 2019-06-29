@@ -122,14 +122,14 @@
   {
     "logicalName": "backToMainPageText",
     "english": "Go back to main page",
-    "german": "Zur Hauptseite zurückkehren.",
+    "german": "Zur Hauptseite zurückkehren",
     "spanish": "Volver a la página principal."
   },
   {
     "logicalName": "searchText",
-    "english": "Search..",
-    "german": "Suchen..",
-    "spanish": "Buscar.."
+    "english": "Search...",
+    "german": "Suchen...",
+    "spanish": "Buscar..."
   },
   {
     "logicalName": "registerText",
@@ -146,7 +146,7 @@
   {
     "logicalName": "addToListText",
     "english": "Add to My List",
-    "german": "Zu Liste hinzufügen",
+    "german": "Zur Liste hinzufügen",
     "spanish": "Añadir a mi lista"
   },
   {
@@ -229,13 +229,13 @@
   },
   {
     "logicalName": "validPasswordText",
-    "english": "Please enter a secure password with a minimum length of 4.",
+    "english": "Please enter a secure password with a minimum length of 4 characters.",
     "german": "Ihr Passwort ist nicht sicher genug. Bitte geben Sie ein Passwort mit mindestens 4 Zeichen ein.",
     "spanish": "Introduzca una contraseña segura con una longitud mínima de 4."
   },
   {
     "logicalName": "validRepeatPasswordText",
-    "english": "Please re-enter the same password as above.",
+    "english": "Please re-enter the same password as above. It must have at least 4 characters.",
     "german": "Das Passwort muss mit dem zuvor eingegebenen Passwort übereinstimmen und mehr als vier Zeichen haben.",
     "spanish": "Por favor vuelva a ingresar la misma contraseña que arriba."
   },
@@ -247,13 +247,13 @@
   },
   {
     "logicalName": "validAGBText",
-    "english": "You must read and accept the AGBs to register.",
-    "german": "Sie muessen die AGB akzeptieren um sich registrieren zu können.",
+    "english": "You have to read and accept the AGBs to register.",
+    "german": "Sie müssen die AGB akzeptieren um sich registrieren zu können.",
     "spanish": "Tienes que aceptar los términos y condiciones para poder registrarte."
   },
   {
     "logicalName": "contactText",
-    "english": "Contact us!",
+    "english": "Contact us",
     "german": "Kontakt",
     "spanish": "Contacto"
   },
@@ -307,7 +307,7 @@
   },
   {
     "logicalName": "catchText3",
-    "english": "Curious? \n Come in and find out!",
+    "english": "Curious? \n Join today and find out more!",
     "german": "Neugierig? \n Tritt bei und erfahre mehr!",
     "spanish": "¿Curioso? \n Entra y averígualo!"
   },
@@ -323,8 +323,22 @@
     "german": "Heute registrieren, endlos gucken! ",
     "spanish": "Únete hoy, mira para siempre!"
   },
-  {"logicalName": "showAllText",
-  "english": "Show all",
-  "german":  "Alle Filme",
-  "spanish": "mostrar todo"}
+  {
+    "logicalName": "allSeriesText",
+    "english": "All series",
+    "german": "Alle Serien",
+    "spanish": "Toutes les séries"
+  },
+  {
+    "logicalName": "genreTextSeries",
+    "english": "Series",
+    "german": "Serien",
+    "spanish": "Séries"
+  },
+  {
+    "logicalName": "showAllText",
+    "english": "Show all",
+    "german": "Alle Filme",
+    "spanish": "mostrar todo"
+  }
 ]

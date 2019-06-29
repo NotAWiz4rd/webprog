@@ -9,6 +9,12 @@ import {Globals} from "../../util/Globals";
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.css']
 })
+
+// The landing page is the page you first see when you call the site.
+// Other then the footer (see footer component)
+// it only has one function: the join button so you can join the best
+// streaming community ever!
+
 export class LandingPageComponent implements OnInit {
 
   constructor(private navigationService: NavigationService,

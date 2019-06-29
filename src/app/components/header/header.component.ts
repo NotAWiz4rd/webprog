@@ -11,6 +11,9 @@ import {User} from "../../util/User";
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
+
+// The header contains buttons for logout, navigate to login, navigate to list, navigate to overview,
+// random video and show all, this class implements their functionality.
 export class HeaderComponent implements OnInit {
 
   constructor(public languageService: LanguageService,

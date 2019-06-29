@@ -4,6 +4,8 @@ import {LanguageService} from "../../services/language.service";
 import {Globals} from "../../util/Globals";
 import {MovieData} from "../../util/MovieData";
 import {UsersService} from "../../services/users.service";
+import {SeriesData} from "../../util/SeriesData";
+import {MoviesService} from "../../services/movies.service";
 
 @Component({
   selector: 'app-movie-preview',
@@ -29,7 +31,11 @@ export class MoviePreviewComponent implements OnInit {
   }
 
   navigateToMovie(movieFilename: string) {
-    this.navigationService.navigateToMovie(movieFilename);
+    if (this.movie.isSeries) {
+      this.navigateToSeries();
+    } else {
+      this.navigationService.navigateToMovie(movieFilename);
+    }
   }
 
   addMovieToList() {
@@ -55,5 +61,28 @@ export class MoviePreviewComponent implements OnInit {
 
   toggleInfo() {
     this.info = !(this.info);
+  }
+
+  navigateToSeries() {
+    let series: SeriesData = this.movie as SeriesData;
+    let watchedSeries = this.usersService.getWatchedMovie(series.filename);
+    if (watchedSeries.info != '') {
+      this.navigateToEpisode(watchedSeries.info);
+    }
+
+    let firstSeason = series.seasons[0];
+    this.navigationService.navigateToEpisode(series.filename, firstSeason.key, firstSeason.episodes[0].filename);
+  }
+
+  private navigateToEpisode(info: string) {
+    let infos = info.split(';');
+    if (infos.length < 2) {
+      console.log('WatchedList contained not enough info to navigate to episode - data might be corrupt.');
+      return;
+    }
+
+    let seasonKey = infos[0];
+    let episode = infos[1];
+    this.navigationService.navigateToEpisode(this.movie.filename, seasonKey, episode);
   }
 }

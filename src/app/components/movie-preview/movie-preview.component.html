@@ -1,8 +1,7 @@
-<div class="preview" (mouseenter)="mouseEnter(movie.name) " (mouseleave)="mouseLeave(movie.name)">
+<div (mouseenter)="mouseEnter(movie.name) " (mouseleave)="mouseLeave(movie.name)">
   <h2 (click)="navigateToMovie(movie.filename)">{{movie.name}}</h2>
-  <div class="thumbnailDiv">
-  <img (click)="navigateToMovie(movie.filename)" src="{{THUMBNAILS_PATH + movie.filename + '.jpg'}}"
-       >
+  <div>
+    <img (click)="navigateToMovie(movie.filename)" src="{{THUMBNAILS_PATH + movie.filename + '.jpg'}}">
     <div class="btn" (click)="addMovieToList()" id="add" *ngIf="hover && !movieIsInList()"
          [ngStyle]="{background: 'url(../../../assets/icons/plus.png'}"></div>
     <div class="btn" (click)="removeMovieFromList()" id="remove" *ngIf="hover && movieIsInList()"

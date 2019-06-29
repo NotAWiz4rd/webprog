@@ -4,6 +4,7 @@ import {MovieData} from "../../util/MovieData";
 import {Globals} from "../../util/Globals";
 import {LanguageService} from "../../services/language.service";
 import {MoviesService} from "../../services/movies.service";
+import {SeriesData} from "../../util/SeriesData";
 
 const MOVIEDATA_PATH = '../../../assets/movieData.json';
 
@@ -12,19 +13,17 @@ const MOVIEDATA_PATH = '../../../assets/movieData.json';
   templateUrl: './overview-page.component.html',
   styleUrls: ['./overview-page.component.css']
 })
+
+// the overview pages shows the user their personalized overview.
+// on filter change the overview page will adapt to only show the corresponding movies.
+// default is to show the recently watched movies first.
 export class OverviewPageComponent implements OnInit {
 
   constructor(public globals: Globals,
               public languageService: LanguageService,
               private moviesService: MoviesService,
               private http: HttpClient) {
-    // load file with movie data - reload this every time, in case the movies have changed
-    this.http.get(MOVIEDATA_PATH)
-      .subscribe(data => {
-        const movieData = data as MovieData[];
-        console.log('Loaded movies data.');
-        this.globals.movieData = movieData;
-      });
+    this.loadMoviesAndSeries();
   }
 
   ngOnInit() {
@@ -41,5 +40,29 @@ export class OverviewPageComponent implements OnInit {
 
   getRecentlyWatched(): MovieData[] {
     return this.moviesService.getRecentlyWatchedMovies(5);
+  }
+
+  loadMoviesAndSeries() {
+    // load file with movie data - reload this every time, in case the movies have changed
+    this.http.get(MOVIEDATA_PATH)
+      .subscribe(data => {
+        this.globals.movieData = [];
+        this.globals.seriesData = [];
+        const array = data as Object[];
+        array.forEach(dataObject => {
+          let movie = dataObject as MovieData;
+          if (movie.isSeries) {
+            this.globals.seriesData.push(dataObject as SeriesData);
+          } else {
+            this.globals.movieData.push(dataObject as MovieData);
+          }
+        });
+        console.log('Loaded movies and series data.');
+      });
+  }
+
+  resetFilters() {
+    this.genreFilterChange('');
+    this.filterInputChange('');
   }
 }

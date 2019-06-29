@@ -8,6 +8,9 @@ import {Globals} from "../../util/Globals";
   templateUrl: './genre-chooser.component.html',
   styleUrls: ['./genre-chooser.component.css']
 })
+
+// this component has an array of genres and makes it possible to search by genres
+// by switching to the chosen one
 export class GenreChooserComponent implements OnInit {
   @Output()
   genreChange: EventEmitter<string> = new EventEmitter();
@@ -34,6 +37,6 @@ export class GenreChooserComponent implements OnInit {
   }
 
   private createGenreArray() {
-    this.genres = [Genre.ACTION, Genre.COMEDIES, Genre.SCIFI, Genre.ROMANCE, Genre.HORROR, Genre.FANTASY, Genre.ANIMATIION, Genre.DRAMAS, Genre.DOCUMENTARIES]
+    this.genres = [Genre.ACTION, Genre.COMEDIES, Genre.SCIFI, Genre.ROMANCE, Genre.HORROR, Genre.FANTASY, Genre.ANIMATIION, Genre.DRAMAS, Genre.DOCUMENTARIES, Genre.SERIES]
   }
 }

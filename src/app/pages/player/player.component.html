@@ -1,4 +1,4 @@
-<div (keypress)="keyDownFunction($event)" ID="videoContainer" (mouseenter)="mouseEnter() " (mouseleave)="mouseLeave()">
+<div (keypress)="keyDownFunction($event)" ID="video-container" (mouseenter)="mouseEnter() " (mouseleave)="mouseLeave()">
 
   <app-basic-button (click)="goBack()" *ngIf="hover"
                     [text]="globals.staticTexts | getStaticText : 'goBackText' : languageService.getLanguage()"></app-basic-button>
@@ -14,14 +14,16 @@
            poster="{{thumbnail}}"
            height="{{innerHeight-5}}"
            width="{{innerWidth-5}}">
-      <source src="{{movieSource}}" type="video/mp4">
+      <source src="{{source}}" type="video/mp4">
       <p>
         {{globals.staticTexts | getStaticText : 'noVideoSupportText' : languageService.getLanguage()}}
       </p>
     </video>
-    <div class="controlPanel" *ngIf="hover" (mouseleave)="volumeLeave()">
+    <div class="control-panel" *ngIf="hover" (mouseleave)="volumeLeave()">
       <div class="btn" (click)="playpause()" id="play"
            [ngStyle]="{background: 'url(../../../assets/icons/' + playIc + ')'}"></div>
+      <div *ngIf="isSeries" class="btn" (click)="goToNextEpisode()" id="next"
+           [ngStyle]="{background: 'url(../../../assets/icons/' + foreIc + ')'}"></div>
       <div class="btn" (click)="toggleMute()" (mouseenter)="volumeEnter()" id="mute"
            [ngStyle]="{background: 'url(../../../assets/icons/' + muteIc + ')'}"></div>
       <input *ngIf="showVolume" orient="vertical" type="range" min="0" max="100" [valueAsNumber]="vidVolume"
